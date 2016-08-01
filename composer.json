@@ -28,7 +28,7 @@
   "extra": {
     "contao": {
       "sources": {
-        "": "files/nutshell"
+        "files/nutshell": "files/nutshell"
       }
     }
   }
