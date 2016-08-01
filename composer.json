@@ -1,6 +1,6 @@
 {
   "name": "erdmannfreunde/euf_nutshell",
-  "description": "Contao Extension to create grid-layouts",
+  "description": "Base Framework for Contao CMS",
   "keywords": ["contao", "nutshell", "euf nutshell", "base framework"],
   "type": "contao-module",
   "homepage": "https://github.com/ErdmannFreunde/euf_nutshell",
