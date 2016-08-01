@@ -23,7 +23,7 @@
     "contao-community-alliance/composer-plugin":"^2.3.0 || 3.*"
   },
   "replace": {
-    "contao-legacy/euf_grid": "self.version"
+    "contao-legacy/euf_nutshell: "self.version"
   },
   "extra": {
     "contao": {
