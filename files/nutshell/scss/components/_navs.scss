@@ -1,0 +1,232 @@
+// *
+// * Erdmann & Freunde - Nutshell
+// * BASE Contao Framework
+// * erdmann-freunde.de/nutshell/
+// *
+// * Lizenziert unter MIT OPEN SOURCE 
+// *
+
+//
+// COMPONENTS/NAVS
+// --------------------------------------------------
+
+// VARIABLES
+$nav--main__item-padding: $base-spacing-unit !default;
+$nav-toggler-top-space:   $base-spacing-unit--sm !default;
+$nav-toggler-right-space: $base-spacing-unit--sm !default;
+$nav-toggler-border:      $base-border-width solid currentColor;
+
+
+// USED FROM _responsive.scss
+// $offcanvas-nav
+
+// --------------------------------------------------
+
+// general nav class, navigation-mixin resets margin, padding and list-stype-type
+.nav {
+  @include navigation;
+}
+
+.nav--horizontal {
+  ul {
+    @extend %clearfix;
+  }
+  
+  li {
+    @include media-query(screen-offcanvas) {
+      float: left;
+    }
+  }
+  
+  a,
+  span.active,
+  span.trail {
+    display: block;
+    padding: ($nav--main__item-padding / 2) $nav--main__item-padding;
+  }
+}
+
+// [1] offcanvas settings
+.nav--mobile {
+  height: 0; // [1]
+  visibility: hidden; // [1]
+  
+  @include media-query(screen-offcanvas) {
+    visibility: visible; // [1]
+    height: auto; // [1]
+  }
+}
+.nav--mobile--active {
+  @media screen and (max-width: $offcanvas-nav) {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: rgba(0,0,0,0.85);
+    z-index: 5000;
+    visibility: visible;
+    
+    .level_1 {
+      @include vertical-align(50%);
+    }
+  }
+}
+
+// button to display offcanvas navigation
+.nav-toggler {
+  font-family: sans-serif;
+  float: right;
+  position: absolute;
+  top: $nav-toggler-top-space;
+  right: $nav-toggler-right-space;
+  z-index: 5001;
+  
+  @include media-query(screen-offcanvas) {
+    display: none;
+  }
+}
+
+.nav-toggler__button {
+  background: none;
+  border: $nav-toggler-border;
+  outline: none;
+}
+
+
+.nav--right {
+  float: right;
+}
+
+.nav--vertical {
+  a,
+  span.active,
+  span.trail {
+    display: block;
+    padding: ($nav--main__item-padding / 2) $nav--main__item-padding;
+  }
+}
+
+.nav--border {
+  border: $base-border;
+  
+  a,
+  span.active,
+  span.trail {
+    padding: $nav--main__item-padding $nav--main__item-padding;
+    border-bottom: 1px solid $base-border-color;
+  
+  
+    &.last {
+      border-bottom: 0;
+    }
+  }
+}
+
+.nav--breadcrumb {
+  border: $base-border;
+  padding: $base-spacing-unit--sm $base-spacing-unit;
+  ul {
+    @extend %clearfix;
+  }
+  
+  li {
+    @include media-query(screen-offcanvas) {
+      float: left;
+      padding-right: $base-spacing-unit;
+    }
+  }
+  
+  a {    
+    &:after {
+      font-size: 0.75rem;
+      display: inline-block;
+      content: "►";
+      vertical-align: middle;
+      padding-left: $base-spacing-unit;
+    }
+  }
+}
+
+.nav--select {
+  select {
+    -webkit-appearance: none;
+    background: transparent;
+    border: $base-border;
+    padding: $base-spacing-unit--xs $base-spacing-unit--sm;   
+  }
+  
+  .submit {
+    vertical-align: middle;
+    padding: $base-spacing-unit--xs $base-spacing-unit--sm;
+  }
+}
+
+.nav--pager {
+  ul {
+    text-align: center;
+  }
+  
+  li {
+    display: inline-block;
+  }
+  
+  .empty {
+    @include invisible;
+  }
+  
+  a {
+    padding: $base-spacing-unit--sm;
+  }
+}
+
+// [1] clearing floated elements like news--list items
+.pagination {
+	@include navigation;
+  @extend %clearfix;
+  
+  margin-top: $base-spacing-unit;
+	
+	clear: both; // [1]
+	text-align: center;
+  line-height: 1;
+	
+	p {
+    padding: $base-spacing-unit--small / 2;
+    padding-left: 0;
+		margin: $base-spacing-unit--small / 2;
+		margin-left: 0;
+		border-top: 2px solid transparent;
+	}
+	
+	li {
+		display: inline;
+	}
+	
+	a,
+	span {
+  	display: inline-block;
+		padding: $base-spacing-unit--small / 2;
+		margin: $base-spacing-unit--small / 2;
+	}
+	
+	span {
+  	border: 2px solid currentColor;
+	}
+	
+	a.next {
+  	margin-right: 0;
+  	padding-right: 0;
+	}
+	
+	@include media-query(screen-sm) {
+  	p {
+  		float: left;
+  	}
+  	
+  	p + ul {
+  		float: right;
+  	}
+	}
+}

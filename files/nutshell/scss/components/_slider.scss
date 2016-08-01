@@ -1,0 +1,85 @@
+// *
+// * Erdmann & Freunde - Nutshell
+// * BASE Contao Framework
+// * erdmann-freunde.de/nutshell/
+// *
+// * Lizenziert unter MIT OPEN SOURCE 
+// *
+
+//
+// COMPONENTS/SLIDER
+// --------------------------------------------------
+
+// VARIABLES
+$arrow-color:               inherit !default;
+$arrow-size:                2rem !default;
+$menu-point-color:          inherit !default;
+$menu-point-color--active:  $color-brand !default;
+
+// USED FROM _variables.scss
+
+// --------------------------------------------------
+
+// template changes:
+// .ce_slider_stop - put label inside span.invisible containers, so that we can use arrows
+
+
+// default slider
+// NOTES:
+// [1] overrides default contao slider styling
+// [2] some fonts use different sizes for left and right arrow. 
+//     We take Arial to make sure it has the same size.
+.slider {
+  position: relative;
+  
+  .slider-control {
+  	position: static; // [1]
+  	height: 0; // [1]
+  }
+  
+  .slider-control a {
+    @include vertical-align(50%);
+    @include font-size($arrow-size,1);
+    
+    position: absolute;
+    display: block;
+    color: $arrow-color;
+    font-family: Arial; // [2]
+    
+    &:before {
+      padding: $base-spacing-unit--sm;
+      display: block;
+    }
+    
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+  
+  .slider-prev:before {
+    content: "◄";
+  }
+  
+  .slider-next:before {
+    content: "►";
+  }
+  
+  .slider-menu {
+    @include font-size(3rem,1);
+    
+    top: auto; // [1]
+    bottom: 0; // [1]
+    
+    b {
+      color: $menu-point-color; // [1]
+    }
+    
+    b.active {
+      color: $menu-point-color--active; // [1]
+    }
+    
+    b:hover {
+      opacity: 0.5;
+    }
+  }
+}

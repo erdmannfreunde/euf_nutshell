@@ -1,0 +1,144 @@
+// *
+// * Erdmann & Freunde - Nutshell
+// * BASE Contao Framework
+// * erdmann-freunde.de/nutshell/
+// *
+// * Lizenziert unter MIT OPEN SOURCE 
+// *
+
+//
+// COMPONENTS/MEDIA
+// --------------------------------------------------
+
+// VARIABLES
+$gallery__gutter-width: $grid__gutter-width !default;
+
+// USED FROM _variables.scss
+
+// --------------------------------------------------
+.image--left img {
+  text-align: left;
+  margin-left: 0;
+}
+
+.image--right img {
+  text-align: right;
+  margin-right: 0;
+}
+
+.image--center img {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ce_gallery {
+  ul {
+    @extend .clearfix;
+  
+    margin-left: $gallery__gutter-width / 2 * -1;
+    margin-right: $gallery__gutter-width / 2 * -1;
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  li {
+    @include column-floating($gallery__gutter-width);
+    
+    margin-bottom: $gallery__gutter-width;
+  }
+  
+  .cols_2 {
+    li {
+      width: 50%;
+    }
+  }
+  
+  .cols_3 {
+    li {
+      width: 50%;
+      
+      @include media-query(screen-md) {
+        width: percentage(4/12);
+      }
+    }
+  }
+  
+  .cols_4 {
+    li {
+      width: 50%;
+      
+      @include media-query(screen-md) {
+        width: percentage(3/12);
+      }
+    }
+  }
+  
+  .cols_5 {
+    li {
+      width: 50%;
+      
+      @include media-query(screen-md) {
+        width: 20%;
+      }
+    }
+  }
+  
+  .cols_6 {
+    li {
+      width: 50%;
+      
+      @include media-query(screen-md) {
+        width: percentage(2/12);
+      }
+    }
+  }
+  
+  img {
+    display: block;
+  }
+}
+
+.ce_player,
+.ce_youtube {
+  
+  .inside,
+  .mejs-video {
+    @include margin-auto;
+  }
+    
+  .mejs-video {
+		width: 100% !important;
+		height: auto !important;
+		padding-top: 56.25%;
+	}
+	
+	.mejs-audio {
+  	margin-top: 30px;
+  	
+    audio {
+    	height: auto;
+  	}
+  }
+	
+	.mejs-overlay, 
+	.mejs-poster {
+		width: 100% !important;
+		height: 100% !important;
+	}
+	
+	.mejs-video {
+  	.mejs-mediaelement video,
+  	.mejs-mediaelement .me-plugin,
+  	.mejs-mediaelement embed {
+  		position: absolute;
+  		top: 0; left: 0; right: 0; bottom: 0;
+  		width: 100% !important;
+  		height: 100% !important;
+  	}
+  }
+}
+
+iframe {
+
+}

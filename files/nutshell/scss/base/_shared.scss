@@ -1,0 +1,71 @@
+// *
+// * Erdmann & Freunde - Nutshell
+// * BASE Contao Framework
+// * erdmann-freunde.de/nutshell/
+// *
+// * Lizenziert unter MIT OPEN SOURCE 
+// *
+
+//
+// BASE/SHARED
+// --------------------------------------------------
+
+// VARIABLES
+
+// USED FROM _variables.scss
+
+// --------------------------------------------------
+
+// set a default margin-bottom for some elements 
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: $base-spacing-unit--sm;
+}
+
+ul, ol, dl,
+blockquote, p, address,
+hr,
+fieldset, figure,
+pre {    
+    margin-bottom: $base-spacing-unit;
+}
+
+
+// set a default margin-left for some elements 
+ul, ol, dd {
+    margin-left: $base-spacing-unit;
+}
+
+
+// Micro clearfix, as per: css-101.org/articles/clearfix/latest-new-clearfix-so-far.php
+.clearfix,
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+
+// hyperlink
+a {
+  color: $color-links;
+}
+
+:not(p) a {
+  text-decoration: none;
+}
+
+
+// images
+figure {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}

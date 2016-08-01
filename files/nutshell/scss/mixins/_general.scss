@@ -1,0 +1,157 @@
+// *
+// * Erdmann & Freunde - Nutshell
+// * BASE Contao Framework
+// * erdmann-freunde.de/nutshell/
+// *
+// * Lizenziert unter MIT OPEN SOURCE 
+// *
+  
+//
+// MIXINS/GENERAL
+// --------------------------------------------------
+
+// VARIABLES
+
+// USED FROM _variables.scss
+
+// --------------------------------------------------
+
+// font-size
+@mixin font-size($font-size, $line-height: auto) {
+    
+    @if (unit($font-size) == "") {
+      font-size: #{$font-size * $base-font-size};
+      font-size: #{$font-size + 'rem'};
+    }
+    
+    @if (unit($font-size) == "rem") {
+      font-size: #{$font-size};
+    }
+  
+    @if (unit($font-size) == "px") {
+      font-size: #{$font-size};
+      font-size: #{$font-size / $base-font-size + 'rem'};
+      @warn "`Pixelwerte` sollten nicht verwendet werden."
+    }
+
+
+    @if $line-height == auto {
+      // line-height: ceil($font-size / $base-line-height) * ($base-line-height / $font-size);
+      line-height: 1.2;
+    }
+
+    @else {
+
+        @if (type-of($line-height) == number or $line-height == inherit or $line-height == normal) {
+            line-height: $line-height;
+        }
+
+        @elseif ($line-height != none and $line-height != false) {
+            @warn "D’oh! ‘#{$line-height}’ is not a valid value for `line-height`."
+        }
+    }
+}
+
+// margin-auto
+@mixin margin-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// basic styles for lists used as navs
+@mixin navigation() {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+// vertical align
+@mixin vertical-align($position: 50%, $correct: -50%) {
+	position: relative;
+	top: $position;
+	-webkit-transform: translateY($correct);
+	-ms-transform: translateY($correct);
+	transform: translateY($correct);
+}
+
+
+@mixin padding-default($column__gutter-width: $grid__gutter-width) {
+  padding-left:  ($column__gutter-width / 2);
+  padding-right: ($column__gutter-width / 2);
+}
+
+// make-row
+@mixin make-row($column__gutter-width: $grid__gutter-width) {
+  @extend %clearfix;
+  
+  margin-left:  $column__gutter-width / 2 * -1;
+  margin-right: $column__gutter-width / 2 * -1;
+}
+
+// column-floating
+@mixin column-floating($column__gutter-width: $grid__gutter-width) {
+  float: left;
+  padding-left:  ($column__gutter-width / 2);
+  padding-right: ($column__gutter-width / 2);
+}
+
+// make-column mixin
+@mixin make-col($columns) {
+  @include column-floating($grid__gutter-width);
+  
+  width: percentage($columns/$grid__columns);
+}
+
+// make-width mixin
+// [1] fallback for browser that can't calculate
+@mixin make-width($width, $align: auto) {
+  $width-percentage: $width / $grid__columns * $wrapper-max;
+  
+  max-width: $width-percentage; //[1]
+  max-width: calc(#{$width-percentage} - #{$grid__gutter-width});
+  
+  @if $align == auto or center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  @if $align == left {
+    margin-left: 0;
+    margin-right: auto;
+  }
+  
+  @if $align == right {
+    margin-right: 0;
+    margin-left: auto;
+  }
+}
+
+// make-offset
+@mixin make-offset($width, $direction: left) {
+  @if $direction == left or none {
+    margin-left: percentage($width / $grid__columns);
+  }
+}
+
+// screen reader only
+@mixin invisible {
+  width:0;
+	height:0;
+	left:-1000px;
+	top:-1000px;
+	position:absolute;
+	overflow:hidden;
+	display:inline;
+}
+
+
+// Functions 
+
+@function map-deep-get($map, $keys...) {
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+    @return $map;
+}

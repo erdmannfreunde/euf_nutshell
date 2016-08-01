@@ -1,0 +1,249 @@
+// *
+// * Erdmann & Freunde - Nutshell
+// * BASE Contao Framework
+// * erdmann-freunde.de/nutshell/
+// *
+// * Lizenziert unter MIT OPEN SOURCE 
+// *
+  
+//
+// BASE/TYPE
+// --------------------------------------------------
+
+// VARIABLES
+$headings__font-family: "Helvetica" !default;
+$headings__font-weight: 300 !default;
+
+$headlines: (
+  h1: (
+    sizes: (
+      xs: 2.0rem,
+      sm: 2.0rem,
+      md: 2.5rem,
+      lg: 2.5rem,
+      xl: 3.0rem
+    ),
+    line-height: 1.55,
+    margin-top: 2rem,
+    margin-bottom: 0.5rem
+  ),
+  h2: (
+    sizes: (
+      xs: 1.625rem,
+      sm: 1.625rem,
+      md: 2.000rem,
+      lg: 2.000rem,
+      xl: 2.250rem
+    ),
+    line-height: 1.5,
+    margin-top: 2rem,
+    margin-bottom: 0.5rem
+  ),
+  h3: (
+    sizes: (
+      xs: 1.375rem,
+      sm: 1.375rem,
+      md: 1.500rem,
+      lg: 1.500rem,
+      xl: 1.750rem
+    ),
+    line-height: 1.25,
+    margin-top: 2rem,
+    margin-bottom: 0.5rem
+  ),
+  h4: (
+    sizes: (
+      xs: 1.125rem,
+      sm: 1.125rem,
+      md: 1.250rem,
+      lg: 1.250rem,
+      xl: 1.500rem
+    ),
+    line-height: 1,
+    margin-top: 1.5rem,
+    margin-bottom: 0.5rem
+  ),
+  h5: (
+    sizes: (
+      xs: 1rem,
+      sm: 1rem,
+      md: 1rem,
+      lg: 1rem,
+      xl: 1rem
+    ),
+    line-height: 1,
+    margin-top: 1.5rem,
+    margin-bottom: 0.5rem
+  ),
+  h6: (
+    sizes: (
+      xs: 0.875rem,
+      sm: 0.875rem,
+      md: 0.875rem,
+      lg: 0.875rem,
+      xl: 0.875rem
+    ),
+    line-height: 1,
+    margin-top: 1.5rem,
+    margin-bottom: 0.5rem
+  ),
+) !default;
+
+$heading-1__size:   map-deep-get($headlines, "h1", "sizes", "xs");
+$heading-1__line-height:   map-deep-get($headlines, "h1", "line-height") !default;
+$heading-1__margin-top:   map-deep-get($headlines, "h1", "margin-top") !default;
+$heading-1__margin-bottom:   map-deep-get($headlines, "h1", "margin-bottom") !default;
+
+$heading-2__size:   map-deep-get($headlines, "h2", "sizes", "xs");
+$heading-2__line-height:   map-deep-get($headlines, "h2", "line-height") !default;
+$heading-2__margin-top:   map-deep-get($headlines, "h2", "margin-top") !default;
+$heading-2__margin-bottom:   map-deep-get($headlines, "h2", "margin-bottom") !default;
+
+$heading-3__size:   map-deep-get($headlines, "h3", "sizes", "xs");
+$heading-3__line-height:   map-deep-get($headlines, "h3", "line-height") !default;
+$heading-3__margin-top:   map-deep-get($headlines, "h3", "margin-top") !default;
+$heading-3__margin-bottom:   map-deep-get($headlines, "h3", "margin-bottom") !default;
+
+$heading-4__size:   map-deep-get($headlines, "h4", "sizes", "xs");
+$heading-4__line-height:   map-deep-get($headlines, "h4", "line-height") !default;
+$heading-4__margin-top:   map-deep-get($headlines, "h4", "margin-top") !default;
+$heading-4__margin-bottom:   map-deep-get($headlines, "h4", "margin-bottom") !default;
+
+$heading-5__size:   map-deep-get($headlines, "h5", "sizes", "xs");
+$heading-5__line-height:   map-deep-get($headlines, "h5", "line-height") !default;
+$heading-5__margin-top:   map-deep-get($headlines, "h5", "margin-top") !default;
+$heading-5__margin-bottom:   map-deep-get($headlines, "h5", "margin-bottom") !default;
+
+$heading-6__size:   map-deep-get($headlines, "h6", "sizes", "xs");
+$heading-6__line-height:   map-deep-get($headlines, "h6", "line-height") !default;
+$heading-6__margin-top:   map-deep-get($headlines, "h6", "margin-top") !default;
+$heading-6__margin-bottom:   map-deep-get($headlines, "h6", "margin-bottom") !default;
+
+$paragraph__link-color:              $color-links !default;
+$paragraph__link-decoration:         underline;
+$paragraph__link-decoration--hover:  none;
+
+
+$code__color:            $color-highlight !default;
+$pre__color-background:  $color-gray !default;
+$pre__color:             #fff !default;
+
+// USED FROM _variables.scss
+
+// --------------------------------------------------
+
+
+// Headings 1–6.
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: $headings__font-weight;
+  font-family: $headings__font-family;
+}
+
+// H1 — h6: Generate Element Styles from config
+// [1] more space between last text-element and new headline
+// [2] combined headlines - example: h1 + h2
+// [3] correct margin-top for headlines, when in a new content element
+// [4] $base-spacing-unit = default margin-bottom for most elements
+
+// [6] ex: h1 + .ce_text > h2:first-child; ">" is to make sure, we only command the neighbor element and no nested elements 
+
+@each $element,$options in $headlines {
+  $count: index(map-keys($headlines), $element);  
+  
+  #{$element} {
+    $sizes: map-get($options, sizes);
+    $line-height: map-get($options, line-height);
+    $margin-top: map-get($options, margin-top);
+    $margin-bottom: map-get($options, margin-bottom);
+    
+    font-size: map-get($sizes, xs);
+    line-height: $line-height;
+    margin-bottom: $margin-bottom; 
+    
+    @include media-query(screen-md) {
+      font-size: map-get($sizes, md);
+    }
+    
+    @include media-query(screen-xl) {
+      font-size: map-get($sizes, xl);
+    }
+    
+    p + &,  // [1]
+    ul + &,
+    ol + & {
+      margin-top: $margin-top;
+    }
+    
+
+    .ce_text + .ce_text & {
+      &:first-child {
+        margin-top: $margin-top - $base-spacing-unit; // [4]
+      }
+    }
+    
+    @if $count < 6 {
+      & + h#{$count + 1}, // two headlines directly following
+      & + [class*="ce_"] > h#{$count + 1}:first-child { // [6]
+        margin-top: -1 * $margin-bottom;
+      }
+    }
+  }
+}
+/* /// */
+
+
+// Paragraph
+p {
+  margin-top: 0;
+  
+  a {
+    color: $paragraph__link-color;
+    text-decoration: $paragraph__link-decoration;
+    
+    &:hover {
+      text-decoration: $paragraph__link-decoration--hover;
+    }
+  }
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+p + h2,
+p + h3 {
+  //margin-top: 2rem;
+}
+
+// Code
+code {
+  color: $code__color;
+}
+
+pre {
+  padding: 1rem;
+  background: $pre__color-background;
+  color: $pre__color;
+  overflow-x: scroll;
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-top: 1px solid $color-gray-light;
+  border-bottom: 0;
+}
+
+// list-item with more than one line of text should have additional space to the following list-item
+.li--block {
+  margin-bottom: 1rem;
+}
+
+.ce_text {
+  margin-bottom: $base-spacing-unit;
+}

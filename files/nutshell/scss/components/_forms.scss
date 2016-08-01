@@ -1,0 +1,124 @@
+// *
+// * Erdmann & Freunde - Nutshell
+// * BASE Contao Framework
+// * erdmann-freunde.de/nutshell/
+// *
+// * Lizenziert unter MIT OPEN SOURCE 
+// *
+
+//
+// COMPONENTS/FORMS
+// --------------------------------------------------
+
+
+// VARIABLES
+$input-border-radius:  $base-border-radius !default;
+
+// USED FROM _variables.scss
+
+// --------------------------------------------------
+
+// [1] focus-highlighting on inputs was cut off by overflow: hidden
+// [2] reset for FF and Chrome, coming with a min-width
+// [3] force IE8 to wrap long content
+// [4] create half-transparent borders (otherwise you have a half-transparent border using the input background color) 
+// [5] reset height
+// [6] disable mobile safari make it a search field with different border-radius and size
+// [7] reset unusual Firefox-on-Android default style
+// [8] make sure, the whole input is visible (chrome)
+// [9] bring button-text and file-name on same base-line in Chrome
+// [10] IE8-9
+.ce_form {
+  overflow: visible; // [1]
+}
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  min-width: 0; // [2]
+}
+
+label {
+  display: inline-block;
+  max-width: 100%; // [3]
+  margin-bottom: $base-spacing-unit--xs;
+  font-weight: bold;
+}
+
+input.text,
+input.captcha,
+textarea {
+  display: block;
+  width: 100%;
+  padding: ($base-spacing-unit / 2) $base-spacing-unit;
+  border-radius: $input-border-radius;
+  border: $base-border-width solid rgba(0,0,0,0.25);
+  background-clip: padding-box; // [4]
+
+  background-image: none; // [7]
+}
+
+textarea.textarea {
+  height: auto; // [5]
+}
+
+.widget-text,
+.widget-textarea {
+  margin-bottom: $base-spacing-unit;
+}
+
+input.submit {
+  @extend %button;
+  @extend button.btn--primary;
+}
+
+input[type="search"] {
+  -webkit-appearance: none; // [6]
+}
+
+input[type="file"] {
+  display: block;
+  vertical-align: middle;
+  line-height: 1; // [9]
+}
+
+// Checkboxes and radios
+input.radio,
+input.checkbox {
+  margin: $base-spacing-unit--xs 0 0;
+  margin-left: 1px; // [8]
+  margin-top: 1px \9; // [10]
+  line-height: normal;
+  
+  + label {
+    margin-right: $base-spacing-unit--xs;
+    font-weight: normal;
+  }
+}
+
+select.select {
+  margin-left: $base-spacing-unit--xs;
+}
+
+.widget-radio,
+.widget-checkbox,
+.widget-select,
+.widget-upload {
+  margin-bottom: $base-spacing-unit;
+  
+  legend {
+    font-weight: 700;
+  }
+}
+
+// Mandatory & Error-Styling
+// asterisk at mandatory fields
+span.mandatory {
+  color: $color-brand;
+}
+
+// error-text
+p.error {
+  margin-bottom: 0;
+}

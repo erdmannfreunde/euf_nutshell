@@ -1,0 +1,60 @@
+// *
+// * Erdmann & Freunde - Nutshell
+// * BASE Contao Framework
+// * erdmann-freunde.de/nutshell/
+// *
+// * Lizenziert unter MIT OPEN SOURCE 
+// *
+
+//
+// COMPONENTS/COMMENTS
+// --------------------------------------------------
+
+// VARIABLES
+$color-error: #f00;
+
+// USED FROM _variables.scss
+// $base-spacing-unit
+
+// --------------------------------------------------
+
+
+// default comments, used for news and as content element
+.ce_comments {
+  overflow: visible;
+  
+  .widget {
+    margin-bottom: $base-spacing-unit;
+  }
+  
+  p.error {
+    margin-bottom: 0;
+    
+    color: $color-error;
+  }
+  
+  .error {
+    border-color: $color-error;
+    border-color: rgba($color-error, 0.5);
+  }
+  
+  .submit {
+    @extend %button;
+    @extend button.btn--primary;
+  }
+}
+
+.comment_default {
+  padding: $base-spacing-unit;
+  margin-bottom: $base-spacing-unit;
+  border: $base-border;
+  
+  .info {
+    padding-bottom: $base-spacing-unit;
+    border-bottom: $base-border;
+  }
+  
+  &.last {
+    margin-bottom: $base-spacing-unit--lg;
+  }
+}

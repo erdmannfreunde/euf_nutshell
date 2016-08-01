@@ -1,0 +1,130 @@
+// *
+// * Erdmann & Freunde - Nutshell
+// * BASE Contao Framework
+// * erdmann-freunde.de/nutshell/
+// *
+// * Lizenziert unter MIT OPEN SOURCE 
+// *
+
+//
+// BASE/LINKS
+// --------------------------------------------------
+
+// VARIABLES
+$button-border-radius: $base-border-radius;
+$button-border-width: $base-border-width;
+
+// USED FROM _variables.scss
+
+// --------------------------------------------------
+
+// [1] Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+%button {
+  border-radius: $button-border-radius;
+  padding: ($base-spacing-unit / 2) $base-spacing-unit;
+  display: inline-block;
+  border: $button-border-width solid transparent;
+  text-align: center;
+  //vertical-align: middle;
+  background: transparent;
+  background-image: none; // [1]
+  white-space: nowrap;
+}
+
+a.btn,
+span.btn,
+button.btn {
+  @extend %button;
+  margin-bottom: $base-spacing-unit;
+}
+
+a.btn--primary,
+span.btn--primary,
+button.btn--primary {
+  background: $color-btn;
+  color: $color-btn-text;
+  
+  &:hover {
+    background: darken($color-btn,10%);
+  }
+}
+
+// [1] add margin, when there is another element following
+div.btn,
+.ce_toplink,
+.toplink {
+  
+  > a,
+  > button {
+    @extend %button;
+  }
+  
+  // [1]
+  &:not(:last-child) {
+    margin-bottom: $base-spacing-unit;
+  }
+}
+
+div.btn--primary,
+.ce_toplink,
+.toplink {
+
+  > a,
+  > button {    
+    background: $color-btn;
+    color: $color-btn-text;
+    
+    &:hover {
+      background: darken($color-btn,10%);
+    }
+  }
+}
+
+.div.btn--left {
+  text-align: left;
+}
+
+div.btn--center {
+  text-align: center;
+}
+
+div.btn--right {
+  text-align: right;
+}
+
+.btn--floated {
+  float: left;
+  margin-right: $base-spacing-unit--xs;
+}
+
+.ce_toplink a,
+.toplink a {
+  text-decoration: none;
+}
+
+
+// used for 
+// * news-reader
+// * events-reader
+// * faq-reader
+// * newsletter-reader
+//
+.back {
+  border-top: $base-border;
+  margin-top: $base-spacing-unit;
+  padding-top: $base-spacing-unit--sm;
+  
+  a {
+    text-decoration: none;
+    
+    &:before {
+      @include font-size(0.75rem,1.4);
+      padding-bottom: 0.25rem;
+      
+      display: inline-block;
+      content: "◄";
+      vertical-align: middle;
+      margin-right: $base-spacing-unit--xs;
+    }
+  }
+}

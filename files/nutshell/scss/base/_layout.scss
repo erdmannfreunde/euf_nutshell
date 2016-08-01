@@ -1,0 +1,78 @@
+// *
+// * Erdmann & Freunde - Nutshell
+// * BASE Contao Framework
+// * erdmann-freunde.de/nutshell/
+// *
+// * Lizenziert unter MIT OPEN SOURCE 
+// *
+
+//
+// BASE/LAYOUT
+// --------------------------------------------------
+
+// VARIABLES
+$header-color-background:   $color-page-background !default;
+$header-color-text:         $color-text !default;
+
+// USED FROM _variables.scss
+
+// --------------------------------------------------
+
+
+// [1] disable scrolling when offcanvas is active
+html.offcanvas--active {
+  @media screen and (max-width: $offcanvas-nav) {
+    overflow-y: hidden; // [1]
+    position: relative;
+  }
+}
+
+// #header
+// [1] needed for offcanvas overlay
+[id="header"] {
+  background: $header-color-background;
+  color: $header-color-text;
+  position: relative; // [1]
+  z-index: 1000; // [1]
+    
+  .inside {
+    @include wrapper-max;
+    @include padding-default;
+    @extend .clearfix;
+  }
+}
+
+
+// #container
+[id="container"] {
+
+}
+
+
+// #main
+// [1] make sure object-fit-images always show up 
+.mod_article {
+  @include wrapper-max;
+  @include padding-default;
+  padding-top: $base-spacing-unit--lg;
+  padding-bottom: $base-spacing-unit--lg;
+  
+  position: relative; // [1]
+}
+
+.article--full {
+  @include wrapper-max(none);
+  
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+
+// #footer
+[id="footer"] {
+  > .inside {
+    @include wrapper-max;
+    @include padding-default;
+    @extend %clearfix;
+  }
+}

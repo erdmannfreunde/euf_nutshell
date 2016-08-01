@@ -1,0 +1,259 @@
+// *
+// * Erdmann & Freunde - Nutshell
+// * BASE Contao Framework
+// * erdmann-freunde.de/nutshell/
+// *
+// * Lizenziert unter MIT OPEN SOURCE 
+// *
+
+//
+// BASE/GRID
+// --------------------------------------------------
+
+// VARIABLES
+
+// USED FROM _variables.scss
+
+// --------------------------------------------------
+
+// grid options
+$grid__columns:       12 !default;
+$grid__gutter-width:  1.875rem !default; // 30px
+
+// column default floating
+%column-floating {
+  float: left;
+  padding-left:  ($grid__gutter-width / 2);
+  padding-right: ($grid__gutter-width / 2);
+}
+
+@for $i from 1 through $grid__columns {
+  .col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}, .col-xl-#{$i} {
+    @extend %column-floating;
+    
+    width: 100%;
+  }
+}
+
+
+// column creation
+@include media-query(screen-xs) {
+
+	@for $i from 1 through $grid__columns {
+		.col-xs-#{$i} {
+			width: percentage($i / $grid__columns);
+		}
+	}
+}
+
+@include media-query(screen-sm) {
+
+	@for $i from 1 through $grid__columns {
+		.col-sm-#{$i} {
+			width: percentage($i / $grid__columns);
+		}
+	}
+}
+
+@include media-query(screen-md) {
+
+	@for $i from 1 through $grid__columns {
+		.col-md-#{$i} {
+			width: percentage($i / $grid__columns);
+		}
+	}
+}
+
+@include media-query(screen-lg) {
+
+	@for $i from 1 through $grid__columns {
+		.col-lg-#{$i} {
+			width: percentage($i / $grid__columns);
+		}
+	}
+}
+
+@include media-query(screen-xl) {
+
+	@for $i from 1 through $grid__columns {
+		.col-xl-#{$i} {
+			width: percentage($i / $grid__columns);
+		}
+	}
+}
+
+
+// OFFSETS
+@include media-query(screen-xs) {
+
+	@for $i from 1 through $grid__columns {
+		.offset-xs-#{$i} {
+			margin-left: percentage($i / $grid__columns);
+		}
+	}
+}
+
+@include media-query(screen-xs) {
+
+	@for $i from 1 through $grid__columns {
+		.offset-xs-#{$i} {
+			margin-left: percentage($i / $grid__columns);
+		}
+	}
+}
+
+@include media-query(screen-sm) {
+
+	@for $i from 1 through $grid__columns {
+		.offset-sm-#{$i} {
+			margin-left: percentage($i / $grid__columns);
+		}
+	}
+}
+
+@include media-query(screen-md) {
+
+	@for $i from 1 through $grid__columns {
+		.offset-md-#{$i} {
+			$margin-percentage: percentage($i / $grid__columns);
+  
+      margin-left: calc(#{$margin-percentage} + #{$grid__gutter-width * $i/ $grid__columns});
+			
+			.row & {
+  			margin-left: percentage($i / $grid__columns);
+			}
+		}
+	}
+}
+
+@include media-query(screen-lg) {
+
+	@for $i from 1 through $grid__columns {
+		.offset-lg-#{$i} {
+			margin-left: percentage($i / $grid__columns);
+		}
+	}
+}
+
+@include media-query(screen-xl) {
+
+	@for $i from 1 through $grid__columns {
+		.offset-xl-#{$i} {
+			margin-left: percentage($i / $grid__columns);
+			
+			.row & {
+  			margin-left: percentage($i / $grid__columns);
+			}
+		}
+	}
+}
+
+// ROW CLASS
+.row {
+  @include make-row;
+}
+
+// pull options
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
+
+
+@include media-query(screen-xs) {
+  .pull-right-xs {
+    float: right;
+  }
+  
+  .pull-left-xs {
+    float: left;
+  }
+}
+
+@include media-query(screen-sm) {
+  .pull-right-sm {
+    float: right;
+  }
+  
+  .pull-left-sm {
+    float: left;
+  }
+}
+
+@include media-query(screen-md) {
+  .pull-right-md {
+    float: right;
+  }
+  
+  .pull-left-md {
+    float: left;
+  }
+}
+
+@include media-query(screen-lg) {
+  .pull-right-lg {
+    float: right;
+  }
+  
+  .pull-left-lg {
+    float: left;
+  }
+}
+
+@include media-query(screen-xl) {
+  .pull-right-xl {
+    float: right;
+  }
+  
+  .pull-left-xl {
+    float: left;
+  }
+}
+
+// clear classes
+.clear-xs {
+   @media screen and (min-width: 550px) {
+  	clear: both;
+  }
+  
+  @media screen and (min-width: 768px) {
+    clear: none; 
+  }
+}
+
+.clear-sm {
+  @media screen and (min-width: 768px) {
+  	clear: both;
+  }
+  
+  @media screen and (min-width: 1024px) {
+    clear: none; 
+  }
+}
+
+.clear-md {
+  @media screen and (min-width: 1024px) {
+  	clear: both;
+  }
+}
+
+// show-grid
+.show-grid {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+  z-index: 1005;
+  background-image: 
+  linear-gradient(to right,
+    rgba(255, 0, 255, 0.1) 0, rgba(255, 0, 255, 0.1) 15px, 
+    rgba(255, 0, 0, 0.0) 15px, rgba(255, 0, 0, 0.0) 85%,
+    rgba(255, 0, 255, 0.1) 15px);
+  
+  background-position: left top;
+  background-repeat: repeat;
+  background-size: calc(100% / 12) 100%;
+}

@@ -1,0 +1,91 @@
+// *
+// * Erdmann & Freunde - Nutshell
+// * BASE Contao Framework
+// * erdmann-freunde.de/nutshell/
+// *
+// * Lizenziert unter MIT OPEN SOURCE 
+// *
+
+//
+// COMPONENTS/NEWSLETTER
+// --------------------------------------------------
+
+// VARIABLES
+$newsletter-list-border:    $base-border !default;
+$newsletter-reader-width:   600px !default;
+$newsletter-reader-border:  $base-border !default;
+
+// USED FROM _variables.scss
+// $base-spacing-unit--sm
+
+// --------------------------------------------------
+
+// [1] let the text-input grow until submit-button hits the maximum width
+// [2] reset margin-bottom, otherwise the button will grow on text-input height+margin
+// [3] makes error 100% width, instead of standing left to the text-input
+.newsletter-subscribe,
+.newsletter-unsubscribe {
+  margin-bottom: 2rem;
+
+  .formbody {
+    display: flex; // [1]
+    flex-flow: row wrap; // [1]
+  }
+  
+  .text {
+    margin-bottom: 0; // [2]
+    
+    display: inline-block;
+    flex: 1;
+  }
+  
+  .error {
+    margin-bottom: 0;
+    
+    flex: 1 100%; // [3]
+    font-weight: 700;
+  }
+  
+  .submit {
+    margin-left: $base-spacing-unit--xs;
+  }
+}
+
+.newsletter-list {
+  @include navigation;
+  
+  li {
+    border-bottom: $newsletter-list-border;   
+    padding-top: $base-spacing-unit;
+    padding-bottom: $base-spacing-unit;
+    display: block;
+    
+    &:first-of-type {
+      border-top: $newsletter-list-border;
+    }
+    
+    @include media-query(screen-sm) {
+      font-size: $heading-4__size;
+      line-height: $heading-4__line-height;
+    }
+    
+    @include media-query(screen-md) {
+      font-size: $heading-3__size;
+      line-height: $heading-3__line-height;
+    }
+    
+    a {    
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+.newsletter-reader {
+  max-width: $newsletter-reader-width;
+  margin-left: auto;
+  margin-right: auto;
+  border: $newsletter-reader-border;
+  padding: 0 $base-spacing-unit;
+}

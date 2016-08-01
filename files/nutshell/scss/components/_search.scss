@@ -1,0 +1,73 @@
+// *
+// * Erdmann & Freunde - Nutshell
+// * BASE Contao Framework
+// * erdmann-freunde.de/nutshell/
+// *
+// * Lizenziert unter MIT OPEN SOURCE 
+// *
+
+//
+// COMPONENTS/SEARCH
+// --------------------------------------------------
+
+// VARIABLES
+$search-color-relevance:  $color-gray;
+$search-color-url:        $color-gray;
+$search-hide-label:       true;
+
+// USED FROM _variables.scss
+// * $base-spacing-unit--sm
+
+// --------------------------------------------------
+
+// [1] let the text-input grow until submit-button hits the maximum width
+// [2] reset margin-bottom, otherwise the button will grow on text-input height+margin
+// [3] align at the bottom so that it doesn't matter, if the input has a label
+.search {
+  .formbody {
+    display: flex; // [1]
+    flex-flow: row wrap; // [1]
+  }
+  
+  .text,
+  .widget-text {
+    margin-bottom: $base-spacing-unit--sm; // [2]
+    
+    display: inline-block;
+    flex: 1;
+  }
+  
+  @if $search-hide-label == true {
+    .widget-text label {
+      @include invisible;
+    }
+  }
+  
+  .submit,
+  .submit_container {
+    margin-bottom: $base-spacing-unit--sm;
+    margin-left: $base-spacing-unit--xs;
+    align-self: flex-end; // [3]
+  }
+  
+  .submit_container .submit {
+    margin-left: 0;
+  }
+  
+  // search-results
+  .relevance {
+    color: $search-color-relevance;
+  }
+  
+  .context {
+    margin-bottom: $base-spacing-unit--xs;
+  }
+  
+  .highlight {
+    font-weight: bold;
+  }
+  
+  .url {
+    color: $search-color-url;
+  }
+}
