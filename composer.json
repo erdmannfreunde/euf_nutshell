@@ -30,6 +30,9 @@
       "sources": {
         "files/nutshell": "files/nutshell"
       }
+    },
+    "branch-alias": {
+      "dev-develop": "1.0.x-dev"
     }
   }
 }
