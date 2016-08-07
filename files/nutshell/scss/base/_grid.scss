@@ -239,21 +239,3 @@ $grid__gutter-width:  1.875rem !default; // 30px
   	clear: both;
   }
 }
-
-// show-grid
-.show-grid {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  height: 100%;
-  z-index: 1005;
-  background-image: 
-  linear-gradient(to right,
-    rgba(255, 0, 255, 0.1) 0, rgba(255, 0, 255, 0.1) 15px, 
-    rgba(255, 0, 0, 0.0) 15px, rgba(255, 0, 0, 0.0) 85%,
-    rgba(255, 0, 255, 0.1) 15px);
-  
-  background-position: left top;
-  background-repeat: repeat;
-  background-size: calc(100% / 12) 100%;
-}
