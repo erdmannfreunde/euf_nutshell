@@ -149,8 +149,7 @@ h6 {
 // [2] combined headlines - example: h1 + h2
 // [3] correct margin-top for headlines, when in a new content element
 // [4] $base-spacing-unit = default margin-bottom for most elements
-
-// [6] ex: h1 + .ce_text > h2:first-child; ">" is to make sure, we only command the neighbor element and no nested elements 
+// [5] ex: h1 + h2
 
 @each $element,$options in $headlines {
   $count: index(map-keys($headlines), $element);  
@@ -187,15 +186,12 @@ h6 {
     }
     
     @if $count < 6 {
-      & + h#{$count + 1}, // two headlines directly following
-      & + [class*="ce_"] > h#{$count + 1}:first-child { // [6]
+      & + h#{$count + 1} { // [5]
         margin-top: -1 * $margin-bottom;
       }
     }
   }
 }
-/* /// */
-
 
 // Paragraph
 p {
