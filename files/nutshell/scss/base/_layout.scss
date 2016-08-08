@@ -18,22 +18,10 @@ $header-color-text:         $color-text !default;
 
 // --------------------------------------------------
 
-
-// [1] disable scrolling when offcanvas is active
-html.offcanvas--active {
-  @media screen and (max-width: $offcanvas-nav) {
-    overflow-y: hidden; // [1]
-    position: relative;
-  }
-}
-
 // #header
-// [1] needed for offcanvas overlay
 [id="header"] {
   background: $header-color-background;
   color: $header-color-text;
-  position: relative; // [1]
-  z-index: 1000; // [1]
     
   .inside {
     @include wrapper-max;
