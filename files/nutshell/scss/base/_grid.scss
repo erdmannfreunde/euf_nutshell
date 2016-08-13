@@ -215,27 +215,47 @@ $grid__gutter-width:  1.875rem !default; // 30px
 
 // clear classes
 .clear-xs {
-   @media screen and (min-width: 550px) {
+   @include media-query(screen-xs) {
   	clear: both;
   }
   
-  @media screen and (min-width: 768px) {
+  @include media-query(screen-sm) {
     clear: none; 
   }
 }
 
 .clear-sm {
-  @media screen and (min-width: 768px) {
+  @include media-query(screen-sm) {
   	clear: both;
   }
   
-  @media screen and (min-width: 1024px) {
+  @include media-query(screen-md) {
     clear: none; 
   }
 }
 
 .clear-md {
-  @media screen and (min-width: 1024px) {
+  @include media-query(screen-md) {
+  	clear: both;
+  }
+  
+  @include media-query(screen-lg) {
+  	clear: none;
+  }
+}
+
+.clear-lg {
+  @include media-query(screen-lg) {
+  	clear: both;
+  }
+  
+  @include media-query(screen-xl) {
+  	clear: none;
+  }
+}
+
+.clear-xl {
+  @include media-query(screen-xl) {
   	clear: both;
   }
 }
