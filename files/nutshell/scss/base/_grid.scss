@@ -215,45 +215,47 @@ $grid__gutter-width:  1.875rem !default; // 30px
 
 // clear classes
 .clear-xs {
-   @media screen and (min-width: 550px) {
+   @include media-query(screen-xs) {
   	clear: both;
   }
   
-  @media screen and (min-width: 768px) {
+  @include media-query(screen-sm) {
     clear: none; 
   }
 }
 
 .clear-sm {
-  @media screen and (min-width: 768px) {
+  @include media-query(screen-sm) {
   	clear: both;
   }
   
-  @media screen and (min-width: 1024px) {
+  @include media-query(screen-md) {
     clear: none; 
   }
 }
 
 .clear-md {
-  @media screen and (min-width: 1024px) {
+  @include media-query(screen-md) {
   	clear: both;
+  }
+  
+  @include media-query(screen-lg) {
+  	clear: none;
   }
 }
 
-// show-grid
-.show-grid {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  height: 100%;
-  z-index: 1005;
-  background-image: 
-  linear-gradient(to right,
-    rgba(255, 0, 255, 0.1) 0, rgba(255, 0, 255, 0.1) 15px, 
-    rgba(255, 0, 0, 0.0) 15px, rgba(255, 0, 0, 0.0) 85%,
-    rgba(255, 0, 255, 0.1) 15px);
+.clear-lg {
+  @include media-query(screen-lg) {
+  	clear: both;
+  }
   
-  background-position: left top;
-  background-repeat: repeat;
-  background-size: calc(100% / 12) 100%;
+  @include media-query(screen-xl) {
+  	clear: none;
+  }
+}
+
+.clear-xl {
+  @include media-query(screen-xl) {
+  	clear: both;
+  }
 }

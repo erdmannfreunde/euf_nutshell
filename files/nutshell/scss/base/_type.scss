@@ -19,9 +19,9 @@ $headlines: (
     sizes: (
       xs: 2.0rem,
       sm: 2.0rem,
-      md: 2.5rem,
-      lg: 2.5rem,
-      xl: 3.0rem
+      md: 2.25rem,
+      lg: 2.25rem,
+      xl: 2.25rem
     ),
     line-height: 1.55,
     margin-top: 2rem,
@@ -31,9 +31,9 @@ $headlines: (
     sizes: (
       xs: 1.625rem,
       sm: 1.625rem,
-      md: 2.000rem,
-      lg: 2.000rem,
-      xl: 2.250rem
+      md: 1.750rem,
+      lg: 1.750rem,
+      xl: 1.750rem
     ),
     line-height: 1.5,
     margin-top: 2rem,
@@ -45,7 +45,7 @@ $headlines: (
       sm: 1.375rem,
       md: 1.500rem,
       lg: 1.500rem,
-      xl: 1.750rem
+      xl: 1.500rem
     ),
     line-height: 1.25,
     margin-top: 2rem,
@@ -57,7 +57,7 @@ $headlines: (
       sm: 1.125rem,
       md: 1.250rem,
       lg: 1.250rem,
-      xl: 1.500rem
+      xl: 1.250rem
     ),
     line-height: 1,
     margin-top: 1.5rem,
@@ -149,8 +149,7 @@ h6 {
 // [2] combined headlines - example: h1 + h2
 // [3] correct margin-top for headlines, when in a new content element
 // [4] $base-spacing-unit = default margin-bottom for most elements
-
-// [6] ex: h1 + .ce_text > h2:first-child; ">" is to make sure, we only command the neighbor element and no nested elements 
+// [5] ex: h1 + h2
 
 @each $element,$options in $headlines {
   $count: index(map-keys($headlines), $element);  
@@ -187,15 +186,12 @@ h6 {
     }
     
     @if $count < 6 {
-      & + h#{$count + 1}, // two headlines directly following
-      & + [class*="ce_"] > h#{$count + 1}:first-child { // [6]
+      & + h#{$count + 1} { // [5]
         margin-top: -1 * $margin-bottom;
       }
     }
   }
 }
-/* /// */
-
 
 // Paragraph
 p {

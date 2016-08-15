@@ -46,55 +46,6 @@ $nav-toggler-border:      $base-border-width solid currentColor;
   }
 }
 
-// [1] offcanvas settings
-.nav--mobile {
-  height: 0; // [1]
-  visibility: hidden; // [1]
-  
-  @include media-query(screen-offcanvas) {
-    visibility: visible; // [1]
-    height: auto; // [1]
-  }
-}
-.nav--mobile--active {
-  @media screen and (max-width: $offcanvas-nav) {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    background: rgba(0,0,0,0.85);
-    z-index: 5000;
-    visibility: visible;
-    
-    .level_1 {
-      @include vertical-align(50%);
-    }
-  }
-}
-
-// button to display offcanvas navigation
-.nav-toggler {
-  font-family: sans-serif;
-  float: right;
-  position: absolute;
-  top: $nav-toggler-top-space;
-  right: $nav-toggler-right-space;
-  z-index: 5001;
-  
-  @include media-query(screen-offcanvas) {
-    display: none;
-  }
-}
-
-.nav-toggler__button {
-  background: none;
-  border: $nav-toggler-border;
-  outline: none;
-}
-
-
 .nav--right {
   float: right;
 }

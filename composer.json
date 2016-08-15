@@ -1,6 +1,6 @@
 {
   "name": "erdmannfreunde/euf_nutshell",
-  "description": "Contao Extension to create grid-layouts",
+  "description": "Base Framework for Contao CMS",
   "keywords": ["contao", "nutshell", "euf nutshell", "base framework"],
   "type": "contao-module",
   "homepage": "https://github.com/ErdmannFreunde/euf_nutshell",
@@ -23,13 +23,16 @@
     "contao-community-alliance/composer-plugin":"^2.3.0 || 3.*"
   },
   "replace": {
-    "contao-legacy/euf_grid": "self.version"
+    "contao-legacy/euf_nutshell": "self.version"
   },
   "extra": {
     "contao": {
       "sources": {
-        "": "files/nutshell"
+        "files/nutshell": "files/nutshell"
       }
+    },
+    "branch-alias": {
+      "dev-develop": "1.0.x-dev"
     }
   }
 }
