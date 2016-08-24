@@ -148,7 +148,7 @@ $nav-toggler-border:      $base-border-width solid currentColor;
     padding-left: 0;
 		margin: $base-spacing-unit--xs;
 		margin-left: 0;
-		border-top: 2px solid transparent;
+		border-top: $base-border-width solid transparent;
 	}
 	
 	li {
@@ -163,7 +163,7 @@ $nav-toggler-border:      $base-border-width solid currentColor;
 	}
 	
 	span {
-  	border: 2px solid currentColor;
+  	border: $base-border;
 	}
 	
 	a.next {
