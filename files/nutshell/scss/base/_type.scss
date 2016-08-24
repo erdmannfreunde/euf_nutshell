@@ -120,8 +120,8 @@ $heading-6__margin-top:   map-deep-get($headlines, "h6", "margin-top") !default;
 $heading-6__margin-bottom:   map-deep-get($headlines, "h6", "margin-bottom") !default;
 
 $paragraph__link-color:              $color-links !default;
-$paragraph__link-decoration:         underline;
-$paragraph__link-decoration--hover:  none;
+$paragraph__link-decoration:         underline !default;
+$paragraph__link-decoration--hover:  none !default;
 
 
 $code__color:            $color-highlight !default;

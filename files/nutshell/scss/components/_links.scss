@@ -11,8 +11,8 @@
 // --------------------------------------------------
 
 // VARIABLES
-$button-border-radius: $base-border-radius;
-$button-border-width: $base-border-width;
+$button-border-radius: $base-border-radius !default;
+$button-border-width: $base-border-width !default;
 
 // USED FROM _variables.scss
 

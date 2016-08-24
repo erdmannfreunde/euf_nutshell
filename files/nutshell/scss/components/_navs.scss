@@ -14,7 +14,7 @@
 $nav--main__item-padding: $base-spacing-unit !default;
 $nav-toggler-top-space:   $base-spacing-unit--sm !default;
 $nav-toggler-right-space: $base-spacing-unit--sm !default;
-$nav-toggler-border:      $base-border-width solid currentColor;
+$nav-toggler-border:      $base-border-width solid currentColor !default;
 
 
 // USED FROM _responsive.scss
@@ -144,11 +144,11 @@ $nav-toggler-border:      $base-border-width solid currentColor;
   line-height: 1;
 	
 	p {
-    padding: $base-spacing-unit--small / 2;
+    padding: $base-spacing-unit--xs;
     padding-left: 0;
-		margin: $base-spacing-unit--small / 2;
+		margin: $base-spacing-unit--xs;
 		margin-left: 0;
-		border-top: 2px solid transparent;
+		border-top: $base-border-width solid transparent;
 	}
 	
 	li {
@@ -158,12 +158,12 @@ $nav-toggler-border:      $base-border-width solid currentColor;
 	a,
 	span {
   	display: inline-block;
-		padding: $base-spacing-unit--small / 2;
-		margin: $base-spacing-unit--small / 2;
+		padding: $base-spacing-unit--xs;
+		margin: $base-spacing-unit--xs;
 	}
 	
 	span {
-  	border: 2px solid currentColor;
+  	border: $base-border;
 	}
 	
 	a.next {
