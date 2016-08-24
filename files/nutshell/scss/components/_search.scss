@@ -11,9 +11,9 @@
 // --------------------------------------------------
 
 // VARIABLES
-$search-color-relevance:  $color-gray;
-$search-color-url:        $color-gray;
-$search-hide-label:       true;
+$search-color-relevance:  $color-gray !default;
+$search-color-url:        $color-gray !default;
+$search-hide-label:       true !default;
 
 // USED FROM _variables.scss
 // * $base-spacing-unit--sm
