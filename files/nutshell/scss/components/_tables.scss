@@ -14,7 +14,7 @@
 $table-border-width:      1px !default;
 $table-border-style:      solid !default;
 $table-border-color:      #ccc !default;
-$table-background-light:  rgba(red($table-border-color), green($table-border-color), blue($table-border-color),0.2);
+$table-background-light:  rgba(red($table-border-color), green($table-border-color), blue($table-border-color),0.2) !default;
 
 // USED FROM _variables.scss
 

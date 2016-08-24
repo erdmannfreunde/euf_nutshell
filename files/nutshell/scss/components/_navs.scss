@@ -14,7 +14,7 @@
 $nav--main__item-padding: $base-spacing-unit !default;
 $nav-toggler-top-space:   $base-spacing-unit--sm !default;
 $nav-toggler-right-space: $base-spacing-unit--sm !default;
-$nav-toggler-border:      $base-border-width solid currentColor;
+$nav-toggler-border:      $base-border-width solid currentColor !default;
 
 
 // USED FROM _responsive.scss
