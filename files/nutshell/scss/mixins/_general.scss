@@ -18,38 +18,7 @@
 
 // font-size
 @mixin font-size($font-size, $line-height: auto) {
-    
-    @if (unit($font-size) == "") {
-      font-size: #{$font-size * $base-font-size};
-      font-size: #{$font-size + 'rem'};
-    }
-    
-    @if (unit($font-size) == "rem") {
-      font-size: #{$font-size};
-    }
-  
-    @if (unit($font-size) == "px") {
-      font-size: #{$font-size};
-      font-size: #{$font-size / $base-font-size + 'rem'};
-      @warn "`Pixelwerte` sollten nicht verwendet werden."
-    }
-
-
-    @if $line-height == auto {
-      // line-height: ceil($font-size / $base-line-height) * ($base-line-height / $font-size);
-      line-height: 1.2;
-    }
-
-    @else {
-
-        @if (type-of($line-height) == number or $line-height == inherit or $line-height == normal) {
-            line-height: $line-height;
-        }
-
-        @elseif ($line-height != none and $line-height != false) {
-            @warn "D’oh! ‘#{$line-height}’ is not a valid value for `line-height`."
-        }
-    }
+  @warn "The font-size mixin is deprecated. Please use font-size and line-height instead. Das font-size mixin ist veraltet. Bitte verwende stattdessen font-size und line-height."
 }
 
 // margin-auto

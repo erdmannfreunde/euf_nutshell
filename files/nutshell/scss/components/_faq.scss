@@ -34,7 +34,8 @@ $faq-border: $base-border !default;
     display: inline-block;
     
     &:before {
-      @include font-size(0.75rem,1.4);
+      font-size: 0.75rem;
+      line-height: 1.4;
       padding-bottom: 0.25rem;
       
       display: inline-block;
@@ -75,8 +76,7 @@ $faq-border: $base-border !default;
   }
   
   .info {
-    @include font-size(0.875rem,auto);
-    
+    font-size: 0.875rem;    
     margin-top: $base-spacing-unit;
     opacity: 0.5;
   }
@@ -95,11 +95,9 @@ $faq-border: $base-border !default;
 //
 .faq-reader {
   .info {
-    @include font-size(0.875rem,auto);
+    font-size: 0.875rem;
    
     margin-top: $base-spacing-unit;    
     opacity: 0.5;
-  }
-  
-  
+  } 
 }
