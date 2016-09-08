@@ -16,6 +16,15 @@
 
 // --------------------------------------------------
 
+// headlines h1 – h6
+@mixin headlines($first: 1, $last: 6) {
+  @for $i from $first through $last { // [1]
+    h#{$i} {
+      @content;
+    }
+  }
+}
+
 // font-size
 @mixin font-size($font-size, $line-height: auto) {
   @warn "The font-size mixin is deprecated. Please use font-size and line-height instead. Das font-size mixin ist veraltet. Bitte verwende stattdessen font-size und line-height."

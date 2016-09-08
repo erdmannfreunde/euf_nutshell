@@ -45,14 +45,24 @@ $faq-border: $base-border !default;
     }
   }
   
-  @for $i from 1 through 6 { // [1]
-    > h#{$i},
-    article > h#{$i} { // [2]
+  > { 
+    @include headlines() { // [1]
       margin-bottom: 0;
       
       &:after {
         border-top: $event-border;
-         
+        content: "";
+        display: block; 
+      }
+    }
+  }
+  
+  article > {
+    @include headlines() { // [1]
+      margin-bottom: 0;
+    
+      &:after {
+        border-top: $event-border;
         content: "";
         display: block; 
       }
@@ -61,14 +71,24 @@ $faq-border: $base-border !default;
 }
 
 .faq-page {
-  @for $i from 1 through 6 { // [1]
-    > h#{$i},
-    article > h#{$i} { // [2]
+  > { 
+    @include headlines() { // [1]
       margin-bottom: 0;
       
       &:after {
         border-top: $event-border;
-         
+        content: "";
+        display: block; 
+      }
+    }
+  }
+  
+  article > {
+    @include headlines() { // [1]
+      margin-bottom: 0;
+    
+      &:after {
+        border-top: $event-border;
         content: "";
         display: block; 
       }

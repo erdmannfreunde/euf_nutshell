@@ -134,12 +134,7 @@ $pre__color:             #fff !default;
 
 
 // Headings 1–6.
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+@include headlines() { // [1]
   font-weight: $headings__font-weight;
   font-family: $headings__font-family;
 }
