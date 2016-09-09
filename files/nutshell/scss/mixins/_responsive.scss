@@ -46,6 +46,14 @@ $breakpoints: (
     "screen-offcanvas-max"  "screen and (max-width: #{$offcanvas-nav})",
 ) !default;
 
+$screen-sizes: (
+    "xs",
+    "sm",
+    "md",
+    "lg",
+    "xl"
+) !default;
+
 // USED FROM _variables.scss
 
 // --------------------------------------------------

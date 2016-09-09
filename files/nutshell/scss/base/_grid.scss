@@ -12,7 +12,8 @@
 
 // VARIABLES
 
-// USED FROM _variables.scss
+// USED FROM _responsive.scss
+// $screen-sizes
 
 // --------------------------------------------------
 
@@ -36,181 +37,82 @@ $grid__gutter-width:  1.875rem !default; // 30px
 }
 
 
-// column creation
-@include media-query(screen-xs) {
 
-	@for $i from 1 through $grid__columns {
-		.col-xs-#{$i} {
-			width: percentage($i / $grid__columns);
-		}
-	}
-}
-
-@include media-query(screen-sm) {
-
-	@for $i from 1 through $grid__columns {
-		.col-sm-#{$i} {
-			width: percentage($i / $grid__columns);
-		}
-	}
-}
-
-@include media-query(screen-md) {
-
-	@for $i from 1 through $grid__columns {
-		.col-md-#{$i} {
-			width: percentage($i / $grid__columns);
-		}
-	}
-}
-
-@include media-query(screen-lg) {
-
-	@for $i from 1 through $grid__columns {
-		.col-lg-#{$i} {
-			width: percentage($i / $grid__columns);
-		}
-	}
-}
-
-@include media-query(screen-xl) {
-
-	@for $i from 1 through $grid__columns {
-		.col-xl-#{$i} {
-			width: percentage($i / $grid__columns);
-		}
-	}
-}
-
-
-// OFFSETS
-@include media-query(screen-xs) {
-
-	@for $i from 1 through $grid__columns {
-		.offset-xs-#{$i} {
-			margin-left: percentage($i / $grid__columns);
-		}
-	}
-}
-
-@include media-query(screen-xs) {
-
-	@for $i from 1 through $grid__columns {
-		.offset-xs-#{$i} {
-			margin-left: percentage($i / $grid__columns);
-		}
-	}
-}
-
-@include media-query(screen-sm) {
-
-	@for $i from 1 through $grid__columns {
-		.offset-sm-#{$i} {
-			margin-left: percentage($i / $grid__columns);
-		}
-	}
-}
-
-@include media-query(screen-md) {
-
-	@for $i from 1 through $grid__columns {
-		.offset-md-#{$i} {
-			$margin-percentage: percentage($i / $grid__columns);
+@for $size from 1 through length($screen-sizes) {
+  $current:   nth($screen-sizes, $size);
   
-      margin-left: calc(#{$margin-percentage} + #{$grid__gutter-width * $i/ $grid__columns});
-			
-			.row & {
+  // column creation
+  /* col-#{$current} */
+  
+  @include media-query(screen-#{$current}) {
+
+  	@for $i from 1 through $grid__columns {
+  		.col-#{$current}-#{$i} {
+  			width: percentage($i / $grid__columns);
+  		}
+  	}
+  }
+  
+  // offset creation
+  /* offset-#{$current} */
+  @include media-query(screen-#{$current}) {
+  
+  	@for $i from 1 through $grid__columns {
+  		.offset-#{$current}-#{$i} {
   			margin-left: percentage($i / $grid__columns);
-			}
-		}
-	}
+  		}
+  	}
+  }
+  
+  //pull-left & -right creation
+  /* pull-left-#{$current} & pull-right-#{$current} */
+  @include media-query(screen-#{$current}) {
+    .pull-right-#{$current} {
+      float: right;
+    }
+    
+    .pull-left-#{$current} {
+      float: left;
+    }
+  }
+  
+  //clear creation
+  /* clear-#{$current} */
+  
+  @include media-query(screen-#{$current}) {
+    .clear-#{$current} {
+      clear: both;
+    }
+  }
+  
+  @if($size < length($screen-sizes)) {
+    $size: $size + 1 ;
+    $next:      nth($screen-sizes, $size);
+    
+    /* clear-#{$next} */
+    @include media-query(screen-#{$next}) {
+      .clear-#{$current} {
+        clear: none;
+      }
+    }
+  }
 }
+  
+  
 
-@include media-query(screen-lg) {
-
-	@for $i from 1 through $grid__columns {
-		.offset-lg-#{$i} {
-			margin-left: percentage($i / $grid__columns);
-		}
-	}
-}
-
-@include media-query(screen-xl) {
-
-	@for $i from 1 through $grid__columns {
-		.offset-xl-#{$i} {
-			margin-left: percentage($i / $grid__columns);
-			
-			.row & {
-  			margin-left: percentage($i / $grid__columns);
-			}
-		}
-	}
-}
 
 // ROW CLASS
 .row {
   @include make-row;
 }
 
-// pull options
+// general pull options
 .pull-right {
   float: right;
 }
 
 .pull-left {
   float: left;
-}
-
-
-@include media-query(screen-xs) {
-  .pull-right-xs {
-    float: right;
-  }
-  
-  .pull-left-xs {
-    float: left;
-  }
-}
-
-@include media-query(screen-sm) {
-  .pull-right-sm {
-    float: right;
-  }
-  
-  .pull-left-sm {
-    float: left;
-  }
-}
-
-@include media-query(screen-md) {
-  .pull-right-md {
-    float: right;
-  }
-  
-  .pull-left-md {
-    float: left;
-  }
-}
-
-@include media-query(screen-lg) {
-  .pull-right-lg {
-    float: right;
-  }
-  
-  .pull-left-lg {
-    float: left;
-  }
-}
-
-@include media-query(screen-xl) {
-  .pull-right-xl {
-    float: right;
-  }
-  
-  .pull-left-xl {
-    float: left;
-  }
 }
 
 // clear classes
