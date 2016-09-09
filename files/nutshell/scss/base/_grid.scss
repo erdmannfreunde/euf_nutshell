@@ -97,11 +97,8 @@ $grid__gutter-width:  1.875rem !default; // 30px
     }
   }
 }
-  
-  
 
-
-// ROW CLASS
+// general row-class
 .row {
   @include make-row;
 }
@@ -113,51 +110,4 @@ $grid__gutter-width:  1.875rem !default; // 30px
 
 .pull-left {
   float: left;
-}
-
-// clear classes
-.clear-xs {
-   @include media-query(screen-xs) {
-  	clear: both;
-  }
-  
-  @include media-query(screen-sm) {
-    clear: none; 
-  }
-}
-
-.clear-sm {
-  @include media-query(screen-sm) {
-  	clear: both;
-  }
-  
-  @include media-query(screen-md) {
-    clear: none; 
-  }
-}
-
-.clear-md {
-  @include media-query(screen-md) {
-  	clear: both;
-  }
-  
-  @include media-query(screen-lg) {
-  	clear: none;
-  }
-}
-
-.clear-lg {
-  @include media-query(screen-lg) {
-  	clear: both;
-  }
-  
-  @include media-query(screen-xl) {
-  	clear: none;
-  }
-}
-
-.clear-xl {
-  @include media-query(screen-xl) {
-  	clear: both;
-  }
 }
