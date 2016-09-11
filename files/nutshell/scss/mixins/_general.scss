@@ -117,7 +117,9 @@
 
 
 // Functions 
-
+// function map-deep-get()
+// function to get a value from a nested map, see _type.scss for usage
+//
 @function map-deep-get($map, $keys...) {
     @each $key in $keys {
         $map: map-get($map, $key);
@@ -125,7 +127,16 @@
     @return $map;
 }
 
+// function headings()
 // function to generate headlines h1 – h6
+//
+// usage:
+// #{headings()} { … } will result in
+// h1, h2, … h6 { … }
+// ---
+// #{headings(2,4) { … } will result in
+// h2,h3,h4 { … }
+// ---
 @function headings($first:1, $last:6) {
   @if $first == $last {
       @return 'h#{$first}';
