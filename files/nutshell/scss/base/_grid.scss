@@ -18,13 +18,14 @@
 
 // grid options
 $grid__columns:       12 !default;
-$grid__gutter-width:  1.875rem !default; // 30px
+$grid__gutter:        1.875rem !default; // 30px
+$grid__gutter--half:  ($grid__gutter / 2) !default;
 
 // column default floating
 %column-floating {
   float: left;
-  padding-left:  ($grid__gutter-width / 2);
-  padding-right: ($grid__gutter-width / 2);
+  padding-left:  $grid__gutter--half;
+  padding-right: $grid__gutter--half;
 }
 
 @for $i from 1 through $grid__columns {
@@ -117,7 +118,7 @@ $grid__gutter-width:  1.875rem !default; // 30px
 		.offset-md-#{$i} {
 			$margin-percentage: percentage($i / $grid__columns);
   
-      margin-left: calc(#{$margin-percentage} + #{$grid__gutter-width * $i/ $grid__columns});
+      margin-left: calc(#{$margin-percentage} + #{$grid__gutter * $i/ $grid__columns});
 			
 			.row & {
   			margin-left: percentage($i / $grid__columns);

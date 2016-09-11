@@ -11,7 +11,8 @@
 // --------------------------------------------------
 
 // VARIABLES
-$gallery__gutter-width: $grid__gutter-width !default;
+$gallery__gutter: $grid__gutter !default;
+$gallery__gutter--half: ($grid__gutter / 2) !default;
 
 // USED FROM _variables.scss
 
@@ -36,16 +37,16 @@ $gallery__gutter-width: $grid__gutter-width !default;
   ul {
     @extend .clearfix;
   
-    margin-left: $gallery__gutter-width / 2 * -1;
-    margin-right: $gallery__gutter-width / 2 * -1;
+    margin-left: $gallery__gutter--half * -1;
+    margin-right: $gallery__gutter--half * -1;
     padding: 0;
     list-style-type: none;
   }
   
   li {
-    @include column-floating($gallery__gutter-width);
+    @include column-floating($gallery__gutter--half);
     
-    margin-bottom: $gallery__gutter-width;
+    margin-bottom: $gallery__gutter;
   }
   
   .cols_2 {
