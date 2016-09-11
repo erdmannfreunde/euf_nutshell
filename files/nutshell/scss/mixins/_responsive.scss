@@ -46,7 +46,7 @@ $breakpoints: (
 
 $additional_breakpoints: (
   offcanvas: (
-    min:        0,
+    min:        48em,
     max:        (48em - 0.0625em), // 767px
   )
 ) !default;
