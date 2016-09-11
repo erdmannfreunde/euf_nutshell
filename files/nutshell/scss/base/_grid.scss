@@ -34,67 +34,67 @@ $grid__gutter-width:  1.875rem !default; // 30px
   width: 100%;
 }
 
-@for $i from 1 through $grid__columns {
-  .col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}, .col-xl-#{$i} {
-    @extend %column-floating;
-    
-  }
-}
+// [1] length($screen-sizes) - go through length of available viewports (xs, sm, md, lg, xl == 5)
+// [2] $current - actual viewport (e.g. "xs")
+// [3] $i - counter, returns the actual grid-column
+// [4] $grid__columns - go through available columns (e.g. 1 --> 12)
 
+// [5] override clear- class for the next viewport by default
+// this means, you can add a clear-xs class to an element, but the clear will only affect the current viewport.  
+@for $size from 1 through length($screen-sizes) { // [1]
+  $current:   nth($screen-sizes, $size); // [2]
 
-
-@for $size from 1 through length($screen-sizes) {
-  $current:   nth($screen-sizes, $size);
-  
   // column creation
-  /* col-#{$current} */
+  @for $i from 1 through $grid__columns { // [3][4]
+    .col-#{$current}-#{$i} { // [2][3]
+      @extend %column-floating;
+    }
+  }
   
-  @include media-query(screen-#{$current}) {
+  // width creation for every col- class
+  @include media-query(screen-#{$current}) { // [2]
 
-  	@for $i from 1 through $grid__columns {
-  		.col-#{$current}-#{$i} {
+  	@for $i from 1 through $grid__columns { // [3][4]
+  		.col-#{$current}-#{$i} { // [2][3]
   			width: percentage($i / $grid__columns);
   		}
   	}
   }
   
   // offset creation
-  /* offset-#{$current} */
-  @include media-query(screen-#{$current}) {
+  @include media-query(screen-#{$current}) { // [2]
   
-  	@for $i from 1 through $grid__columns {
-  		.offset-#{$current}-#{$i} {
+  	@for $i from 1 through $grid__columns { // [3]
+  		.offset-#{$current}-#{$i} { // [2][3]
   			margin-left: percentage($i / $grid__columns);
   		}
   	}
   }
   
   //pull-left & -right creation
-  /* pull-left-#{$current} & pull-right-#{$current} */
-  @include media-query(screen-#{$current}) {
-    .pull-right-#{$current} {
+  @include media-query(screen-#{$current}) { // [2]
+    .pull-right-#{$current} { // [2]
       float: right;
     }
     
-    .pull-left-#{$current} {
+    .pull-left-#{$current} { // [2]
       float: left;
     }
   }
   
-  //clear creation
-  /* clear-#{$current} */
-  
-  @include media-query(screen-#{$current}) {
-    .clear-#{$current} {
+  //clear creation  
+  @include media-query(screen-#{$current}) { // [2]
+    .clear-#{$current} { // [2]
       clear: both;
     }
   }
   
+  // [5]
   @if($size < length($screen-sizes)) {
     $size: $size + 1 ;
     $next:      nth($screen-sizes, $size);
     
-    /* clear-#{$next} */
+    // clear-#{$next}
     @include media-query(screen-#{$next}) {
       .clear-#{$current} {
         clear: none;
