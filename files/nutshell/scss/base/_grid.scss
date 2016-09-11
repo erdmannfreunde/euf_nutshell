@@ -21,6 +21,11 @@
 $grid__columns:       12 !default;
 $grid__gutter-width:  1.875rem !default; // 30px
 
+// general row-class
+.row {
+  @include make-row;
+}
+
 // column default floating
 %column-floating {
   float: left;
@@ -96,18 +101,4 @@ $grid__gutter-width:  1.875rem !default; // 30px
       }
     }
   }
-}
-
-// general row-class
-.row {
-  @include make-row;
-}
-
-// general pull options
-.pull-right {
-  float: right;
-}
-
-.pull-left {
-  float: left;
 }
