@@ -31,13 +31,13 @@ $grid__gutter-width:  1.875rem !default; // 30px
   float: left;
   padding-left:  ($grid__gutter-width / 2);
   padding-right: ($grid__gutter-width / 2);
+  width: 100%;
 }
 
 @for $i from 1 through $grid__columns {
   .col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}, .col-xl-#{$i} {
     @extend %column-floating;
     
-    width: 100%;
   }
 }
 
