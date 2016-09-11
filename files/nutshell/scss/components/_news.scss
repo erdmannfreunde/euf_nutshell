@@ -36,7 +36,7 @@ $news-grid-columns--lg: 3 !default;
   margin-bottom: $base-spacing-unit;
   
   > { 
-    @include headlines() {
+    #{headings()} {
       margin-bottom: 0;
       
       &:after {
@@ -73,7 +73,7 @@ $news-grid-columns--lg: 3 !default;
     @extend %clearfix;
     
     > { 
-      @include headlines() { 
+      #{headings()} { 
         margin-top: $base-spacing-unit;
       }
     }
@@ -107,7 +107,7 @@ $news-grid-columns--lg: 3 !default;
   margin-bottom: $base-spacing-unit;
   
   > { 
-    @include headlines() {
+    #{headings()} {
       @include padding-default;
       
       &:after {
@@ -170,7 +170,7 @@ $news-grid-columns--lg: 3 !default;
   @include navigation();
   
   > { 
-    @include headlines() {
+    #{headings()} {
       font-size: $heading-4__size;
       line-height: $heading-4__line-height;
       margin-bottom: $heading-4__margin-bottom;

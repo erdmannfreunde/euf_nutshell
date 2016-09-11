@@ -46,7 +46,7 @@ $faq-border: $base-border !default;
   }
   
   > { 
-    @include headlines() { // [1]
+    #{headings()} { // [1]
       margin-bottom: 0;
       
       &:after {
@@ -58,7 +58,7 @@ $faq-border: $base-border !default;
   }
   
   article > {
-    @include headlines() { // [1]
+    #{headings()} { // [1]
       margin-bottom: 0;
     
       &:after {
@@ -72,7 +72,7 @@ $faq-border: $base-border !default;
 
 .faq-page {
   > { 
-    @include headlines() { // [1]
+    #{headings()} { // [1]
       margin-bottom: 0;
       
       &:after {
@@ -84,7 +84,7 @@ $faq-border: $base-border !default;
   }
   
   article > {
-    @include headlines() { // [1]
+    #{headings()} { // [1]
       margin-bottom: 0;
     
       &:after {

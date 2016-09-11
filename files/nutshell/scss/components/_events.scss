@@ -32,7 +32,7 @@ $event-border:  $base-border !default;
   margin-bottom: $base-spacing-unit;
   
   > { 
-    @include headlines() { // [1]
+    #{headings()} { // [1]
       margin-bottom: 0;
       
       &:after {
@@ -60,7 +60,7 @@ $event-border:  $base-border !default;
     @extend %clearfix;
     
     > { 
-      @include headlines() { // [1] 
+      #{headings()} { // [1] 
         margin-top: $base-spacing-unit;
       }
     }
@@ -92,7 +92,7 @@ $event-border:  $base-border !default;
   @include navigation();
   
   > {  
-    @include headlines() { // [1]
+    #{headings()} { // [1]
       font-size: $heading-4__size;
       line-height: $heading-4__line-height;
       // margin-top: $heading-4__margin-top;

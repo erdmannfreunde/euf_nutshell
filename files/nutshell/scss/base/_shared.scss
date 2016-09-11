@@ -18,7 +18,7 @@
 
 // set a default margin-bottom for some elements 
 // [1] call every headline element (h1-h6)
-@include headlines() { // [1]
+#{headings()} { // [1]
   margin-top: 0;
   margin-bottom: $base-spacing-unit--sm;
 }
