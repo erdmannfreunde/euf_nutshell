@@ -28,7 +28,7 @@ $color-text--inverted:    $color-page-background !default;
 $color-links: $color-highlight !default;
 
 // Buttons
-$color-btn:       $color-links;
+$color-btn:       $color-links !default;
 $color-btn-text:  #fff !default;
 
 // Base Font Settings
