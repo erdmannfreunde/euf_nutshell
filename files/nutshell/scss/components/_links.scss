@@ -11,8 +11,9 @@
 // --------------------------------------------------
 
 // VARIABLES
-$button-border-radius: $base-border-radius !default;
-$button-border-width: $base-border-width !default;
+$button-spacing:        $base-spacing-unit--sm $base-spacing-unit !default;
+$button-border-radius:  $base-border-radius !default;
+$button-border-width:   $base-border-width !default;
 
 // USED FROM _variables.scss
 
@@ -21,11 +22,10 @@ $button-border-width: $base-border-width !default;
 // [1] Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
 %button {
   border-radius: $button-border-radius;
-  padding: ($base-spacing-unit / 2) $base-spacing-unit;
+  padding: $button-spacing;
   display: inline-block;
   border: $button-border-width solid transparent;
   text-align: center;
-  //vertical-align: middle;
   background: transparent;
   background-image: none; // [1]
   white-space: nowrap;
