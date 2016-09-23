@@ -39,7 +39,8 @@ $menu-point-color--active:  $color-brand !default;
   
   .slider-control a {
     @include vertical-align(50%);
-    @include font-size($arrow-size,1);
+    font-size: $arrow-size;
+    line-height: 1;
     
     position: absolute;
     display: block;
@@ -65,7 +66,8 @@ $menu-point-color--active:  $color-brand !default;
   }
   
   .slider-menu {
-    @include font-size(3rem,1);
+    font-size: 3rem;
+    line-height: 1;
     
     top: auto; // [1]
     bottom: 0; // [1]

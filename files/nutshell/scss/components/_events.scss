@@ -31,13 +31,12 @@ $event-border:  $base-border !default;
 .events-list {
   margin-bottom: $base-spacing-unit;
   
-  @for $i from 1 through 6 { // [1]
-    > h#{$i} { // [2]
+  > { 
+    #{headings()} { // [1]
       margin-bottom: 0;
       
       &:after {
         border-top: $event-border;
-         
         content: "";
         display: block; 
       }
@@ -60,8 +59,8 @@ $event-border:  $base-border !default;
   .event {
     @extend %clearfix;
     
-    @for $i from 1 through 6 { // [1]
-      > h#{$i} { 
+    > { 
+      #{headings()} { // [1] 
         margin-top: $base-spacing-unit;
       }
     }
@@ -69,7 +68,6 @@ $event-border:  $base-border !default;
     &:after {
       border-bottom: $base-border;
       margin-top: $base-spacing-unit;
-      
       content: "";
       display: block;
     }
@@ -93,8 +91,8 @@ $event-border:  $base-border !default;
 .events-menu {
   @include navigation();
   
-  @for $i from 1 through 6 { // [1]
-    > h#{$i} {
+  > {  
+    #{headings()} { // [1]
       font-size: $heading-4__size;
       line-height: $heading-4__line-height;
       // margin-top: $heading-4__margin-top;

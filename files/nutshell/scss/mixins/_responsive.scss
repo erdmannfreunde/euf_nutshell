@@ -17,34 +17,42 @@
 //     we end up at ~1200px (see _page.scss)
 //
 $wrapper-max:         66.625em !default; // ~1200px [1]
-$offcanvas-nav:       48em !default; // 768px
-$offcanvas-nav-max:   (#{$offcanvas-nav} - 0.0625em) !default; // 0.0625em = 1px
 
-$screen-xs-min:   0 !default;
-$screen-sm-min:   34.375em !default; // 550px
-$screen-md-min:   48em !default; // 768px
-$screen-lg-min:   58.75em !default; // 940px
-$screen-xl-min:   68.75em !default; // 1100px
 
-$screen-xs-max:   (#{$screen-sm-min} - 0.0625em) !default;
-$screen-sm-max:   (#{$screen-md-min} - 0.0625em) !default;
-$screen-md-max:   (#{$screen-lg-min} - 0.0625em) !default;
-$screen-lg-max:   (#{$screen-xl-min} - 0.0625em) !default;
-
+// $breakpoints: will be used in _grid.scss to generate grid classes
 $breakpoints: (
-    "screen-xs"             "screen and (min-width: #{$screen-xs-min})",
-    "screen-sm"             "screen and (min-width: #{$screen-sm-min})",
-    "screen-md"             "screen and (min-width: #{$screen-md-min})",
-    "screen-lg"             "screen and (min-width: #{$screen-lg-min})",
-    "screen-xl"             "screen and (min-width: #{$screen-xl-min})",
-    "screen-offcanvas"      "screen and (min-width: #{$offcanvas-nav})",
-    
-    "screen-xs-max"         "screen and (max-width: #{$screen-xs-max})",
-    "screen-sm-max"         "screen and (max-width: #{$screen-sm-max})",
-    "screen-md-max"         "screen and (max-width: #{$screen-md-max})",
-    "screen-lg-max"         "screen and (max-width: #{$screen-lg-max})",
-    "screen-offcanvas-max"  "screen and (max-width: #{$offcanvas-nav})",
+  xs: (
+    min:        0,
+    max:        (34.375em - 0.0625em), // 549px
+  ),
+  sm: (
+    min:        34.375em, // 550px
+    max:        (48em - 0.0625em), // 767px
+  ),
+  md: (
+    min:        48em, // 768px
+    max:        (58.75em - 0.0625em), // 939px
+  ),
+  lg: (
+    min:        58.75em, // 940px
+    max:        (68.75em - 0.0625em), // 1099px
+  ),
+  xl: (
+    min:        68.75em, // 1100px
+    max:        "none"
+  ),
 ) !default;
+
+
+$additional_breakpoints: (
+  offcanvas: (
+    min:        48em, // 768px
+    max:        (48em - 0.0625em), // 767px
+  )
+) !default;
+
+$all_breakpoints: map-merge($breakpoints, $additional_breakpoints);
+
 
 // USED FROM _variables.scss
 
@@ -61,24 +69,44 @@ $breakpoints: (
     $breakpoint-found: false;
 
     // Loop through the list of breakpoints we’ve provided in our settings file.
-    @each $breakpoint in $breakpoints {
+    @each $breakpoint, $screen in $all_breakpoints {
 
         // Grab the alias and the condition from their respective locations in
         // the list.
-        $alias:     nth($breakpoint, 1);
-        $condition: nth($breakpoint, 2);
-
+        
+        // min-width
+        $size:      $breakpoint; // (xs)
+        
+        $alias-min:     "screen-#{$size}"; // (screen-xs)
+        $alias-max:     "screen-#{$size}-max"; // (screen-xs-max)
+        $condition-min: map-get($screen, min);
+        $condition-max: map-get($screen, max);
+        
+        //@warn "mq: #{$mq}";
+        
+        //@warn "size: #{$size}, alias: #{$alias-min} - #{$alias-max}, condition: #{$condition-min} #{$condition-max}";
+        
+        
         // If the media query we’ve specified has an alias and a condition...
-        @if $mq == $alias and $condition {
+        @if $mq == $alias-min {
 
             // ...tell the mixin that we’ve found it...
             $breakpoint-found: true;
 
             // ...and spit it out here.
-            @media #{$condition} {
-                @content;
+            @media screen and (min-width: #{$condition-min}) {
+              @content;
             }
 
+        }
+        @if $mq == $alias-max {
+            // ...tell the mixin that we’ve found it...
+            $breakpoint-found: true;
+
+            // ...and spit it out here.
+            @media screen and (max-width: #{$condition-max}) {
+              @content;
+            }
         }
 
     }

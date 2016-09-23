@@ -30,8 +30,7 @@ $toggler-border:          2px solid transparent !default;
   margin-bottom: $toggler-spacing;
 
   .toggler {
-    @include font-size($toggler-font-size,auto);
-    
+    font-size: $toggler-font-size;    
     cursor: pointer;
     background: $toggler-background;
     color: $toggler-color;
