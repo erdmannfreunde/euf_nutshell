@@ -46,29 +46,29 @@
 }
 
 
-@mixin padding-default($column__gutter-width: $grid__gutter-width) {
-  padding-left:  ($column__gutter-width / 2);
-  padding-right: ($column__gutter-width / 2);
+@mixin padding-default($column__gutter--half: $grid__gutter--half) {
+  padding-left:  $column__gutter--half;
+  padding-right: $column__gutter--half;
 }
 
 // make-row
-@mixin make-row($column__gutter-width: $grid__gutter-width) {
+@mixin make-row($column__gutter--half: $grid__gutter--half) {
   @extend %clearfix;
   
-  margin-left:  $column__gutter-width / 2 * -1;
-  margin-right: $column__gutter-width / 2 * -1;
+  margin-left:  $column__gutter--half * -1;
+  margin-right: $column__gutter--half * -1;
 }
 
 // column-floating
-@mixin column-floating($column__gutter-width: $grid__gutter-width) {
+@mixin column-floating($column__gutter--half: $grid__gutter--half) {
   float: left;
-  padding-left:  ($column__gutter-width / 2);
-  padding-right: ($column__gutter-width / 2);
+  padding-left:  $column__gutter--half;
+  padding-right: $column__gutter--half;
 }
 
 // make-column mixin
 @mixin make-col($columns) {
-  @include column-floating($grid__gutter-width);
+  @include column-floating($grid__gutter);
   
   width: percentage($columns/$grid__columns);
 }
@@ -79,7 +79,7 @@
   $width-percentage: $width / $grid__columns * $wrapper-max;
   
   max-width: $width-percentage; //[1]
-  max-width: calc(#{$width-percentage} - #{$grid__gutter-width});
+  max-width: calc(#{$width-percentage} - #{$grid__gutter});
   
   @if $align == auto or center {
     margin-left: auto;
