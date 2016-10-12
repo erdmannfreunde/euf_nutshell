@@ -188,8 +188,10 @@ $pre__color:             #fff !default;
   }
 }
 
-// Paragraph
-p {
+// Paragraph, Lists
+p,
+ul,
+ol {
   margin-top: 0;
   
   a {
