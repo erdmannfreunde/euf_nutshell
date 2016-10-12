@@ -68,7 +68,7 @@
 
 // make-column mixin
 @mixin make-col($columns) {
-  @include column-floating($grid__gutter);
+  @include column-floating($grid__gutter--half);
   
   width: percentage($columns/$grid__columns);
 }
