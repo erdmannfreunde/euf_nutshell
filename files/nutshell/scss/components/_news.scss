@@ -179,7 +179,7 @@ $news-grid-columns--lg: 3 !default;
   }
     
   .year {
-    margin-bottom: 1rem;
+    margin-bottom: $base-spacing-unit--sm;
     
      > a,
      > .active {
@@ -190,6 +190,6 @@ $news-grid-columns--lg: 3 !default;
   }
   
   .level_2 li {
-    margin-bottom: 0.25rem;
+    margin-bottom: $base-spacing-unit--xs;
   }
 }
