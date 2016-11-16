@@ -60,6 +60,7 @@ $all_breakpoints: map-merge($breakpoints, $additional_breakpoints);
 
 @mixin wrapper-max($width: $wrapper-max) {
   max-width: $width;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
