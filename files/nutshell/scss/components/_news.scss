@@ -68,8 +68,7 @@ $news-grid-columns--lg: 3 !default;
   
   .layout_short,
   .layout_latest,
-  .layout_simple,
-  .event {
+  .layout_simple {
     @extend %clearfix;
     
     > { 
@@ -81,7 +80,6 @@ $news-grid-columns--lg: 3 !default;
     &:after {
       border-bottom: $base-border;
       margin-top: $base-spacing-unit;
-      
       content: "";
       display: block;
     }
@@ -120,8 +118,7 @@ $news-grid-columns--lg: 3 !default;
 
   .layout_short,
   .layout_latest,
-  .layout_simple,
-  .event {
+  .layout_simple {
     @include column-floating;
     
     margin-top: $base-spacing-unit;
