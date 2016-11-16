@@ -149,7 +149,8 @@ $pre__color:             #fff !default;
 @each $element,$options in $headlines {
   $count: index(map-keys($headlines), $element);  
   
-  #{$element} {
+  #{$element},
+  %#{$element} {
     $sizes: map-get($options, sizes);
     $line-height: map-get($options, line-height);
     $margin-top: map-get($options, margin-top);
