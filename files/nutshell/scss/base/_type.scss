@@ -149,7 +149,6 @@ $pre__color:             #fff !default;
 @each $element,$options in $headlines {
   $count: index(map-keys($headlines), $element);  
   
-  #{$element},
   %#{$element} {
     $sizes: map-get($options, sizes);
     $line-height: map-get($options, line-height);
@@ -167,6 +166,15 @@ $pre__color:             #fff !default;
     @include media-query(screen-xl) {
       font-size: map-get($sizes, xl);
     }
+  }
+  
+  #{$element} {
+    @extend %#{$element};
+    
+    $sizes: map-get($options, sizes);
+    $line-height: map-get($options, line-height);
+    $margin-top: map-get($options, margin-top);
+    $margin-bottom: map-get($options, margin-bottom);
     
     p + &,  // [1]
     ul + &,
