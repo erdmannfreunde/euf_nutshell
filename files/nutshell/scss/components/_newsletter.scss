@@ -25,7 +25,7 @@ $newsletter-reader-border:  $base-border !default;
 // [3] makes error 100% width, instead of standing left to the text-input
 .newsletter-subscribe,
 .newsletter-unsubscribe {
-  margin-bottom: 2rem;
+  margin-bottom: $base-spacing-unit;
 
   .formbody {
     display: flex; // [1]
