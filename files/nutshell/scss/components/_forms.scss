@@ -113,6 +113,11 @@ select.select {
   }
 }
 
+.radio_container > span,
+.checkbox_container > span {
+	display: inline-block;
+}
+
 // Mandatory & Error-Styling
 // asterisk at mandatory fields
 span.mandatory {
