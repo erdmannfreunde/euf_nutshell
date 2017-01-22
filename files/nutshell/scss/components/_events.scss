@@ -93,28 +93,20 @@ $event-border:  $base-border !default;
   
   > {  
     #{headings()} { // [1]
-      font-size: $heading-4__size;
-      line-height: $heading-4__line-height;
-      // margin-top: $heading-4__margin-top;
-      margin-bottom: $heading-4__margin-bottom;
       
-      + * {
-        border-top: $event-border;// [2]      
+      &:after {
+        border-top: $news-border;
+        content: "";
+        display: block; 
       }
     }
   }
   
-  .level_1 {
-    padding-top: $base-spacing-unit;
-  }
-    
   .year {
-    margin-bottom: 1;
+    margin-bottom: $base-spacing-unit--sm;
     
      > a,
      > .active {
-      font-size: $heading-4__size;
-      line-height: $heading-4__line-height;
       color: inherit;
       font-weight: $headings__font-weight;
       font-family: $headings__font-family;
@@ -122,6 +114,6 @@ $event-border:  $base-border !default;
   }
   
   .level_2 li {
-    margin-bottom: 0.25rem;
+    margin-bottom: $base-spacing-unit--xs;
   }
 }

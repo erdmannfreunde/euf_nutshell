@@ -60,11 +60,12 @@ $all_breakpoints: map-merge($breakpoints, $additional_breakpoints);
 
 @mixin wrapper-max($width: $wrapper-max) {
   max-width: $width;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
 
-@mixin media-query($mq) {
+@mixin media-query($mq, $mq-max: false) {
 
     $breakpoint-found: false;
 
@@ -88,7 +89,7 @@ $all_breakpoints: map-merge($breakpoints, $additional_breakpoints);
         
         
         // If the media query we’ve specified has an alias and a condition...
-        @if $mq == $alias-min {
+        @if $mq == $alias-min and $mq-max == false {
 
             // ...tell the mixin that we’ve found it...
             $breakpoint-found: true;
@@ -105,6 +106,15 @@ $all_breakpoints: map-merge($breakpoints, $additional_breakpoints);
 
             // ...and spit it out here.
             @media screen and (max-width: #{$condition-max}) {
+              @content;
+            }
+        }
+        @if ($mq == $alias-min and $mq-max == $alias-max)  {
+            // ...tell the mixin that we’ve found it...
+            $breakpoint-found: true;
+
+            // ...and spit it out here.
+            @media screen and (min-width: #{$condition-min}) and (max-width: #{$condition-max}) {
               @content;
             }
         }

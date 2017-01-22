@@ -54,8 +54,8 @@ $base-spacing-unit--small:    $base-spacing-unit--sm !default;
 $base-spacing-unit--large:    $base-spacing-unit--lg !default;
 
 // Base Border Settings
-$base-border-radius:          4px !default !default;
-$base-border-width:           1px !default !default;
+$base-border-radius:          4px !default;
+$base-border-width:           1px !default;
 $base-border-color:           $color-gray-light !default;
 
 $base-border:                 $base-border-width solid $base-border-color !default;

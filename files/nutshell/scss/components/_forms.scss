@@ -28,6 +28,7 @@ $input-border-radius:  $base-border-radius !default;
 // [8] make sure, the whole input is visible (chrome)
 // [9] bring button-text and file-name on same base-line in Chrome
 // [10] IE8-9
+// [11] space between checkbox/radio + label, when inline
 .ce_form {
   overflow: visible; // [1]
 }
@@ -92,7 +93,7 @@ input.checkbox {
   line-height: normal;
   
   + label {
-    margin-right: $base-spacing-unit--xs;
+    margin-right: $base-spacing-unit--xs; // [11]
     font-weight: normal;
   }
 }
@@ -110,6 +111,11 @@ select.select {
   legend {
     font-weight: 700;
   }
+}
+
+.radio_container > span,
+.checkbox_container > span {
+	display: inline-block;
 }
 
 // Mandatory & Error-Styling
