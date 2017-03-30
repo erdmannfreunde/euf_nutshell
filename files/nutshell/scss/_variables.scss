@@ -17,7 +17,7 @@ $color-gray:        #555    !default;
 $color-gray-light:  #ccc !default;
 
 $color-brand:       $color-default !default;
-$color-highlight:   $color-brand;
+$color-highlight:   $color-brand !default;
 
 // Page
 $color-page-background:   #fff !default;
