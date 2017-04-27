@@ -145,11 +145,13 @@ $pre__color:             #fff !default;
 // [3] correct margin-top for headlines, when in a new content element
 // [4] $base-spacing-unit = default margin-bottom for most elements
 // [5] ex: h1 + h2
+// [6] new placeholder because scssphp in Contao fails with %#{$element}
 
 @each $element,$options in $headlines {
   $count: index(map-keys($headlines), $element);  
   
-  %#{$element} {
+  %#{$element},
+  %_#{$element} {
     $sizes: map-get($options, sizes);
     $line-height: map-get($options, line-height);
     $margin-top: map-get($options, margin-top);
