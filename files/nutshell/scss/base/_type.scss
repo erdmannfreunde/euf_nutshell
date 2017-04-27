@@ -146,6 +146,8 @@ $pre__color:             #fff !default;
 // [4] $base-spacing-unit = default margin-bottom for most elements
 // [5] ex: h1 + h2
 // [6] new placeholder because scssphp in Contao fails with %#{$element}
+// [7] base font size
+// [8] loop through all viewports and add font-size for every viewport
 
 @each $element,$options in $headlines {
   $count: index(map-keys($headlines), $element);  
@@ -157,21 +159,25 @@ $pre__color:             #fff !default;
     $margin-top: map-get($options, margin-top);
     $margin-bottom: map-get($options, margin-bottom);
     
-    font-size: map-get($sizes, xs);
+    
+    font-size: map-get($sizes, xs); // [7]
     line-height: $line-height;
-    margin-bottom: $margin-bottom; 
+    margin-bottom: $margin-bottom;
     
-    @include media-query(screen-md) {
-      font-size: map-get($sizes, md);
-    }
-    
-    @include media-query(screen-xl) {
-      font-size: map-get($sizes, xl);
+    // [8]
+    @for $i from 2 through length($sizes) {
+	    $current: nth($sizes, $i); // $i = 2 = sm, $i = 5 = xl
+	    $viewport: nth($current, 1);
+	    $font-size: nth($current, 2);	    
+	    
+	    @include media-query(screen-#{$viewport}) {
+	      font-size: $font-size;
+	    }
     }
   }
   
   #{$element} {
-    @extend %#{$element};
+    @extend %_#{$element};
     
     $sizes: map-get($options, sizes);
     $line-height: map-get($options, line-height);
