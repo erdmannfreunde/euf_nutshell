@@ -40,7 +40,9 @@ $nav-toggler-border:      $base-border-width solid currentColor !default;
   
   a,
   span.active,
-  span.trail {
+  span.trail,
+  strong.active,
+  strong.trail {
     display: block;
     padding: ($nav--main__item-padding / 2) $nav--main__item-padding;
   }
@@ -53,7 +55,9 @@ $nav-toggler-border:      $base-border-width solid currentColor !default;
 .nav--vertical {
   a,
   span.active,
-  span.trail {
+  span.trail,
+  strong.active,
+  strong.trail {
     display: block;
     padding: ($nav--main__item-padding / 2) $nav--main__item-padding;
   }
@@ -64,7 +68,9 @@ $nav-toggler-border:      $base-border-width solid currentColor !default;
   
   a,
   span.active,
-  span.trail {
+  span.trail,
+  strong.active,
+  strong.trail {
     padding: $nav--main__item-padding $nav--main__item-padding;
     border-bottom: 1px solid $base-border-color;
   
