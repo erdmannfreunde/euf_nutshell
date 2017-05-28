@@ -69,7 +69,8 @@ textarea.textarea {
   margin-bottom: $base-spacing-unit;
 }
 
-input.submit {
+input.submit,
+button.submit {
   @extend %button;
   @extend button.btn--primary;
 }
