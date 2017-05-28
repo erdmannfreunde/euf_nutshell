@@ -44,14 +44,18 @@ $search-hide-label:       true !default;
   }
   
   .submit,
-  .submit_container {
+  .submit_container,
+  .widget-submit {
     margin-bottom: $base-spacing-unit--sm;
     margin-left: $base-spacing-unit--xs;
     align-self: flex-end; // [3]
   }
   
-  .submit_container .submit {
-    margin-left: 0;
+  .submit_container,
+  .widget-submit {
+	  .submit {
+    	margin-left: 0;
+    }
   }
   
   // search-results
