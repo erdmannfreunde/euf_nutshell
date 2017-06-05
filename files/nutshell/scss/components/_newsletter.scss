@@ -32,7 +32,8 @@ $newsletter-reader-border:  $base-border !default;
     flex-flow: row wrap; // [1]
   }
   
-  .text {
+  .text,
+  .widget-text {
     margin-bottom: 0; // [2]
     
     display: inline-block;
