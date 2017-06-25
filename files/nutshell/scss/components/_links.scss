@@ -11,6 +11,8 @@
 // --------------------------------------------------
 
 // VARIABLES
+$button-bg:             $color-btn !default;
+$button-bg-hover:       darken($button-bg, 10%) !default;
 $button-spacing:        $base-spacing-unit--sm $base-spacing-unit !default;
 $button-border-radius:  $base-border-radius !default;
 $button-border-width:   $base-border-width !default;
@@ -41,11 +43,11 @@ button.btn {
 a.btn--primary,
 span.btn--primary,
 button.btn--primary {
-  background: $color-btn;
+  background: $button-bg;
   color: $color-btn-text;
   
   &:hover {
-    background: darken($color-btn,10%);
+    background: $button-bg-hover;
   }
 }
 
@@ -71,11 +73,11 @@ div.btn--primary,
 
   > a,
   > button {    
-    background: $color-btn;
+    background: $button-bg;
     color: $color-btn-text;
     
     &:hover {
-      background: darken($color-btn,10%);
+      background: $button-bg-hover;
     }
   }
 }
