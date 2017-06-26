@@ -16,6 +16,9 @@ $button-bg-hover:       darken($button-bg, 10%) !default;
 $button-spacing:        $base-spacing-unit--sm $base-spacing-unit !default;
 $button-border-radius:  $base-border-radius !default;
 $button-border-width:   $base-border-width !default;
+$button-font-family:    $base-font-family !default;
+$button-font-weight:    400 !default;
+$button-line-height:    $base-line-height !default;
 
 // USED FROM _variables.scss
 
@@ -27,6 +30,9 @@ $button-border-width:   $base-border-width !default;
   padding: $button-spacing;
   display: inline-block;
   border: $button-border-width solid transparent;
+  font-family: $button-font-family;
+  font-weight: $button-font-weight;
+  line-height: $button-line-height;
   text-align: center;
   background: transparent;
   background-image: none; // [1]
