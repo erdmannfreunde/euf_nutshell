@@ -12,7 +12,9 @@
 
 
 // VARIABLES
-$input-border-radius:  $base-border-radius !default;
+$input-border-width:    $base-border-width !default;
+$input-border-radius:   $base-border-radius !default;
+$inout-border-color:    rgba(0,0,0,0.25) !default;
 
 // USED FROM _variables.scss
 
@@ -54,7 +56,7 @@ textarea {
   width: 100%;
   padding: ($base-spacing-unit / 2) $base-spacing-unit;
   border-radius: $input-border-radius;
-  border: $base-border-width solid rgba(0,0,0,0.25);
+  border: $input-border-width solid $input-border-color;
   background-clip: padding-box; // [4]
 
   background-image: none; // [7]
