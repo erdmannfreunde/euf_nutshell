@@ -128,6 +128,9 @@ $code__color:            $color-highlight !default;
 $pre__color-background:  $color-gray !default;
 $pre__color:             #fff !default;
 
+$selection-background: $color-brand;
+$selection-color: $color-text--inverted;
+
 // USED FROM _variables.scss
 
 // --------------------------------------------------
@@ -256,4 +259,10 @@ hr {
 
 .ce_text {
   margin-bottom: $base-spacing-unit;
+}
+
+::selection {
+  background: $selection-background;
+  color: $selection-color;
+  opacity: 1;
 }
