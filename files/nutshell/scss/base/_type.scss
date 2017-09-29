@@ -131,6 +131,8 @@ $pre__color:             #fff !default;
 $selection-background: $color-brand;
 $selection-color: $color-text--inverted;
 
+$hr-border: $base-border;
+
 // USED FROM _variables.scss
 
 // --------------------------------------------------
@@ -248,8 +250,8 @@ pre {
 hr {
   margin-top: 1rem;
   margin-bottom: 1rem;
-  border-top: 1px solid $color-gray-light;
-  border-bottom: 0;
+  border: 0;
+  border-top: $hr-border;
 }
 
 // list-item with more than one line of text should have additional space to the following list-item
