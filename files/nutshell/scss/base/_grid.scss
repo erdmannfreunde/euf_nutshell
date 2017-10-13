@@ -22,6 +22,13 @@ $grid__columns:       12 !default;
 $grid__gutter:        1.875rem !default; // 30px
 $grid__gutter--half:  ($grid__gutter / 2) !default;
 
+
+$debug-mode: false !default;
+$row-bg:  $color-gray-light;
+$col-bg:  lighten($color-gray-light, 10%);
+$container-bg: rgba($color-page-background,.5);
+$grid__gutters: ($grid__columns - 1);
+
 // general row-class
 .row {
   @include make-row;
@@ -104,5 +111,34 @@ $grid__gutter--half:  ($grid__gutter / 2) !default;
         clear: none;
       }
     }
+  }
+}
+
+@if ($debug-mode == true) {
+  // Debug Mode
+  .row {
+  	position: relative;
+  	background: $row-bg;
+  	z-index: 0;
+    padding-top: $base-spacing-unit;
+  
+    &:before {
+    	content: "";
+    	display: block;
+    	position: absolute;
+    	z-index: -1;
+    	left: $grid__gutter--half;
+    	right: $grid__gutter--half;
+    	top: 0;
+    	height: 100%;
+    	background: repeating-linear-gradient(to right,
+    		$col-bg 0%, $col-bg calc((100% - (#{$grid__gutter} * #{$grid__gutters})) / #{$grid__columns}), 
+    		$row-bg calc((100% - (1.875rem * 11)) / 12), $row-bg calc(((100% - (#{$grid__gutter} * #{$grid__gutters})) / #{$grid__columns}) + #{$grid__gutter})
+    	); // [1]
+    }
+  }
+  
+  [class*="col"] > div {
+    background: $container-bg;
   }
 }
