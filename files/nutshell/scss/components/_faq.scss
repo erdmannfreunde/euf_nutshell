@@ -50,7 +50,7 @@ $faq-border: $base-border !default;
       margin-bottom: 0;
       
       &:after {
-        border-top: $event-border;
+        border-top: $faq-border;
         content: "";
         display: block; 
       }
@@ -62,7 +62,7 @@ $faq-border: $base-border !default;
       margin-bottom: 0;
     
       &:after {
-        border-top: $event-border;
+        border-top: $faq-border;
         content: "";
         display: block; 
       }
@@ -76,7 +76,7 @@ $faq-border: $base-border !default;
       margin-bottom: 0;
       
       &:after {
-        border-top: $event-border;
+        border-top: $faq-border;
         content: "";
         display: block; 
       }
@@ -88,7 +88,7 @@ $faq-border: $base-border !default;
       margin-bottom: 0;
     
       &:after {
-        border-top: $event-border;
+        border-top: $faq-border;
         content: "";
         display: block; 
       }
