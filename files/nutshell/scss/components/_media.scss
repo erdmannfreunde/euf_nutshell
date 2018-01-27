@@ -163,6 +163,7 @@ $gallery__gutter--half: ($grid__gutter / 2) !default;
   height: auto;
   
   iframe {
+    border: 0;
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     width: 100% !important;
