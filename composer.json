@@ -4,7 +4,7 @@
   "keywords": ["contao", "nutshell", "euf nutshell", "base framework"],
   "type": "contao-module",
   "homepage": "https://github.com/ErdmannFreunde/euf_nutshell",
-  "license": "GPL-3.0+",
+  "license": "GPL-3.0-or-later",
 	"authors":[
 		{
 			"name":"Erdmann & Freunde",
