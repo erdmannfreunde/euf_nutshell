@@ -162,13 +162,15 @@ $nav-toggler-border:      $base-border-width solid currentColor !default;
 	}
 	
 	a,
-	span {
+	span,
+	strong {
   	display: inline-block;
 		padding: $base-spacing-unit--xs;
 		margin: $base-spacing-unit--xs;
 	}
 	
-	span {
+	span,
+	strong {
   	border: $base-border;
 	}
 	
