@@ -166,6 +166,8 @@ $hr-border: $base-border;
     
     
     font-size: map-get($sizes, xs); // [7]
+    font-family: $headings__font-family;
+    font-weight: $headings__font-weight;
     line-height: $line-height;
     margin-bottom: $margin-bottom;
     
