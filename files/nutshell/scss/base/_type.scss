@@ -96,23 +96,16 @@ html {
 --code__color:            						var(--color-highlight);
 --selection-background:								var(--color-brand);
 --pre__color-background:  						var(--color-gray);
+--pre__color:             						var(--color-text--inverted);
+
 --selection-color: 										var(--color-text--inverted);
 
 --hr-border: 													var(--base-border);
+--paragraph__link-decoration:         underline;
+--paragraph__link-decoration--hover:  none;
 }
-//$paragraph__link-color:              $color-links !default;
-$paragraph__link-decoration:         underline !default;
-$paragraph__link-decoration--hover:  none !default;
 
 
-//$code__color:            $color-highlight !default;
-//$pre__color-background:  $color-gray !default;
-//$pre__color:             #fff !default;
-
-//$selection-background: $color-brand;
-//$selection-color: $color-text--inverted;
-
-//$hr-border: $base-border;
 
 // USED FROM _variables.scss
 
@@ -129,7 +122,7 @@ $paragraph__link-decoration--hover:  none !default;
 // [1] more space between last text-element and new headline
 // [2] combined headlines - example: h1 + h2
 // [3] correct margin-top for headlines, when in a new content element
-// [4] $base-spacing-unit = default margin-bottom for most elements
+// [4] --base-spacing-unit = default margin-bottom for most elements
 // [5] ex: h1 + h2
 // [6] new placeholder because scssphp in Contao fails with %#{$element}
 // [7] base font size
@@ -214,15 +207,9 @@ ol {
   }
 }
 
-p + h2,
-p + h3 {
-  //margin-top: 2rem;
-}
-
 // Code
 code {
   color: var(--code__color);
-  //color: $code__color;
 }
 
 pre {
@@ -250,7 +237,6 @@ hr {
 
 ::selection {
 	background: var(--selection-background);
-  //background: $selection-background;
   color: var(--selection-color);
   opacity: 1;
 }

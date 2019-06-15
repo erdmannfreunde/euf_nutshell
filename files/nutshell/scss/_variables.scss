@@ -13,100 +13,48 @@
 // General Colors
 
 html {
---color-default: blue;
---color-gray-dark:   #222;
---color-gray:        #555;
---color-gray-light: #ccc;
+--color-default:            #ff5636;
+--color-gray-dark:          #222;
+--color-gray:               #555;
+--color-gray-light:         #ccc;
 
---color-brand: var(--color-default);
---color-highlight: var(--color-brand);
+--color-brand:              var(--color-default);
+--color-highlight:          var(--color-brand);
 
 // Page
---color-page-background:   #fff !default;
---color-text:              var(--color-gray-dark);
---color-text--inverted:    var(--color-page-background);
+--color-page-background:    #fff;
+--color-text:               var(--color-gray-dark);
+--color-text--inverted:     var(--color-page-background);
 
 // Links
---color-links: var(--color-highlight);
+--color-links:              var(--color-highlight);
 
 // Buttons
---color-btn: var(--color-links);
---color-btn-text:  #fff;
-
-
-
+--color-btn:                var(--color-links);
+--color-btn-text:           var(--color-text--inverted);
 
 // Base Font Settings
---base-font-size--xs:      0.875rem;
---base-font-size:          1rem;
---base-font-size--xl:      1.125rem;
+--base-font-size--xs:       0.875rem;
+--base-font-size:           1rem;
+--base-font-size--xl:       1.125rem;
 
---base-line-height:        1.625;
+--base-line-height:         1.625;
 
---base-font-family:        "Helvetica", "Helvetica Neue";
+--base-font-family:         "Helvetica", "Helvetica Neue";
 
 // Base Spacing Units
 --base-spacing-unit: 1rem;
 
---base-spacing-unit--xs:       calc(var(--base-spacing-unit) / 4);
---base-spacing-unit--sm:       calc(var(--base-spacing-unit) / 2);
+--base-spacing-unit--xs:    calc(var(--base-spacing-unit) / 4);
+--base-spacing-unit--sm:    calc(var(--base-spacing-unit) / 2);
 
---base-spacing-unit--lg:       calc(var(--base-spacing-unit) * 2);
---base-spacing-unit--xl:       calc(var(--base-spacing-unit) * 4);
+--base-spacing-unit--lg:    calc(var(--base-spacing-unit) * 2);
+--base-spacing-unit--xl:    calc(var(--base-spacing-unit) * 4);
 
 // Base Border Settings
---base-border-radius:          4px;
---base-border-width:           1px;
---base-border-color:           var(--color-gray-light);
+--base-border-radius:       4px;
+--base-border-width:        1px;
+--base-border-color:        var(--color-gray-light);
 
---base-border:                 var(--base-border-width) solid var(--base-border-color);
+--base-border:              var(--base-border-width) solid var(--base-border-color);
 }
-
-//$color-default:     #ff5636 !default;
-//$color-gray-dark:   #222    !default;
-//$color-gray:        #555    !default;
-//$color-gray-light:  #ccc !default;
-
-//$color-brand:       $color-default !default;
-//$color-highlight:   $color-brand !default;
-
-// Page
-//$color-page-background:   #fff !default;
-//$color-text:              $color-gray-dark !default;
-//$color-text--inverted:    $color-page-background !default;
-
-// Links
-//$color-links: $color-highlight !default;
-
-// Buttons
-//$color-btn:       $color-links !default;
-//$color-btn-text:  #fff !default;
-
-// Base Font Settings
-//$base-font-size--xs:      0.875rem !default;
-//$base-font-size:          1rem !default;
-//$base-font-size--xl:      1.125rem !default;
-
-//$base-line-height:        1.625 !default;
-
-//$base-font-family:        "Helvetica", "Helvetica Neue" !default;
-
-// Base Spacing Units
-//$base-spacing-unit:           1rem  !default;
-
-//$base-spacing-unit--xs:       $base-spacing-unit / 4 !default;
-//$base-spacing-unit--sm:       $base-spacing-unit / 2 !default;
-
-// $base-spacing-unit--lg:       $base-spacing-unit * 2 !default;
-// $base-spacing-unit--xl:       $base-spacing-unit * 4 !default;
-
-// deprecated
-// $base-spacing-unit--small:    $base-spacing-unit--sm !default;
-// $base-spacing-unit--large:    $base-spacing-unit--lg !default;
-
-// Base Border Settings
-// $base-border-radius:          4px !default;
-// $base-border-width:           1px !default;
-// $base-border-color:           $color-gray-light !default;
-
-// $base-border:                 $base-border-width solid $base-border-color !default;
