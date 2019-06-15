@@ -11,8 +11,10 @@
 // --------------------------------------------------
 
 // VARIABLES
-$headings__font-family: "Helvetica" !default;
-$headings__font-weight: 300 !default;
+html {
+--headings__font-family: "Helvetica";
+--headings__font-weight: 300;
+}
 
 $headlines: (
   h1: (
@@ -89,49 +91,28 @@ $headlines: (
   ),
 ) !default;
 
-$heading-1__size:   map-deep-get($headlines, "h1", "sizes", "xs");
-$heading-1__line-height:   map-deep-get($headlines, "h1", "line-height") !default;
-$heading-1__margin-top:   map-deep-get($headlines, "h1", "margin-top") !default;
-$heading-1__margin-bottom:   map-deep-get($headlines, "h1", "margin-bottom") !default;
+html {
+--paragraph__link-color:							var(--color-links);
+--code__color:            						var(--color-highlight);
+--selection-background:								var(--color-brand);
+--pre__color-background:  						var(--color-gray);
+--selection-color: 										var(--color-text--inverted);
 
-$heading-2__size:   map-deep-get($headlines, "h2", "sizes", "xs");
-$heading-2__line-height:   map-deep-get($headlines, "h2", "line-height") !default;
-$heading-2__margin-top:   map-deep-get($headlines, "h2", "margin-top") !default;
-$heading-2__margin-bottom:   map-deep-get($headlines, "h2", "margin-bottom") !default;
-
-$heading-3__size:   map-deep-get($headlines, "h3", "sizes", "xs");
-$heading-3__line-height:   map-deep-get($headlines, "h3", "line-height") !default;
-$heading-3__margin-top:   map-deep-get($headlines, "h3", "margin-top") !default;
-$heading-3__margin-bottom:   map-deep-get($headlines, "h3", "margin-bottom") !default;
-
-$heading-4__size:   map-deep-get($headlines, "h4", "sizes", "xs");
-$heading-4__line-height:   map-deep-get($headlines, "h4", "line-height") !default;
-$heading-4__margin-top:   map-deep-get($headlines, "h4", "margin-top") !default;
-$heading-4__margin-bottom:   map-deep-get($headlines, "h4", "margin-bottom") !default;
-
-$heading-5__size:   map-deep-get($headlines, "h5", "sizes", "xs");
-$heading-5__line-height:   map-deep-get($headlines, "h5", "line-height") !default;
-$heading-5__margin-top:   map-deep-get($headlines, "h5", "margin-top") !default;
-$heading-5__margin-bottom:   map-deep-get($headlines, "h5", "margin-bottom") !default;
-
-$heading-6__size:   map-deep-get($headlines, "h6", "sizes", "xs");
-$heading-6__line-height:   map-deep-get($headlines, "h6", "line-height") !default;
-$heading-6__margin-top:   map-deep-get($headlines, "h6", "margin-top") !default;
-$heading-6__margin-bottom:   map-deep-get($headlines, "h6", "margin-bottom") !default;
-
-$paragraph__link-color:              $color-links !default;
+--hr-border: 													var(--base-border);
+}
+//$paragraph__link-color:              $color-links !default;
 $paragraph__link-decoration:         underline !default;
 $paragraph__link-decoration--hover:  none !default;
 
 
-$code__color:            $color-highlight !default;
-$pre__color-background:  $color-gray !default;
-$pre__color:             #fff !default;
+//$code__color:            $color-highlight !default;
+//$pre__color-background:  $color-gray !default;
+//$pre__color:             #fff !default;
 
-$selection-background: $color-brand;
-$selection-color: $color-text--inverted;
+//$selection-background: $color-brand;
+//$selection-color: $color-text--inverted;
 
-$hr-border: $base-border;
+//$hr-border: $base-border;
 
 // USED FROM _variables.scss
 
@@ -140,8 +121,8 @@ $hr-border: $base-border;
 
 // Headings 1–6.
 #{headings()} { // [1]
-  font-weight: $headings__font-weight;
-  font-family: $headings__font-family;
+  font-weight: var(--headings__font-weight);
+  font-family: var(--headings__font-family);
 }
 
 // H1 — h6: Generate Element Styles from config
@@ -166,8 +147,8 @@ $hr-border: $base-border;
     
     
     font-size: map-get($sizes, xs); // [7]
-    font-family: $headings__font-family;
-    font-weight: $headings__font-weight;
+    font-family: var(--headings__font-family);
+    font-weight: var(--headings__font-weight);
     line-height: $line-height;
     margin-bottom: $margin-bottom;
     
@@ -200,7 +181,7 @@ $hr-border: $base-border;
 
     .ce_text + .ce_text & {
       &:first-child {
-        margin-top: $margin-top - $base-spacing-unit; // [4]
+        margin-top: calc($margin-top - var(--base-spacing-unit)); // [4]
       }
     }
     
@@ -219,11 +200,12 @@ ol {
   margin-top: 0;
   
   a {
-    color: $paragraph__link-color;
-    text-decoration: $paragraph__link-decoration;
+	  color: var(--paragraph__link-color);
+    //color: $paragraph__link-color;
+    text-decoration: var(--paragraph__link-decoration);
     
     &:hover {
-      text-decoration: $paragraph__link-decoration--hover;
+      text-decoration: var(--paragraph__link-decoration--hover);
     }
   }
   
@@ -239,13 +221,14 @@ p + h3 {
 
 // Code
 code {
-  color: $code__color;
+  color: var(--code__color);
+  //color: $code__color;
 }
 
 pre {
   padding: 1rem;
-  background: $pre__color-background;
-  color: $pre__color;
+  background: var(--pre__color-background);
+  color: var(--pre__color);
   overflow-x: scroll;
 }
 
@@ -253,7 +236,7 @@ hr {
   margin-top: 1rem;
   margin-bottom: 1rem;
   border: 0;
-  border-top: $hr-border;
+  border-top: var(--hr-border);
 }
 
 // list-item with more than one line of text should have additional space to the following list-item
@@ -262,11 +245,12 @@ hr {
 }
 
 .ce_text {
-  margin-bottom: $base-spacing-unit;
+  margin-bottom: var(--base-spacing-unit);
 }
 
 ::selection {
-  background: $selection-background;
-  color: $selection-color;
+	background: var(--selection-background);
+  //background: $selection-background;
+  color: var(--selection-color);
   opacity: 1;
 }

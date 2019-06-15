@@ -24,9 +24,9 @@ $grid__gutter--half:  ($grid__gutter / 2) !default;
 
 
 $debug-mode: false !default;
-$row-bg:  $color-gray-light;
-$col-bg:  lighten($color-gray-light, 10%);
-$container-bg: rgba($color-page-background,.5);
+$row-bg:  var(--color-gray-light);
+$col-bg:  rgba(var(--color-gray-light),0.7);
+$container-bg: rgba(var(--color-page-background),.5);
 $grid__gutters: ($grid__columns - 1);
 
 // general row-class
@@ -118,9 +118,9 @@ $grid__gutters: ($grid__columns - 1);
   // Debug Mode
   .row {
   	position: relative;
-  	background: $row-bg;
+  	background: var(--row-bg);
   	z-index: 0;
-    padding-top: $base-spacing-unit;
+    padding-top: var(--base-spacing-unit);
   
     &:before {
     	content: "";

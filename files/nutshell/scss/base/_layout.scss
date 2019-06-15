@@ -11,8 +11,10 @@
 // --------------------------------------------------
 
 // VARIABLES
-$header-color-background:   $color-page-background !default;
-$header-color-text:         $color-text !default;
+html {
+--header-color-background:   var(--color-page-background);
+--header-color-text:         var(--color-text);
+}
 
 // USED FROM _variables.scss
 
@@ -20,8 +22,8 @@ $header-color-text:         $color-text !default;
 
 // #header
 [id="header"] {
-  background: $header-color-background;
-  color: $header-color-text;
+  background: var(--header-color-background);
+  color: var(--header-color-text);
     
   .inside {
     @include wrapper-max;
@@ -42,8 +44,8 @@ $header-color-text:         $color-text !default;
 .mod_article {
   @include wrapper-max;
   @include padding-default;
-  padding-top: $base-spacing-unit--lg;
-  padding-bottom: $base-spacing-unit--lg;
+  padding-top: var(--base-spacing-unit--lg);
+  padding-bottom: var(--base-spacing-unit--lg);
   
   position: relative; // [1]
 }

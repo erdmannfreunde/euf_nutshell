@@ -11,10 +11,12 @@
 // --------------------------------------------------
 
 // VARIABLES
-$nav--main__item-padding: $base-spacing-unit !default;
-$nav-toggler-top-space:   $base-spacing-unit--sm !default;
-$nav-toggler-right-space: $base-spacing-unit--sm !default;
-$nav-toggler-border:      $base-border-width solid currentColor !default;
+html {
+--nav--main__item-padding: var(--base-spacing-unit);
+--nav-toggler-top-space:   var(--base-spacing-unit--sm);
+--nav-toggler-right-space: var(--base-spacing-unit--sm);
+--nav-toggler-border:      var(--base-border-width) solid currentColor;
+}
 
 
 // USED FROM _responsive.scss
@@ -44,7 +46,7 @@ $nav-toggler-border:      $base-border-width solid currentColor !default;
   strong.active,
   strong.trail {
     display: block;
-    padding: ($nav--main__item-padding / 2) $nav--main__item-padding;
+    padding: (var(--nav--main__item-padding) / 2) var(--nav--main__item-padding);
   }
 }
 
@@ -59,20 +61,20 @@ $nav-toggler-border:      $base-border-width solid currentColor !default;
   strong.active,
   strong.trail {
     display: block;
-    padding: ($nav--main__item-padding / 2) $nav--main__item-padding;
+    padding: (var(--nav--main__item-padding) / 2) var(--nav--main__item-padding);
   }
 }
 
 .nav--border {
-  border: $base-border;
+  border: var(--base-border);
   
   a,
   span.active,
   span.trail,
   strong.active,
   strong.trail {
-    padding: $nav--main__item-padding $nav--main__item-padding;
-    border-bottom: 1px solid $base-border-color;
+    padding: var(--nav--main__item-padding) var(--nav--main__item-padding);
+    border-bottom: 1px solid var(--base-border-color);
   
   
     &.last {
@@ -82,8 +84,8 @@ $nav-toggler-border:      $base-border-width solid currentColor !default;
 }
 
 .nav--breadcrumb {
-  border: $base-border;
-  padding: $base-spacing-unit--sm $base-spacing-unit;
+  border: var(--base-border);
+  padding: var(--base-spacing-unit--sm) var(--base-spacing-unit);
   ul {
     @extend %clearfix;
   }
@@ -91,7 +93,7 @@ $nav-toggler-border:      $base-border-width solid currentColor !default;
   li {
     @include media-query(screen-offcanvas) {
       float: left;
-      padding-right: $base-spacing-unit;
+      padding-right: var(--base-spacing-unit);
     }
   }
   
@@ -101,7 +103,7 @@ $nav-toggler-border:      $base-border-width solid currentColor !default;
       display: inline-block;
       content: "►";
       vertical-align: middle;
-      padding-left: $base-spacing-unit;
+      padding-left: var(--base-spacing-unit);
     }
   }
 }
@@ -110,13 +112,13 @@ $nav-toggler-border:      $base-border-width solid currentColor !default;
   select {
     -webkit-appearance: none;
     background: transparent;
-    border: $base-border;
-    padding: $base-spacing-unit--xs $base-spacing-unit--sm;   
+    border: var(--base-border);
+    padding: var(--base-spacing-unit--xs) var(--base-spacing-unit--sm);   
   }
   
   .submit {
     vertical-align: middle;
-    padding: $base-spacing-unit--xs $base-spacing-unit--sm;
+    padding: var(--base-spacing-unit--xs) var(--base-spacing-unit--sm);
   }
 }
 
@@ -134,7 +136,7 @@ $nav-toggler-border:      $base-border-width solid currentColor !default;
   }
   
   a {
-    padding: $base-spacing-unit--sm;
+    padding: var(--base-spacing-unit--sm);
   }
 }
 
@@ -143,18 +145,18 @@ $nav-toggler-border:      $base-border-width solid currentColor !default;
 	@include navigation;
   @extend %clearfix;
   
-  margin-top: $base-spacing-unit;
+  margin-top: var(--base-spacing-unit);
 	
 	clear: both; // [1]
 	text-align: center;
   line-height: 1;
 	
 	p {
-    padding: $base-spacing-unit--xs;
+    padding: var(--base-spacing-unit--xs);
     padding-left: 0;
-		margin: $base-spacing-unit--xs;
+		margin: var(--base-spacing-unit--xs);
 		margin-left: 0;
-		border-top: $base-border-width solid transparent;
+		border-top: var(--base-border-width) solid transparent;
 	}
 	
 	li {
@@ -165,13 +167,13 @@ $nav-toggler-border:      $base-border-width solid currentColor !default;
 	span,
 	strong {
   	display: inline-block;
-		padding: $base-spacing-unit--xs;
-		margin: $base-spacing-unit--xs;
+		padding: var(--base-spacing-unit--xs);
+		margin: var(--base-spacing-unit--xs);
 	}
 	
 	span,
 	strong {
-  	border: $base-border;
+  	border: var(--base-border);
 	}
 	
 	a.next {

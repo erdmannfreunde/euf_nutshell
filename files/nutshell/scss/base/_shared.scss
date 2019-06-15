@@ -20,7 +20,7 @@
 // [1] call every headline element (h1-h6)
 #{headings()} { // [1]
   margin-top: 0;
-  margin-bottom: $base-spacing-unit--sm;
+  margin-bottom: var(--base-spacing-unit--sm);
 }
 
 ul, ol, dl,
@@ -28,13 +28,13 @@ blockquote, p, address,
 hr,
 fieldset, figure,
 pre {    
-    margin-bottom: $base-spacing-unit;
+    margin-bottom: var(--base-spacing-unit);
 }
 
 
 // set a default margin-left for some elements 
 ul, ol, dd {
-    margin-left: $base-spacing-unit;
+    margin-left: var(--base-spacing-unit);
 }
 
 
@@ -51,7 +51,8 @@ ul, ol, dd {
 
 // hyperlink
 a {
-  color: $color-links;
+  //color: $color-links;
+  color: var(--color-links);
 }
 
 :not(p) a {
