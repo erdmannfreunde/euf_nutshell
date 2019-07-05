@@ -11,15 +11,17 @@
 // --------------------------------------------------
 
 // VARIABLES
-$accordion-padding:       $base-spacing-unit--sm !default;
-$accordion-background:    $color-gray-light !default;
+html {
+--accordion-padding:       var(--base-spacing-unit--sm);
+--accordion-background:    var(--color-gray-light);
 
 
-$toggler-font-size:       1.5rem !default;
-$toggler-background:      $color-highlight !default;
-$toggler-color:           $color-text--inverted !default;
-$toggler-spacing:         $base-spacing-unit--xs !default;
-$toggler-border:          2px solid transparent !default;
+--toggler-font-size:       1.5rem;
+--toggler-background:      var(--color-highlight);
+--toggler-color:           var(--color-text--inverted);
+--toggler-spacing:         var(--base-spacing-unit--xs);
+--toggler-border:          2px solid transparent;
+}
 
 // USED FROM _variables.scss
 
@@ -27,18 +29,18 @@ $toggler-border:          2px solid transparent !default;
 
 // default accordion
 .ce_accordion {
-  margin-bottom: $toggler-spacing;
+  margin-bottom: var(--toggler-spacing);
 
   .toggler {
-    font-size: $toggler-font-size;    
+    font-size: var(--toggler-font-size);    
     cursor: pointer;
-    background: $toggler-background;
-    color: $toggler-color;
-    padding: $accordion-padding;
-    border: $toggler-border;
+    background: var(--toggler-background);
+    color: var(--toggler-color);
+    padding: var(--accordion-padding);
+    border: var(--toggler-border);
     
     &:hover {
-      color: rgba($toggler-color, 0.5);
+      color: rgba(var(--toggler-color), 0.5);
                   
     }
     
@@ -48,7 +50,7 @@ $toggler-border:          2px solid transparent !default;
   }
   
   .accordion {
-    padding: $accordion-padding;
-    background: $accordion-background;
+    padding: var(--accordion-padding);
+    background: var(--accordion-background);
   }
 }

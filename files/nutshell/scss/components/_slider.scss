@@ -11,10 +11,12 @@
 // --------------------------------------------------
 
 // VARIABLES
-$arrow-color:               inherit !default;
-$arrow-size:                2rem !default;
-$menu-point-color:          inherit !default;
-$menu-point-color--active:  $color-brand !default;
+html {
+--arrow-color:               inherit;
+--arrow-size:                2rem;
+--menu-point-color:          inherit;
+--menu-point-color--active:  var(--color-brand);
+}
 
 // USED FROM _variables.scss
 
@@ -39,16 +41,16 @@ $menu-point-color--active:  $color-brand !default;
   
   .slider-control a {
     @include vertical-align(50%);
-    font-size: $arrow-size;
+    font-size: var(--arrow-size);
     line-height: 1;
     
     position: absolute;
     display: block;
-    color: $arrow-color;
+    color: var(--arrow-color);
     font-family: Arial; // [2]
     
     &:before {
-      padding: $base-spacing-unit--sm;
+      padding: var(--base-spacing-unit--sm);
       display: block;
     }
     
@@ -73,11 +75,11 @@ $menu-point-color--active:  $color-brand !default;
     bottom: 0; // [1]
     
     b {
-      color: $menu-point-color; // [1]
+      color: var(--menu-point-color); // [1]
     }
     
     b.active {
-      color: $menu-point-color--active; // [1]
+      color: var(--menu-point-color--active); // [1]
     }
     
     b:hover {

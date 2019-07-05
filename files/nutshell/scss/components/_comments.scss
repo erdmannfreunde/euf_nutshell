@@ -11,10 +11,13 @@
 // --------------------------------------------------
 
 // VARIABLES
-$color-error: #f00 !default;
+html {
+--color-error: rgba(255, 0, 0, 1);
+--color-error-light: rgba(255, 0, 0, 0.5);
+}
 
 // USED FROM _variables.scss
-// $base-spacing-unit
+// var(--base-spacing-unit);
 
 // --------------------------------------------------
 
@@ -24,18 +27,17 @@ $color-error: #f00 !default;
   overflow: visible;
   
   .widget {
-    margin-bottom: $base-spacing-unit;
+    margin-bottom: var(--base-spacing-unit);
   }
   
   p.error {
     margin-bottom: 0;
     
-    color: $color-error;
+    color: var(--color-error);
   }
   
   .error {
-    border-color: $color-error;
-    border-color: rgba($color-error, 0.5);
+    border-color: var(--color-error-light);
   }
   
   .submit {
@@ -45,16 +47,16 @@ $color-error: #f00 !default;
 }
 
 .comment_default {
-  padding: $base-spacing-unit;
-  margin-bottom: $base-spacing-unit;
-  border: $base-border;
+  padding: var(--base-spacing-unit);
+  margin-bottom: var(--base-spacing-unit);
+  border: var(--base-border);
   
   .info {
-    padding-bottom: $base-spacing-unit;
-    border-bottom: $base-border;
+    padding-bottom: var(--base-spacing-unit);
+    border-bottom: var(--base-border);
   }
   
   &.last {
-    margin-bottom: $base-spacing-unit--lg;
+    margin-bottom: var(--base-spacing-unit--lg);
   }
 }

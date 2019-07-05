@@ -11,7 +11,9 @@
 // --------------------------------------------------
 
 // VARIABLES
-$news-border: $base-border !default;
+html {
+--news-border: var(--base-border);
+}
 
 $news-grid-columns--sm: 2 !default;
 $news-grid-columns--md: 2 !default;
@@ -33,14 +35,14 @@ $news-grid-columns--lg: 3 !default;
 // [1] call every headline element (h1-h6)
 // [2] headline for FE-Module
 .news-list {
-  margin-bottom: $base-spacing-unit;
+  margin-bottom: var(--base-spacing-unit);
   
   > { 
     #{headings()} {
       margin-bottom: 0;
       
       &:after {
-        border-top: $news-border;
+        border-top: var(--news-border);
          
         content: "";
         display: block; 
@@ -54,32 +56,31 @@ $news-grid-columns--lg: 3 !default;
   }
   
   .image_container {
-    margin-top: $base-spacing-unit;
-    margin-bottom: $base-spacing-unit;
+    margin-top: var(--base-spacing-unit);
+    margin-bottom: var(--base-spacing-unit);
   }
     
   .float_left {
-    margin-right: $base-spacing-unit;
+    margin-right: var(--base-spacing-unit);
   }
   
   .float_right {
-    margin-left: $base-spacing-unit;
+    margin-left: var(--base-spacing-unit);
   } 
   
   .layout_short,
   .layout_latest,
   .layout_simple {
-    @extend %clearfix;
     
     > { 
       #{headings()} { 
-        margin-top: $base-spacing-unit;
+        margin-top: var(--base-spacing-unit);
       }
     }
     
     &:after {
-      border-bottom: $base-border;
-      margin-top: $base-spacing-unit;
+      border-bottom: var(--base-border);
+      margin-top: var(--base-spacing-unit);
       content: "";
       display: block;
     }
@@ -89,27 +90,27 @@ $news-grid-columns--lg: 3 !default;
   .layout_upcoming {
     time,
     a {
-      padding-top: $base-spacing-unit;
+      padding-top: var(--base-spacing-unit);
       display: inline-block;
     }
   }
   
   .header {
-    margin-top: $base-spacing-unit;
+    margin-top: var(--base-spacing-unit);
   }
 }
 
 .news-grid {
   @include make-row;
   
-  margin-bottom: $base-spacing-unit;
+  margin-bottom: var(--base-spacing-unit);
   
   > { 
     #{headings()} {
       @include padding-default;
       
       &:after {
-        border-top: $news-border;
+        border-top: var(--news-border);
         content: "";
         display: block; 
       }
@@ -121,38 +122,18 @@ $news-grid-columns--lg: 3 !default;
   .layout_simple {
     @include column-floating;
     
-    margin-top: $base-spacing-unit;
+    margin-top: var(--base-spacing-unit);
     
     @include media-query(screen-sm) {
       @include make-col((12 / $news-grid-columns--sm));
-      
-      &:nth-of-type(#{$news-grid-columns--sm + n} + 1) {
-        clear:both;
-      }
     }
     
     @include media-query(screen-md) {
       @include make-col((12 / $news-grid-columns--md));
-      
-      &:nth-of-type(n) {
-        clear: none;
-      }
-      
-      &:nth-of-type(#{$news-grid-columns--md + n} + 1) {
-        clear: both; 
-      }
     }
     
     @include media-query(screen-lg) {
       @include make-col((12 / $news-grid-columns--lg));
-      
-      &:nth-of-type(n) {
-        clear: none;
-      }
-      
-      &:nth-of-type(#{$news-grid-columns--lg + n} + 1) {
-        clear: both; 
-      }
     }
   }
   
@@ -170,7 +151,7 @@ $news-grid-columns--lg: 3 !default;
     #{headings()} {
       
       &:after {
-        border-top: $news-border;
+        border-top: var(--news-border);
          
         content: "";
         display: block; 
@@ -179,17 +160,17 @@ $news-grid-columns--lg: 3 !default;
   }
     
   .year {
-    margin-bottom: $base-spacing-unit--sm;
+    margin-bottom: var(--base-spacing-unit--sm);
     
      > a,
      > .active {
       color: inherit;
-      font-weight: $headings__font-weight;
-      font-family: $headings__font-family;
+      font-weight: var(--headings__font-weight);
+      font-family: var(--headings__font-family);
     }
   }
   
   .level_2 li {
-    margin-bottom: $base-spacing-unit--xs;
+    margin-bottom: var(--base-spacing-unit--xs);
   }
 }

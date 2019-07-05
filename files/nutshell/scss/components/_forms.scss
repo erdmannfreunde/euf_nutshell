@@ -12,9 +12,11 @@
 
 
 // VARIABLES
-$input-border-width:    $base-border-width !default;
-$input-border-radius:   $base-border-radius !default;
-$input-border-color:    rgba(0,0,0,0.25) !default;
+html {
+--input-border-width:    var(--base-border-width);
+--input-border-radius:   var(--base-border-radius);
+--input-border-color:    rgba(0,0,0,0.25);
+}
 
 // USED FROM _variables.scss
 
@@ -45,7 +47,7 @@ fieldset {
 label {
   display: inline-block;
   max-width: 100%; // [3]
-  margin-bottom: $base-spacing-unit--xs;
+  margin-bottom: var(--base-spacing-unit--xs);
   font-weight: bold;
 }
 
@@ -54,9 +56,9 @@ input.captcha,
 textarea {
   display: block;
   width: 100%;
-  padding: ($base-spacing-unit / 2) $base-spacing-unit;
-  border-radius: $input-border-radius;
-  border: $input-border-width solid $input-border-color;
+  padding: calc(var(--base-spacing-unit / 2) var(--base-spacing-unit));
+  border-radius: var(--input-border-radius);
+  border: var(--input-border-width) solid var(--input-border-color);
   background-clip: padding-box; // [4]
 
   background-image: none; // [7]
@@ -68,7 +70,7 @@ textarea.textarea {
 
 .widget-text,
 .widget-textarea {
-  margin-bottom: $base-spacing-unit;
+  margin-bottom: var(--base-spacing-unit);
 }
 
 input.submit,
@@ -90,26 +92,26 @@ input[type="file"] {
 // Checkboxes and radios
 input.radio,
 input.checkbox {
-  margin: $base-spacing-unit--xs 0 0;
+  margin: var(--base-spacing-unit--xs) 0 0;
   margin-left: 1px; // [8]
   margin-top: 1px \9; // [10]
   line-height: normal;
   
   + label {
-    margin-right: $base-spacing-unit--xs; // [11]
+    margin-right: var(--base-spacing-unit--xs); // [11]
     font-weight: normal;
   }
 }
 
 select.select {
-  margin-left: $base-spacing-unit--xs;
+  margin-left: var(--base-spacing-unit--xs);
 }
 
 .widget-radio,
 .widget-checkbox,
 .widget-select,
 .widget-upload {
-  margin-bottom: $base-spacing-unit;
+  margin-bottom: var(--base-spacing-unit);
   
   legend {
     font-weight: 700;
@@ -124,7 +126,7 @@ select.select {
 // Mandatory & Error-Styling
 // asterisk at mandatory fields
 span.mandatory {
-  color: $color-brand;
+  color: var(--color-brand);
 }
 
 // error-text
