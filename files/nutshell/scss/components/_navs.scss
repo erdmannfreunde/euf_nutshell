@@ -30,9 +30,6 @@ html {
 }
 
 .nav--horizontal {
-  ul {
-    @extend %clearfix;
-  }
   
   li {
     @include media-query(screen-offcanvas) {
@@ -86,9 +83,6 @@ html {
 .nav--breadcrumb {
   border: var(--base-border);
   padding: var(--base-spacing-unit--sm) var(--base-spacing-unit);
-  ul {
-    @extend %clearfix;
-  }
   
   li {
     @include media-query(screen-offcanvas) {
@@ -143,7 +137,6 @@ html {
 // [1] clearing floated elements like news--list items
 .pagination {
 	@include navigation;
-  @extend %clearfix;
   
   margin-top: var(--base-spacing-unit);
 	

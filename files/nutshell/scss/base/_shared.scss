@@ -39,8 +39,7 @@ ul, ol, dd {
 
 
 // Micro clearfix, as per: css-101.org/articles/clearfix/latest-new-clearfix-so-far.php
-.clearfix,
-%clearfix {
+.clearfix {
   &:after {
     content: "";
     display: table;

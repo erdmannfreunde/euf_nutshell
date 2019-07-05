@@ -57,7 +57,6 @@
 
 // make-row
 @mixin make-row($column__gutter--half: $grid__gutter--half) {
-  @extend %clearfix;
   
   margin-left:  $column__gutter--half * -1;
   margin-right: $column__gutter--half * -1;

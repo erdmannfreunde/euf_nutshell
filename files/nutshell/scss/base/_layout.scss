@@ -28,7 +28,6 @@ html {
   .inside {
     @include wrapper-max;
     @include padding-default;
-    @extend .clearfix;
   }
 }
 
@@ -63,6 +62,5 @@ html {
   > .inside {
     @include wrapper-max;
     @include padding-default;
-    @extend %clearfix;
   }
 }
