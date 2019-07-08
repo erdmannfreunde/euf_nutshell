@@ -11,8 +11,10 @@
 // --------------------------------------------------
 
 // VARIABLES
-$gallery__gutter: $grid__gutter !default;
-$gallery__gutter--half: ($grid__gutter / 2) !default;
+html {
+--gallery__gutter: var(--grid__gutter);
+--gallery__gutter--half: calc(var(--gallery__gutter) / 2);
+}
 
 // USED FROM _variables.scss
 
@@ -34,19 +36,15 @@ $gallery__gutter--half: ($grid__gutter / 2) !default;
 }
 
 .ce_gallery {
-  ul {
-    @extend .clearfix;
-  
-    margin-left: $gallery__gutter--half * -1;
-    margin-right: $gallery__gutter--half * -1;
+  ul {  
+    @include make-row();
+    
     padding: 0;
     list-style-type: none;
   }
   
-  li {
-    @include column-floating($gallery__gutter--half);
-    
-    margin-bottom: $gallery__gutter;
+  li {    
+    margin-bottom: var(--gallery__gutter);
   }
   
   .cols_2 {
@@ -169,8 +167,4 @@ $gallery__gutter--half: ($grid__gutter / 2) !default;
     width: 100% !important;
     height: 100% !important;
   }
-}
-
-iframe {
-
 }

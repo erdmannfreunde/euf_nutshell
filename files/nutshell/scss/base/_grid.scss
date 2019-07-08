@@ -11,72 +11,57 @@
 // --------------------------------------------------
 
 // VARIABLES
+html {
+--grid__columns:       12;
+--grid__gutter:        1.875rem; // 30px
+}
+
+$grid__columns:         12 !default;
 
 // USED FROM _responsive.scss
 // $breakpoints
 
 // --------------------------------------------------
 
-// grid options
-$grid__columns:       12 !default;
-$grid__gutter:        1.875rem !default; // 30px
-$grid__gutter--half:  ($grid__gutter / 2) !default;
-
-
-$debug-mode: false !default;
-$row-bg:  var(--color-gray-light);
-$col-bg:  rgba(var(--color-gray-light),0.7);
-$container-bg: rgba(var(--color-page-background),.5);
-$grid__gutters: ($grid__columns - 1);
-
 // general row-class
 .row {
-  @include make-row;
-}
-
-// column default floating
-%column-floating {
-  float: left;
-  padding-left:  $grid__gutter--half;
-  padding-right: $grid__gutter--half;
-  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(var(--grid__columns), 1fr);
+  grid-gap: var(--grid__gutter);
+  grid-auto-columns: 1fr;
+  grid-auto-flow: row dense;
 }
 
 // [1] length($breakpoints) - go through length of available viewports (xs, sm, md, lg, xl == 5)
 // [2] $current - actual viewport (e.g. "xs")
 // [3] $i - counter, returns the actual grid-column
-// [4] $grid__columns - go through available columns (e.g. 1 --> 12)
+// [4] var(--grid__columns) - go through available columns (e.g. 1 --> 12)
 
 // [5] override clear- class for the next viewport by default
 // this means, you can add a clear-xs class to an element, but the clear will only affect the current viewport.  
 @for $size from 1 through length($breakpoints) { // [1]
   $x:   nth($breakpoints, $size); // [2]
   $current:   nth($x, 1); // [2]
-  // @warn "Item: #{length($breakpoints)}, Current: #{$current}";
-
-  // column creation
-  @for $i from 1 through $grid__columns { // [3][4]
-    .col-#{$current}-#{$i} { // [2][3]
-      @extend %column-floating;
-    }
-  }
   
   // width creation for every col- class
   @include media-query(screen-#{$current}) { // [2]
 
   	@for $i from 1 through $grid__columns { // [3][4]
   		.col-#{$current}-#{$i} { // [2][3]
-  			width: percentage($i / $grid__columns);
+  			grid-column: span $i / span $i;
   		}
   	}
   }
   
-  // offset creation
+  // .col-start and .row-start creation
   @include media-query(screen-#{$current}) { // [2]
   
-  	@for $i from 0 through ($grid__columns - 1) { // [3]
-  		.offset-#{$current}-#{$i} { // [2][3]
-  			margin-left: percentage($i / $grid__columns);
+  	@for $i from 1 through $grid__columns { // [3]
+  		.col-start-#{$current}-#{$i} { // [2][3]
+  			grid-column-start: $i;
+  		}
+  		.row-start-#{$current}-#{$i} { // [2][3]
+  			grid-row-start: $i;
   		}
   	}
   }
@@ -84,11 +69,13 @@ $grid__gutters: ($grid__columns - 1);
   //pull-left & -right creation
   @include media-query(screen-#{$current}) { // [2]
     .pull-right-#{$current} { // [2]
-      float: right;
+      grid-column-end: -1;
     }
     
     .pull-left-#{$current} { // [2]
-      float: left;
+      grid-column-start: 1;
+      grid-row-start: 1;
+      grid-column-end: inherit;
     }
   }
   
@@ -111,34 +98,5 @@ $grid__gutters: ($grid__columns - 1);
         clear: none;
       }
     }
-  }
-}
-
-@if ($debug-mode == true) {
-  // Debug Mode
-  .row {
-  	position: relative;
-  	background: var(--row-bg);
-  	z-index: 0;
-    padding-top: var(--base-spacing-unit);
-  
-    &:before {
-    	content: "";
-    	display: block;
-    	position: absolute;
-    	z-index: -1;
-    	left: $grid__gutter--half;
-    	right: $grid__gutter--half;
-    	top: 0;
-    	height: 100%;
-    	background: repeating-linear-gradient(to right,
-    		$col-bg 0%, $col-bg calc((100% - (#{$grid__gutter} * #{$grid__gutters})) / #{$grid__columns}), 
-    		$row-bg calc((100% - (1.875rem * 11)) / 12), $row-bg calc(((100% - (#{$grid__gutter} * #{$grid__gutters})) / #{$grid__columns}) + #{$grid__gutter})
-    	); // [1]
-    }
-  }
-  
-  [class*="col"] > div {
-    background: $container-bg;
   }
 }

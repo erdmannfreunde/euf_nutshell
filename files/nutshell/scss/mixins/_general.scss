@@ -16,11 +16,6 @@
 
 // --------------------------------------------------
 
-// font-size
-@mixin font-size($font-size, $line-height: auto) {
-  @warn "The font-size mixin is deprecated. Please use font-size and line-height instead. Das font-size mixin ist veraltet. Bitte verwende stattdessen font-size und line-height."
-}
-
 // margin-auto
 @mixin margin-auto {
   margin-left: auto;
@@ -50,30 +45,29 @@
 }
 
 
-@mixin padding-default($column__gutter--half: $grid__gutter--half) {
+@mixin padding-default($column__gutter--half: var(--grid__gutter--half)) {
   padding-left:  $column__gutter--half;
   padding-right: $column__gutter--half;
 }
 
 // make-row
-@mixin make-row($column__gutter--half: $grid__gutter--half) {
-  
-  margin-left:  $column__gutter--half * -1;
-  margin-right: $column__gutter--half * -1;
+@mixin make-row() {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: var(--grid__gutter);
+  grid-auto-columns: 1fr;
 }
 
 // column-floating
-@mixin column-floating($column__gutter--half: $grid__gutter--half) {
-  float: left;
-  padding-left:  $column__gutter--half;
-  padding-right: $column__gutter--half;
+@mixin column-floating() {
+  
 }
 
 // make-column mixin
 @mixin make-col($columns) {
-  @include column-floating($grid__gutter--half);
+  @include column-floating();
   
-  width: percentage($columns/$grid__columns);
+  grid-column-end: span $columns / span $columns;
 }
 
 // make-width mixin
@@ -82,7 +76,7 @@
   $width-percentage: $width / $grid__columns * $wrapper-max;
   
   max-width: $width-percentage; //[1]
-  max-width: calc(#{$width-percentage} - #{$grid__gutter});
+  max-width: calc(#{$width-percentage} - var(--grid__gutter));
   
   @if $align == auto or center {
     margin-left: auto;
@@ -102,9 +96,7 @@
 
 // make-offset
 @mixin make-offset($width, $direction: left) {
-  @if $direction == left or none {
-    margin-left: percentage($width / $grid__columns);
-  }
+  @warn 'make-offset() is deprecated. use make-start() instead.';
 }
 
 // screen reader only
