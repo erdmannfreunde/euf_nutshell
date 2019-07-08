@@ -67,7 +67,7 @@
 @mixin make-col($columns) {
   @include column-floating();
   
-  grid-column-end: span $columns / span $columns;
+  grid-column: span $columns / span $columns;
 }
 
 // make-width mixin
