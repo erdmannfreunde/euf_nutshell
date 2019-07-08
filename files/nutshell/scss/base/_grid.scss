@@ -73,7 +73,6 @@ $grid__columns:         12 !default;
     }
     
     .pull-left-#{$current} { // [2]
-      grid-column-start: 1;
       grid-row-start: 1;
       grid-column-end: inherit;
     }
