@@ -30,11 +30,10 @@ html {
 }
 
 .nav--horizontal {
+  display: flex;
   
-  li {
-    @include media-query(screen-offcanvas) {
-      float: left;
-    }
+  @include media-query(screen-offcanvas) {
+    flex-direction: column;
   }
   
   a,
@@ -45,10 +44,6 @@ html {
     display: block;
     padding: (var(--nav--main__item-padding) / 2) var(--nav--main__item-padding);
   }
-}
-
-.nav--right {
-  float: right;
 }
 
 .nav--vertical {
@@ -83,10 +78,14 @@ html {
 .nav--breadcrumb {
   border: var(--base-border);
   padding: var(--base-spacing-unit--sm) var(--base-spacing-unit);
+  display: flex;
+  
+  @include media-query(screen-offcanvas) {
+    flex-direction: column;
+  }
   
   li {
     @include media-query(screen-offcanvas) {
-      float: left;
       padding-right: var(--base-spacing-unit);
     }
   }
@@ -134,13 +133,12 @@ html {
   }
 }
 
-// [1] clearing floated elements like news--list items
 .pagination {
 	@include navigation;
+	
+	display: flex;
   
   margin-top: var(--base-spacing-unit);
-	
-	clear: both; // [1]
 	text-align: center;
   line-height: 1;
 	
@@ -176,11 +174,11 @@ html {
 	
 	@include media-query(screen-sm) {
   	p {
-  		float: left;
+  		justify-self: flex-start;
   	}
   	
   	p + ul {
-  		float: right;
+  		justify-self: flex-end;
   	}
 	}
 }
