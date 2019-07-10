@@ -122,8 +122,6 @@ $news-grid-columns--lg: 3 !default;
   .layout_simple {
     @include column-floating;
     
-    margin-top: var(--base-spacing-unit);
-    
     @include media-query(screen-sm) {
       @include make-col((12 / $news-grid-columns--sm));
     }
