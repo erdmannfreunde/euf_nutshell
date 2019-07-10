@@ -60,7 +60,7 @@
 
 // column-floating
 @mixin column-floating() {
-  
+  grid-column: 1 / -1;
 }
 
 // make-column mixin
