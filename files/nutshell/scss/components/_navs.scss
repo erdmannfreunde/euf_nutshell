@@ -30,10 +30,13 @@ html {
 }
 
 .nav--horizontal {
-  display: flex;
-  
-  @include media-query(screen-offcanvas) {
+  ul {
+    display: flex;
     flex-direction: column;
+    
+    @include media-query(screen-offcanvas) {
+      flex-direction: row;
+    }
   }
   
   a,
