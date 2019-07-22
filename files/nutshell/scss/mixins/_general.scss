@@ -99,6 +99,11 @@
   @warn 'make-offset() is deprecated. use make-start() instead.';
 }
 
+// make-start
+@mixin make-start($start) {
+  grid-column-start: $start;
+}
+
 // screen reader only
 @mixin invisible {
   width:0;

@@ -193,12 +193,10 @@ ol {
   margin-top: 0;
   
   a {
-	  color: var(--paragraph__link-color);
-    //color: $paragraph__link-color;
     text-decoration: var(--paragraph__link-decoration);
     
     &:hover {
-      text-decoration: var(--paragraph__link-decoration--hover);
+      --paragraph__link-decoration: var(--paragraph__link-decoration--hover);
     }
   }
   

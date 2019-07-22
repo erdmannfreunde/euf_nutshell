@@ -139,8 +139,9 @@ html {
 .pagination {
 	@include navigation;
 	
-	display: flex;
-  
+	display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: 1fr 1fr;
   margin-top: var(--base-spacing-unit);
 	text-align: center;
   line-height: 1;

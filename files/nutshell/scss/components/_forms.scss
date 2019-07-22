@@ -48,7 +48,6 @@ label {
   display: inline-block;
   max-width: 100%; // [3]
   margin-bottom: var(--base-spacing-unit--xs);
-  font-weight: bold;
 }
 
 input.text,
@@ -56,7 +55,7 @@ input.captcha,
 textarea {
   display: block;
   width: 100%;
-  padding: calc(var(--base-spacing-unit / 2) var(--base-spacing-unit));
+  padding: calc(var(--base-spacing-unit) / 2) var(--base-spacing-unit);
   border-radius: var(--input-border-radius);
   border: var(--input-border-width) solid var(--input-border-color);
   background-clip: padding-box; // [4]

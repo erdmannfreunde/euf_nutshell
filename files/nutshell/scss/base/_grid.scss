@@ -29,13 +29,11 @@ $grid__columns:         12 !default;
   grid-template-columns: repeat(var(--grid__columns), 1fr);
   grid-gap: var(--grid__gutter);
   grid-auto-columns: 1fr;
-  grid-auto-flow: row dense;
 }
 
 // column default floating
 %column-floating {
   grid-column: 1 / -1;
-  display: grid;
 }
 
 // [1] length($breakpoints) - go through length of available viewports (xs, sm, md, lg, xl == 5)
