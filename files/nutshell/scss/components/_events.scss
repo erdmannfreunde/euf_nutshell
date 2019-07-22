@@ -65,13 +65,6 @@ html {
         margin-top: var(--base-spacing-unit);
       }
     }
-    
-    &:after {
-      border-bottom: var(--base-border);
-      margin-top: var(--base-spacing-unit);
-      content: "";
-      display: block;
-    }
   }
   
   .layout_upcoming {
