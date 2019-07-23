@@ -141,10 +141,13 @@ html {
 	
 	display: grid;
   grid-column: 1 / -1;
-  grid-template-columns: 1fr 1fr;
   margin-top: var(--base-spacing-unit);
 	text-align: center;
   line-height: 1;
+  
+  @include media-query(screen-sm) {
+    grid-template-columns: 1fr 1fr;
+  }
 	
 	p {
     padding: var(--base-spacing-unit--xs);
