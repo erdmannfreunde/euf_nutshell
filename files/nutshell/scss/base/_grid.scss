@@ -27,13 +27,25 @@ $grid__columns:         12 !default;
 .row {
   display: grid;
   grid-template-columns: repeat(var(--grid__columns), 1fr);
-  grid-gap: var(--grid__gutter);
+  grid-column-gap: var(--grid__gutter);
   grid-auto-columns: 1fr;
+  
+  @supports not (display: grid) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(-1 * var(--grid__gutter) / 2);
+    margin-right: calc(-1 * var(--grid__gutter) / 2);
+  }
 }
 
 // column default floating
 %column-floating {
   grid-column: 1 / -1;
+  
+  @supports not(display: grid) {
+    padding-left: var(--grid__gutter--half);
+    padding-right: var(--grid__gutter--half);
+  }
 }
 
 // [1] length($breakpoints) - go through length of available viewports (xs, sm, md, lg, xl == 5)
@@ -60,6 +72,10 @@ $grid__columns:         12 !default;
   	@for $i from 1 through $grid__columns { // [3][4]
   		.col-#{$current}-#{$i} { // [2][3]
   			grid-column: span $i / span $i;
+  			
+  			@supports not (display: grid) {
+          width: percentage($i/12);
+        }
   		}
   	}
   }

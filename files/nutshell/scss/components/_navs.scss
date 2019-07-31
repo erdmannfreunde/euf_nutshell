@@ -145,6 +145,13 @@ html {
 	text-align: center;
   line-height: 1;
   
+  @supports not (display: grid) {
+    display: flex;
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
   @include media-query(screen-sm) {
     grid-template-columns: 1fr 1fr;
   }
@@ -181,11 +188,11 @@ html {
 	
 	@include media-query(screen-sm) {
   	p {
-  		justify-self: flex-start;
+  		justify-self: start;
   	}
   	
   	p + ul {
-  		justify-self: flex-end;
+  		justify-self: end;
   	}
 	}
 }

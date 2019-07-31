@@ -36,12 +36,6 @@ html {
   > { 
     #{headings()} { // [1]
       margin-bottom: 0;
-      
-      &:after {
-        border-top: var(--event-border);
-        content: "";
-        display: block; 
-      }
     }
   }
   
@@ -84,17 +78,6 @@ html {
 // [2] add border-top to the first element after headline
 .events-menu {
   @include navigation();
-  
-  > {  
-    #{headings()} { // [1]
-      
-      &:after {
-        border-top: var(--event-border);
-        content: "";
-        display: block; 
-      }
-    }
-  }
   
   .year {
     margin-bottom: var(--base-spacing-unit--sm);

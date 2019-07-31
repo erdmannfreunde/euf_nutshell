@@ -31,7 +31,6 @@ html {
 // [7] reset unusual Firefox-on-Android default style
 // [8] make sure, the whole input is visible (chrome)
 // [9] bring button-text and file-name on same base-line in Chrome
-// [10] IE8-9
 // [11] space between checkbox/radio + label, when inline
 .ce_form {
   overflow: visible; // [1]
@@ -91,13 +90,14 @@ input[type="file"] {
 // Checkboxes and radios
 input.radio,
 input.checkbox {
-  margin: var(--base-spacing-unit--xs) 0 0;
   margin-left: 1px; // [8]
-  margin-top: 1px \9; // [10]
-  line-height: normal;
+  margin-right: var(--base-spacing-unit--xs);
+  line-height: var(--base-line-height);
+  vertical-align: middle;
   
   + label {
     margin-right: var(--base-spacing-unit--xs); // [11]
+    margin-bottom: 0;
     font-weight: normal;
   }
 }
@@ -117,9 +117,12 @@ select.select {
   }
 }
 
-.radio_container > span,
-.checkbox_container > span {
-	display: inline-block;
+.radio_container,
+.checkbox_container {
+   > span {
+  	display: inline-flex;
+  	align-items: center;
+  }
 }
 
 // Mandatory & Error-Styling

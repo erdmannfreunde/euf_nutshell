@@ -25,18 +25,6 @@
 	float:right;
 }
 
-// clear floats
-.block {
-	overflow:hidden;
-}
-
-.clear {
-	height:0.1px;
-	font-size:0.1px;
-	line-height:0.1px;
-	clear:both;
-}
-
 // Hide invisible elements
 .invisible {
 	width:0;

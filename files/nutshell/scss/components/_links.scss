@@ -127,16 +127,5 @@ div.btn--right {
   
   a {
     text-decoration: none;
-    
-    &:before {
-      font-size: 0.75rem;
-      line-height: 1.4;
-      padding-bottom: 0.25rem;
-      
-      display: inline-block;
-      content: "◄";
-      vertical-align: middle;
-      margin-right: var(--base-spacing-unit--xs);
-    }
   }
 }

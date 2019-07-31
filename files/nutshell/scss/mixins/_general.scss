@@ -54,13 +54,25 @@
 @mixin make-row() {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-gap: var(--grid__gutter);
+  grid-column-gap: var(--grid__gutter);
   grid-auto-columns: 1fr;
+  
+  @supports not (display: grid) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(-1 * var(--grid__gutter) / 2);
+    margin-right: calc(-1 * var(--grid__gutter) / 2);
+  }
 }
 
 // column-floating
 @mixin column-floating() {
   grid-column: 1 / -1;
+  
+  @supports not(display: grid) {
+    padding-left: var(--grid__gutter--half);
+    padding-right: var(--grid__gutter--half);
+  }
 }
 
 // make-column mixin
@@ -68,6 +80,10 @@
   @include column-floating();
   
   grid-column: span $columns / span $columns;
+  
+  @supports not (display: grid) {
+    width: percentage($columns/12);
+  }
 }
 
 // make-width mixin

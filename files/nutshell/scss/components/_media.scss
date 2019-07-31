@@ -36,59 +36,64 @@ html {
 }
 
 .ce_gallery {
+  margin-bottom: var(--base-spacing-unit);
+  
   ul {  
     @include make-row();
     
+    grid-row-gap: var(--grid__gutter);
+    
     padding: 0;
+    margin: 0;
     list-style-type: none;
   }
   
   li {    
-    margin-bottom: var(--gallery__gutter);
+    @extend %column-floating;
   }
   
   .cols_2 {
     li {
-      width: 50%;
+      @include make-col(6);
     }
   }
   
   .cols_3 {
     li {
-      width: 50%;
+      @include make-col(6);
       
       @include media-query(screen-md) {
-        width: percentage(4/12);
+        @include make-col(3);
       }
     }
   }
   
   .cols_4 {
     li {
-      width: 50%;
+      @include make-col(6);
       
       @include media-query(screen-md) {
-        width: percentage(3/12);
+        @include make-col(3);
       }
     }
   }
   
   .cols_5 {
     li {
-      width: 50%;
+      @include make-col(6);
       
       @include media-query(screen-md) {
-        width: 20%;
+        @include make-col(2);
       }
     }
   }
   
   .cols_6 {
     li {
-      width: 50%;
+      @include make-col(6);
       
       @include media-query(screen-md) {
-        width: percentage(2/12);
+        @include make-col(2);
       }
     }
   }

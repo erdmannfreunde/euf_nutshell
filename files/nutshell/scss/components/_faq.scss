@@ -34,17 +34,6 @@ html {
 
   li a {
     display: inline-block;
-    
-    &:before {
-      font-size: 0.75rem;
-      line-height: 1.4;
-      padding-bottom: 0.25rem;
-      
-      display: inline-block;
-      content: "►";
-      vertical-align: middle;
-      margin-right: var(--base-spacing-unit--xs);
-    }
   }
   
   > { 
@@ -104,7 +93,7 @@ html {
   }
   
   section {
-    padding: var(--base-spacing-unit 0);
+    padding: var(--base-spacing-unit) 0;
     border-bottom: var(--faq-border);
     
     &.last {
