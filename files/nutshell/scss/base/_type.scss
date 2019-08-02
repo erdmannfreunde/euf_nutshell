@@ -174,7 +174,7 @@ html {
 
     .ce_text + .ce_text & {
       &:first-child {
-        margin-top: calc($margin-top - var(--base-spacing-unit)); // [4]
+        margin-top: calc(#{$margin-top} - var(--base-spacing-unit)); // [4]
       }
     }
     
