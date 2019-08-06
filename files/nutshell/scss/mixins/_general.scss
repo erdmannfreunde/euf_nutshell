@@ -16,12 +16,6 @@
 
 // --------------------------------------------------
 
-// margin-auto
-@mixin margin-auto {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 // basic styles for lists used as navs
 @mixin navigation() {
   ul {
@@ -34,16 +28,6 @@
 	  text-decoration: none;
   }
 }
-
-// vertical align
-@mixin vertical-align($position: 50%, $correct: -50%) {
-	position: relative;
-	top: $position;
-	-webkit-transform: translateY($correct);
-	-ms-transform: translateY($correct);
-	transform: translateY($correct);
-}
-
 
 @mixin padding-default($column__gutter--half: var(--grid__gutter--half)) {
   padding-left:  $column__gutter--half;
