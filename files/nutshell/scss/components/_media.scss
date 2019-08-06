@@ -109,7 +109,8 @@ html {
   .inside,
   .mejs-video,
   .mejs__video {
-    @include margin-auto;
+    margin-left: auto;
+    margin-right: auto;
   }
     
   .mejs-video,

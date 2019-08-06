@@ -40,7 +40,9 @@ html {
   }
   
   .slider-control a {
-    @include vertical-align(50%);
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
     font-size: var(--arrow-size);
     line-height: 1;
     
