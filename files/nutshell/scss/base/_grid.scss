@@ -142,3 +142,83 @@ $grid__columns:         12 !default;
     }
   }
 }
+
+// classes for alignment
+// [1] length($breakpoints) - go through length of available viewports (xs, sm, md, lg, xl == 5)
+// [2] $current - actual viewport (e.g. "xs")
+// [3] $i - counter, returns the actual grid-column
+// [4] $grid__columns - go through available columns (e.g. 1 --> 12)
+.justify-start { // [2][3]
+  justify-self: start;
+  text-align: left;
+}
+
+.justify-center { // [2][3]
+  justify-self: center;
+  text-align: center;
+}
+
+.justify-end { // [2][3]
+  justify-self: end;
+  text-align: right;
+}
+
+@for $size from 1 through length($breakpoints) { // [1]
+  $x:   nth($breakpoints, $size); // [2]
+  $current:   nth($x, 1); // [2]
+
+  // width creation for every col- class
+  @include media-query(screen-#{$current}) { // [2]
+
+    .justify-#{$current}-start { // [2][3]
+      justify-self: flex-start;
+      text-align: left;
+    }
+
+    .justify-#{$current}-center { // [2][3]
+      justify-self: center;
+      text-align: center;
+    }
+
+    .justify-#{$current}-end { // [2][3]
+      justify-self: flex-end;
+      text-align: right;
+    }
+  }
+}
+
+.align-start { // [2][3]
+  align-self: start;
+}
+
+.align-center { // [2][3]
+  align-self: center;
+}
+
+.align-end { // [2][3]
+  align-self: end;
+}
+
+@for $size from 1 through length($breakpoints) { // [1]
+  $x:   nth($breakpoints, $size); // [2]
+  $current:   nth($x, 1); // [2]
+
+  // width creation for every col- class
+  @include media-query(screen-#{$current}) { // [2]
+
+    .align-#{$current}-start { // [2][3]
+      justify-self: flex-start;
+      text-align: left;
+    }
+
+    .align-#{$current}-center { // [2][3]
+      justify-self: center;
+      text-align: center;
+    }
+
+    .align-#{$current}-end { // [2][3]
+      justify-self: flex-end;
+      text-align: right;
+    }
+  }
+}
