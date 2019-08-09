@@ -40,8 +40,6 @@ html {
   }
   
   a,
-  span.active,
-  span.trail,
   strong.active,
   strong.trail {
     display: block;
@@ -51,8 +49,6 @@ html {
 
 .nav--vertical {
   a,
-  span.active,
-  span.trail,
   strong.active,
   strong.trail {
     display: block;
@@ -64,8 +60,6 @@ html {
   border: var(--base-border);
   
   a,
-  span.active,
-  span.trail,
   strong.active,
   strong.trail {
     padding: var(--nav--main__item-padding) var(--nav--main__item-padding);
@@ -169,14 +163,12 @@ html {
 	}
 	
 	a,
-	span,
 	strong {
   	display: inline-block;
 		padding: var(--base-spacing-unit--xs);
 		margin: var(--base-spacing-unit--xs);
 	}
 	
-	span,
 	strong {
   	border: var(--base-border);
 	}
