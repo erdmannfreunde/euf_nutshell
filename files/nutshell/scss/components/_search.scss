@@ -11,12 +11,16 @@
 // --------------------------------------------------
 
 // VARIABLES
-$search-color-relevance:  $color-gray !default;
-$search-color-url:        $color-gray !default;
 $search-hide-label:       true !default;
 
+
+html {
+  --search-color-relevance:  var(--color-gray);
+  --search-color-url:        var(--color-gray);
+}
+
 // USED FROM _variables.scss
-// * $base-spacing-unit--sm
+// * var(--base-spacing-unit--sm);
 
 // --------------------------------------------------
 
@@ -31,7 +35,7 @@ $search-hide-label:       true !default;
   
   .text,
   .widget-text {
-    margin-bottom: $base-spacing-unit--sm; // [2]
+    margin-bottom: var(--base-spacing-unit--sm); // [2]
     
     display: inline-block;
     flex: 1;
@@ -46,8 +50,8 @@ $search-hide-label:       true !default;
   .submit,
   .submit_container,
   .widget-submit {
-    margin-bottom: $base-spacing-unit--sm;
-    margin-left: $base-spacing-unit--xs;
+    margin-bottom: var(--base-spacing-unit--sm);
+    margin-left: var(--base-spacing-unit--xs);
     align-self: flex-end; // [3]
   }
   
@@ -60,11 +64,11 @@ $search-hide-label:       true !default;
   
   // search-results
   .relevance {
-    color: $search-color-relevance;
+    color: var(--search-color-relevance);
   }
   
   .context {
-    margin-bottom: $base-spacing-unit--xs;
+    margin-bottom: var(--base-spacing-unit--xs);
   }
   
   .highlight {
@@ -72,6 +76,6 @@ $search-hide-label:       true !default;
   }
   
   .url {
-    color: $search-color-url;
+    color: var(--search-color-url);
   }
 }

@@ -11,7 +11,9 @@
 // --------------------------------------------------
 
 // VARIABLES
-$faq-border: $base-border !default;
+html {
+  --faq-border: var(--base-border);
+}
 
 // USED FROM _variables.scss
 
@@ -27,22 +29,11 @@ $faq-border: $base-border !default;
   }
   
   li {
-    margin-bottom: $base-spacing-unit--sm;
+    margin-bottom: var(--base-spacing-unit--sm);
   }
 
   li a {
     display: inline-block;
-    
-    &:before {
-      font-size: 0.75rem;
-      line-height: 1.4;
-      padding-bottom: 0.25rem;
-      
-      display: inline-block;
-      content: "►";
-      vertical-align: middle;
-      margin-right: $base-spacing-unit--xs;
-    }
   }
   
   > { 
@@ -50,7 +41,7 @@ $faq-border: $base-border !default;
       margin-bottom: 0;
       
       &:after {
-        border-top: $faq-border;
+        border-top: var(--faq-border);
         content: "";
         display: block; 
       }
@@ -62,7 +53,7 @@ $faq-border: $base-border !default;
       margin-bottom: 0;
     
       &:after {
-        border-top: $faq-border;
+        border-top: var(--faq-border);
         content: "";
         display: block; 
       }
@@ -76,7 +67,7 @@ $faq-border: $base-border !default;
       margin-bottom: 0;
       
       &:after {
-        border-top: $faq-border;
+        border-top: var(--faq-border);
         content: "";
         display: block; 
       }
@@ -88,7 +79,7 @@ $faq-border: $base-border !default;
       margin-bottom: 0;
     
       &:after {
-        border-top: $faq-border;
+        border-top: var(--faq-border);
         content: "";
         display: block; 
       }
@@ -97,16 +88,16 @@ $faq-border: $base-border !default;
   
   .info {
     font-size: 0.875rem;    
-    margin-top: $base-spacing-unit;
+    margin-top: var(--base-spacing-unit);
     opacity: 0.5;
   }
   
   section {
-    padding: $base-spacing-unit 0;
-    border-bottom: $faq-border;
+    padding: var(--base-spacing-unit) 0;
+    border-bottom: var(--faq-border);
     
     &.last {
-      margin-bottom: $base-spacing-unit;
+      margin-bottom: var(--base-spacing-unit);
     }
   }
 }
@@ -117,7 +108,7 @@ $faq-border: $base-border !default;
   .info {
     font-size: 0.875rem;
    
-    margin-top: $base-spacing-unit;    
+    margin-top: var(--base-spacing-unit);    
     opacity: 0.5;
   } 
 }

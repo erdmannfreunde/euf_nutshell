@@ -11,9 +11,11 @@
 // --------------------------------------------------
 
 // VARIABLES
-$newsletter-list-border:    $base-border !default;
-$newsletter-reader-width:   600px !default;
-$newsletter-reader-border:  $base-border !default;
+html {
+  --newsletter-list-border:    var(--base-border);
+  --newsletter-reader-width:   600px;
+  --newsletter-reader-border:  var(--base-border);
+}
 
 // USED FROM _variables.scss
 // $base-spacing-unit--sm
@@ -25,7 +27,7 @@ $newsletter-reader-border:  $base-border !default;
 // [3] makes error 100% width, instead of standing left to the text-input
 .newsletter-subscribe,
 .newsletter-unsubscribe {
-  margin-bottom: $base-spacing-unit;
+  margin-bottom: var(--base-spacing-unit);
 
   .formbody {
     display: flex; // [1]
@@ -48,7 +50,7 @@ $newsletter-reader-border:  $base-border !default;
   }
   
   .submit {
-    margin-left: $base-spacing-unit--xs;
+    margin-left: var(--base-spacing-unit--xs);
   }
 }
 
@@ -56,23 +58,23 @@ $newsletter-reader-border:  $base-border !default;
   @include navigation;
   
   li {
-    border-bottom: $newsletter-list-border;   
-    padding-top: $base-spacing-unit;
-    padding-bottom: $base-spacing-unit;
+    border-bottom: var(--newsletter-list-border);   
+    padding-top: var(--base-spacing-unit);
+    padding-bottom: var(--base-spacing-unit);
     display: block;
     
     &:first-of-type {
-      border-top: $newsletter-list-border;
+      border-top: var(--newsletter-list-border);
     }
     
     @include media-query(screen-sm) {
-      font-size: $heading-4__size;
-      line-height: $heading-4__line-height;
+      font-size: var(--heading-4__size);
+      line-height: var(--heading-4__line-height);
     }
     
     @include media-query(screen-md) {
-      font-size: $heading-3__size;
-      line-height: $heading-3__line-height;
+      font-size: var(--heading-3__size);
+      line-height: var(--heading-3__line-height);
     }
     
     a {    
@@ -84,9 +86,9 @@ $newsletter-reader-border:  $base-border !default;
 }
 
 .newsletter-reader {
-  max-width: $newsletter-reader-width;
+  max-width: var(--newsletter-reader-width);
   margin-left: auto;
   margin-right: auto;
-  border: $newsletter-reader-border;
-  padding: 0 $base-spacing-unit;
+  border: var(--newsletter-reader-border);
+  padding: 0 var(--base-spacing-unit);
 }
