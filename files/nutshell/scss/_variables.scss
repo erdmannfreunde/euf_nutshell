@@ -13,48 +13,48 @@
 // General Colors
 
 html {
---color-default:            #ff5636;
---color-gray-dark:          #222;
---color-gray:               #555;
---color-gray-light:         #ccc;
-
---color-brand:              var(--color-default);
---color-highlight:          var(--color-brand);
-
-// Page
---color-page-background:    #fff;
---color-text:               var(--color-gray-dark);
---color-text--inverted:     var(--color-page-background);
-
-// Links
---color-links:              var(--color-highlight);
-
-// Buttons
---color-btn:                var(--color-links);
---color-btn-text:           var(--color-text--inverted);
-
-// Base Font Settings
---base-font-size--xs:       0.875rem;
---base-font-size:           1rem;
---base-font-size--xl:       1.125rem;
-
---base-line-height:         1.625;
-
---base-font-family:         -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Helvetica Neue", Arial, sans-serif;
-
-// Base Spacing Units
---base-spacing-unit: 1rem;
-
---base-spacing-unit--xs:    calc(var(--base-spacing-unit) / 4);
---base-spacing-unit--sm:    calc(var(--base-spacing-unit) / 2);
-
---base-spacing-unit--lg:    calc(var(--base-spacing-unit) * 2);
---base-spacing-unit--xl:    calc(var(--base-spacing-unit) * 4);
-
-// Base Border Settings
---base-border-radius:       4px;
---base-border-width:        1px;
---base-border-color:        var(--color-gray-light);
-
---base-border:              var(--base-border-width) solid var(--base-border-color);
+  --color-default:            #ff5636;
+  --color-gray-dark:          #222;
+  --color-gray:               #555;
+  --color-gray-light:         #ccc;
+  
+  --color-brand:              var(--color-default);
+  --color-highlight:          var(--color-brand);
+  
+  // Page
+  --color-page-background:    #fff;
+  --color-text:               var(--color-gray-dark);
+  --color-text--inverted:     var(--color-page-background);
+  
+  // Links
+  --color-links:              var(--color-highlight);
+  
+  // Buttons
+  --color-btn:                var(--color-links);
+  --color-btn-text:           var(--color-text--inverted);
+  
+  // Base Font Settings
+  --base-font-size--xs:       0.875rem;
+  --base-font-size:           1rem;
+  --base-font-size--xl:       1.125rem;
+  
+  --base-line-height:         1.625;
+  
+  --base-font-family:         -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Helvetica Neue", Arial, sans-serif;
+  
+  // Base Spacing Units
+  --base-spacing-unit: 1rem;
+  
+  --base-spacing-unit--xs:    calc(var(--base-spacing-unit) / 4);
+  --base-spacing-unit--sm:    calc(var(--base-spacing-unit) / 2);
+  
+  --base-spacing-unit--lg:    calc(var(--base-spacing-unit) * 2);
+  --base-spacing-unit--xl:    calc(var(--base-spacing-unit) * 4);
+  
+  // Base Border Settings
+  --base-border-radius:       4px;
+  --base-border-width:        1px;
+  --base-border-color:        var(--color-gray-light);
+  
+  --base-border:              var(--base-border-width) solid var(--base-border-color);
 }

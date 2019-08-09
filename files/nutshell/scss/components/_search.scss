@@ -11,12 +11,13 @@
 // --------------------------------------------------
 
 // VARIABLES
-html {
---search-color-relevance:  var(--color-gray);
---search-color-url:        var(--color-gray);
-}
-
 $search-hide-label:       true !default;
+
+
+html {
+  --search-color-relevance:  var(--color-gray);
+  --search-color-url:        var(--color-gray);
+}
 
 // USED FROM _variables.scss
 // * var(--base-spacing-unit--sm);

@@ -12,14 +12,14 @@
 
 // VARIABLES
 html {
---button-bg:             var(--color-btn);
---button-bg-hover:       rgba(var(--button-bg) 0.8);
---button-spacing:        var(--base-spacing-unit--sm) var(--base-spacing-unit);
---button-border-radius:  var(--base-border-radius);
---button-border-width:   var(--base-border-width);
---button-font-family:    var(--base-font-family);
---button-font-weight:    400;
---button-line-height:    var(--base-line-height);
+  --button-bg:             var(--color-btn);
+  --button-bg-hover:       rgba(var(--button-bg) 0.8);
+  --button-spacing:        var(--base-spacing-unit--sm) var(--base-spacing-unit);
+  --button-border-radius:  var(--base-border-radius);
+  --button-border-width:   var(--base-border-width);
+  --button-font-family:    var(--base-font-family);
+  --button-font-weight:    400;
+  --button-line-height:    var(--base-line-height);
 }
 
 // USED FROM _variables.scss

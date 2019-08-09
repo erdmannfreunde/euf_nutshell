@@ -12,15 +12,15 @@
 
 // VARIABLES
 html {
---accordion-padding:       var(--base-spacing-unit--sm);
---accordion-background:    var(--color-gray-light);
-
-
---toggler-font-size:       1.5rem;
---toggler-background:      var(--color-highlight);
---toggler-color:           var(--color-text--inverted);
---toggler-spacing:         var(--base-spacing-unit--xs);
---toggler-border:          2px solid transparent;
+  --accordion-padding:       var(--base-spacing-unit--sm);
+  --accordion-background:    var(--color-gray-light);
+  
+  
+  --toggler-font-size:       1.5rem;
+  --toggler-background:      var(--color-highlight);
+  --toggler-color:           var(--color-text--inverted);
+  --toggler-spacing:         var(--base-spacing-unit--xs);
+  --toggler-border:          2px solid transparent;
 }
 
 // USED FROM _variables.scss

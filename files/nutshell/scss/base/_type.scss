@@ -10,12 +10,7 @@
 // BASE/TYPE
 // --------------------------------------------------
 
-// VARIABLES
-html {
---headings__font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Helvetica Neue", Arial, sans-serif;
---headings__font-weight: 700;
-}
-
+// SASS-VARIABLES
 $headlines: (
   h1: (
     sizes: (
@@ -91,18 +86,22 @@ $headlines: (
   ),
 ) !default;
 
+// CSS-VARIABLES
 html {
---paragraph__link-color:							var(--color-links);
---code__color:            						var(--color-highlight);
---selection-background:								var(--color-brand);
---pre__color-background:  						var(--color-gray);
---pre__color:             						var(--color-text--inverted);
+  --headings__font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Helvetica Neue", Arial, sans-serif;
+  --headings__font-weight: 700;
 
---selection-color: 										var(--color-text--inverted);
-
---hr-border: 													var(--base-border);
---paragraph__link-decoration:         underline;
---paragraph__link-decoration--hover:  none;
+  --paragraph__link-color:							var(--color-links);
+  --code__color:            						var(--color-highlight);
+  --selection-background:								var(--color-brand);
+  --pre__color-background:  						var(--color-gray);
+  --pre__color:             						var(--color-text--inverted);
+  
+  --selection-color: 										var(--color-text--inverted);
+  
+  --hr-border: 													var(--base-border);
+  --paragraph__link-decoration:         underline;
+  --paragraph__link-decoration--hover:  none;
 }
 
 

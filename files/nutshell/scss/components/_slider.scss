@@ -12,10 +12,10 @@
 
 // VARIABLES
 html {
---arrow-color:               inherit;
---arrow-size:                2rem;
---menu-point-color:          inherit;
---menu-point-color--active:  var(--color-brand);
+  --arrow-color:               inherit;
+  --arrow-size:                2rem;
+  --menu-point-color:          inherit;
+  --menu-point-color--active:  var(--color-brand);
 }
 
 // USED FROM _variables.scss

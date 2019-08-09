@@ -11,8 +11,10 @@
 // --------------------------------------------------
 
 // VARIABLES
-$download-link-color:   inherit !default;
-$download-link-decoration: none !default;
+html {
+  --download-link-color:   inherit;
+  --download-link-decoration: none;
+}
 
 // USED FROM _variables.scss
 
@@ -29,8 +31,8 @@ $download-link-decoration: none !default;
   
   a {
     display: inline-block;
-    color: $download-link-color;
-    text-decoration: $download-link-decoration;
+    color: var(--download-link-color);
+    text-decoration: var(--download-link-decoration);
     
   }
 }
