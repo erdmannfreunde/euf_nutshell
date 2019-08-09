@@ -18,10 +18,6 @@ html {
 --nav-toggler-border:      var(--base-border-width) solid currentColor;
 }
 
-
-// USED FROM _responsive.scss
-// $offcanvas-nav
-
 // --------------------------------------------------
 
 // general nav class, navigation-mixin resets margin, padding and list-stype-type
@@ -34,7 +30,7 @@ html {
     display: flex;
     flex-direction: column;
     
-    @include media-query(screen-offcanvas) {
+    @include media-query(screen-menu) {
       flex-direction: row;
     }
   }
@@ -77,12 +73,12 @@ html {
   padding: var(--base-spacing-unit--sm) var(--base-spacing-unit);
   display: flex;
   
-  @include media-query(screen-offcanvas) {
+  @include media-query(screen-menu) {
     flex-direction: column;
   }
   
   li {
-    @include media-query(screen-offcanvas) {
+    @include media-query(screen-menu) {
       padding-right: var(--base-spacing-unit);
     }
   }
