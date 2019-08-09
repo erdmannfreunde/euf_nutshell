@@ -11,14 +11,16 @@
 // --------------------------------------------------
 
 // VARIABLES
-$button-bg:             $color-btn !default;
-$button-bg-hover:       darken($button-bg, 10%) !default;
-$button-spacing:        $base-spacing-unit--sm $base-spacing-unit !default;
-$button-border-radius:  $base-border-radius !default;
-$button-border-width:   $base-border-width !default;
-$button-font-family:    $base-font-family !default;
-$button-font-weight:    400 !default;
-$button-line-height:    $base-line-height !default;
+html {
+  --button-bg:             var(--color-btn);
+  --button-bg-hover:       rgba(var(--button-bg) 0.8);
+  --button-spacing:        var(--base-spacing-unit--sm) var(--base-spacing-unit);
+  --button-border-radius:  var(--base-border-radius);
+  --button-border-width:   var(--base-border-width);
+  --button-font-family:    var(--base-font-family);
+  --button-font-weight:    400;
+  --button-line-height:    var(--base-line-height);
+}
 
 // USED FROM _variables.scss
 
@@ -26,34 +28,35 @@ $button-line-height:    $base-line-height !default;
 
 // [1] Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
 %button {
-  border-radius: $button-border-radius;
-  padding: $button-spacing;
+  border-radius: var(--button-border-radius);
+  padding: var(--button-spacing);
   display: inline-block;
-  border: $button-border-width solid transparent;
-  font-family: $button-font-family;
-  font-weight: $button-font-weight;
-  line-height: $button-line-height;
+  border: var(--button-border-width) solid transparent;
+  font-family: var(--button-font-family);
+  font-weight: var(--button-font-weight);
+  line-height: var(--button-line-height);
   text-align: center;
   background: transparent;
   background-image: none; // [1]
   white-space: nowrap;
+  text-decoration: none;
 }
 
 a.btn,
 span.btn,
 button.btn {
   @extend %button;
-  margin-bottom: $base-spacing-unit;
+  margin-bottom: var(--base-spacing-unit);
 }
 
 a.btn--primary,
 span.btn--primary,
 button.btn--primary {
-  background: $button-bg;
-  color: $color-btn-text;
+  background: var(--button-bg);
+  color: var(--color-btn-text);
   
   &:hover {
-    background: $button-bg-hover;
+    background: var(--button-bg-hover);
   }
 }
 
@@ -69,7 +72,7 @@ div.btn,
   
   // [1]
   &:not(:last-child) {
-    margin-bottom: $base-spacing-unit;
+    margin-bottom: var(--base-spacing-unit);
   }
 }
 
@@ -79,11 +82,11 @@ div.btn--primary,
 
   > a,
   > button {    
-    background: $button-bg;
-    color: $color-btn-text;
+    background: var(--button-bg);
+    color: var(--color-btn-text);
     
     &:hover {
-      background: $button-bg-hover;
+      background: var(--button-bg-hover);
     }
   }
 }
@@ -102,7 +105,7 @@ div.btn--right {
 
 .btn--floated {
   float: left;
-  margin-right: $base-spacing-unit--xs;
+  margin-right: var(--base-spacing-unit--xs);
 }
 
 .ce_toplink a,
@@ -118,22 +121,11 @@ div.btn--right {
 // * newsletter-reader
 //
 .back {
-  border-top: $base-border;
-  margin-top: $base-spacing-unit;
-  padding-top: $base-spacing-unit--sm;
+  border-top: var(--base-border);
+  margin-top: var(--base-spacing-unit);
+  padding-top: var(--base-spacing-unit--sm);
   
   a {
     text-decoration: none;
-    
-    &:before {
-      font-size: 0.75rem;
-      line-height: 1.4;
-      padding-bottom: 0.25rem;
-      
-      display: inline-block;
-      content: "◄";
-      vertical-align: middle;
-      margin-right: $base-spacing-unit--xs;
-    }
   }
 }

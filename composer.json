@@ -32,7 +32,7 @@
       }
     },
     "branch-alias": {
-      "dev-develop": "1.0.x-dev"
+      "dev-feature/css_variables": "1.0.x-dev"
     }
   }
 }

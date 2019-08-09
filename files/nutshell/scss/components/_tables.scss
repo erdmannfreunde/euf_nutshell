@@ -11,10 +11,12 @@
 // --------------------------------------------------
 
 // VARIABLES
-$table-border-width:      1px !default;
-$table-border-style:      solid !default;
-$table-border-color:      #ccc !default;
-$table-background-light:  rgba(red($table-border-color), green($table-border-color), blue($table-border-color),0.2) !default;
+html {
+  --table-border-width:      1px;
+  --table-border-style:      solid;
+  --table-border-color:      #ccc;
+  --table-background-light:  #eee;
+}
 
 // USED FROM _variables.scss
 
@@ -22,18 +24,18 @@ $table-background-light:  rgba(red($table-border-color), green($table-border-col
 
 table,
 %table {
-    margin-bottom: $base-spacing-unit;
+    margin-bottom: var(--base-spacing-unit);
     
     width: 100%;
     padding: 0;
     border-spacing: 0;
-    border-left: $table-border-width $table-border-style $table-border-color;
-    border-top: $table-border-width $table-border-style $table-border-color;
+    border-left: var(--table-border-width) var(--table-border-style) var(--table-border-color);
+    border-top: var(--table-border-width) var(--table-border-style) var(--table-border-color);
 
     th,
     td {
-      border-right: $table-border-width $table-border-style $table-border-color;
-      border-bottom: $table-border-width $table-border-style $table-border-color;
+      border-right: var(--table-border-width) var(--table-border-style) var(--table-border-color);
+      border-bottom: var(--table-border-width) var(--table-border-style) var(--table-border-color);
 
       padding: 10px;
     }
@@ -41,7 +43,7 @@ table,
 
 thead {
   text-align: left;
-  background: $table-background-light;
+  background: var(--table-background-light);
 }
 
 tfoot {
@@ -50,7 +52,7 @@ tfoot {
 
 .table--striped {
   .even {
-    background: $table-background-light;
+    background: var(--table-background-light);
   }
 }
 

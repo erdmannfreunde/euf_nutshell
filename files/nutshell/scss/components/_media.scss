@@ -11,8 +11,10 @@
 // --------------------------------------------------
 
 // VARIABLES
-$gallery__gutter: $grid__gutter !default;
-$gallery__gutter--half: ($grid__gutter / 2) !default;
+html {
+  --gallery__gutter: var(--grid__gutter);
+  --gallery__gutter--half: calc(var(--gallery__gutter) / 2);
+}
 
 // USED FROM _variables.scss
 
@@ -34,63 +36,64 @@ $gallery__gutter--half: ($grid__gutter / 2) !default;
 }
 
 .ce_gallery {
-  ul {
-    @extend .clearfix;
+  margin-bottom: var(--base-spacing-unit);
   
-    margin-left: $gallery__gutter--half * -1;
-    margin-right: $gallery__gutter--half * -1;
+  ul {  
+    @include make-row();
+    
+    grid-row-gap: var(--grid__gutter);
+    
     padding: 0;
+    margin: 0;
     list-style-type: none;
   }
   
-  li {
-    @include column-floating($gallery__gutter--half);
-    
-    margin-bottom: $gallery__gutter;
+  li {    
+    @extend %column-floating;
   }
   
   .cols_2 {
     li {
-      width: 50%;
+      @include make-col(6);
     }
   }
   
   .cols_3 {
     li {
-      width: 50%;
+      @include make-col(6);
       
       @include media-query(screen-md) {
-        width: percentage(4/12);
+        @include make-col(3);
       }
     }
   }
   
   .cols_4 {
     li {
-      width: 50%;
+      @include make-col(6);
       
       @include media-query(screen-md) {
-        width: percentage(3/12);
+        @include make-col(3);
       }
     }
   }
   
   .cols_5 {
     li {
-      width: 50%;
+      @include make-col(6);
       
       @include media-query(screen-md) {
-        width: 20%;
+        @include make-col(2);
       }
     }
   }
   
   .cols_6 {
     li {
-      width: 50%;
+      @include make-col(6);
       
       @include media-query(screen-md) {
-        width: percentage(2/12);
+        @include make-col(2);
       }
     }
   }
@@ -106,7 +109,8 @@ $gallery__gutter--half: ($grid__gutter / 2) !default;
   .inside,
   .mejs-video,
   .mejs__video {
-    @include margin-auto;
+    margin-left: auto;
+    margin-right: auto;
   }
     
   .mejs-video,
@@ -169,8 +173,4 @@ $gallery__gutter--half: ($grid__gutter / 2) !default;
     width: 100% !important;
     height: 100% !important;
   }
-}
-
-iframe {
-
 }
