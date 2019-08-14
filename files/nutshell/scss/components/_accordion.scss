@@ -19,6 +19,7 @@ html {
   --toggler-font-size:       1.5rem;
   --toggler-background:      var(--color-highlight);
   --toggler-color:           var(--color-text--inverted);
+  --toggler-color-hover:     var(--color-brand-primary);
   --toggler-spacing:         var(--base-spacing-unit--xs);
   --toggler-border:          2px solid transparent;
 }
@@ -40,7 +41,7 @@ html {
     border: var(--toggler-border);
     
     &:hover {
-      color: rgba(var(--toggler-color), 0.5);
+      color: var(--toggler-color-hover);
                   
     }
     
