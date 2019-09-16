@@ -39,7 +39,7 @@ html {
   strong.active,
   strong.trail {
     display: block;
-    padding: (var(--nav--main__item-padding) / 2) var(--nav--main__item-padding);
+    padding: calc(var(--nav--main__item-padding) / 2) var(--nav--main__item-padding);
   }
 }
 
@@ -48,7 +48,7 @@ html {
   strong.active,
   strong.trail {
     display: block;
-    padding: (var(--nav--main__item-padding) / 2) var(--nav--main__item-padding);
+    padding: calc(var(--nav--main__item-padding) / 2) var(--nav--main__item-padding);
   }
 }
 
