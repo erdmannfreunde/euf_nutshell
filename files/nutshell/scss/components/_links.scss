@@ -13,7 +13,7 @@
 // VARIABLES
 html {
   --button-bg:             var(--color-btn);
-  --button-bg-hover:       rgba(var(--button-bg) 0.8);
+  --button-bg-hover:       var(--color-btn);
   --button-spacing:        var(--base-spacing-unit--sm) var(--base-spacing-unit);
   --button-border-radius:  var(--base-border-radius);
   --button-border-width:   var(--base-border-width);
