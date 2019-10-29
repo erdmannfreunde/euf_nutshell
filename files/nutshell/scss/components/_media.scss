@@ -63,7 +63,7 @@ html {
       @include make-col(6);
       
       @include media-query(screen-md) {
-        @include make-col(3);
+        @include make-col(4);
       }
     }
   }
