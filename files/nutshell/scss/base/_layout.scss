@@ -25,7 +25,7 @@ html {
   background: var(--header-color-background);
   color: var(--header-color-text);
     
-  .inside {
+  > .inside {
     @include wrapper-max;
     @include padding-default;
   }
