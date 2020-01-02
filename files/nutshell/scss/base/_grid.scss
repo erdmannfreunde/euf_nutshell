@@ -121,27 +121,6 @@ $grid__columns:         12 !default;
       grid-column-end: inherit;
     }
   }
-  
-  //clear creation  
-  @include media-query(screen-#{$current}) { // [2]
-    .clear-#{$current} { // [2]
-      clear: both;
-    }
-  }
-  
-  // [5]
-  @if($size < length($breakpoints)) {
-    $size: $size + 1;
-    $x:   nth($breakpoints, $size);
-    $next:      nth($x, 1);
-    
-    // clear-#{$next}
-    @include media-query(screen-#{$next}) {
-      .clear-#{$current} {
-        clear: none;
-      }
-    }
-  }
 }
 
 // classes for alignment
