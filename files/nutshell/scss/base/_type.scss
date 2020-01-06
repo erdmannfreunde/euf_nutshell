@@ -121,11 +121,9 @@ html {
 // [1] more space between last text-element and new headline
 // [2] combined headlines - example: h1 + h2
 // [3] correct margin-top for headlines, when in a new content element
-// [4] --base-spacing-unit = default margin-bottom for most elements
-// [5] ex: h1 + h2
-// [6] new placeholder because scssphp in Contao fails with %#{$element}
-// [7] base font size
-// [8] loop through all viewports and add font-size for every viewport
+// [4] ex: h1 + h2
+// [5] base font size
+// [6] loop through all viewports and add font-size for every viewport
 
 @each $element,$options in $headlines {
   $count: index(map-keys($headlines), $element);  
@@ -138,13 +136,13 @@ html {
     $margin-bottom: map-get($options, margin-bottom);
     
     
-    font-size: map-get($sizes, xs); // [7]
+    font-size: map-get($sizes, xs); // [5]
     font-family: var(--headings__font-family);
     font-weight: var(--headings__font-weight);
     line-height: $line-height;
     margin-bottom: $margin-bottom;
     
-    // [8]
+    // [6]
     @for $i from 2 through length($sizes) {
 	    $current: nth($sizes, $i); // $i = 2 = sm, $i = 5 = xl
 	    $viewport: nth($current, 1);
@@ -173,12 +171,12 @@ html {
 
     .ce_text + .ce_text & {
       &:first-child {
-        margin-top: calc(#{$margin-top} - var(--base-spacing-unit)); // [4]
+        margin-top: $margin-top;
       }
     }
     
     @if $count < 6 {
-      & + h#{$count + 1} { // [5]
+      & + h#{$count + 1} { // [4]
         margin-top: -1 * $margin-bottom;
       }
     }

@@ -97,6 +97,16 @@ $grid__columns:         12 !default;
   	}
   }
   
+  // height creation for every row-span- class
+  @include media-query(screen-#{$current}) { // [2]
+
+  	@for $i from 1 through $grid__columns { // [3][4]
+  		.row-span-#{$current}-#{$i} { // [2][3]
+  			grid-row: span $i / span $i;
+  		}
+  	}
+  }
+  
   // .col-start and .row-start creation
   @include media-query(screen-#{$current}) { // [2]
   
@@ -119,27 +129,6 @@ $grid__columns:         12 !default;
     .pull-left-#{$current} { // [2]
       grid-row-start: 1;
       grid-column-end: inherit;
-    }
-  }
-  
-  //clear creation  
-  @include media-query(screen-#{$current}) { // [2]
-    .clear-#{$current} { // [2]
-      clear: both;
-    }
-  }
-  
-  // [5]
-  @if($size < length($breakpoints)) {
-    $size: $size + 1;
-    $x:   nth($breakpoints, $size);
-    $next:      nth($x, 1);
-    
-    // clear-#{$next}
-    @include media-query(screen-#{$next}) {
-      .clear-#{$current} {
-        clear: none;
-      }
     }
   }
 }
@@ -221,5 +210,17 @@ $grid__columns:         12 !default;
       justify-self: flex-end;
       text-align: right;
     }
+  }
+}
+
+// row-start-1-12
+// row-span-1-12
+@for $i from 1 through $grid__columns { // [1]
+  .row-start-#{$i} { // [2][3]
+			grid-row-start: $i;
+  }
+  
+  .row-span-#{$i} { // [2][3]
+			grid-row: span $i / span $i;
   }
 }

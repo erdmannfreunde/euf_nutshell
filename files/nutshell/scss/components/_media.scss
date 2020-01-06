@@ -38,7 +38,7 @@ html {
 .ce_gallery {
   margin-bottom: var(--base-spacing-unit);
   
-  ul {  
+  > ul {  
     @include make-row();
     
     grid-row-gap: var(--grid__gutter);
@@ -46,10 +46,10 @@ html {
     padding: 0;
     margin: 0;
     list-style-type: none;
-  }
   
-  li {    
-    @extend %column-floating;
+    li {    
+      @extend %column-floating;
+    }
   }
   
   .cols_2 {
@@ -63,7 +63,7 @@ html {
       @include make-col(6);
       
       @include media-query(screen-md) {
-        @include make-col(3);
+        @include make-col(4);
       }
     }
   }
