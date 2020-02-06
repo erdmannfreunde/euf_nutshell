@@ -90,6 +90,7 @@ $headlines: (
 html {
   --headings__font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Helvetica Neue", Arial, sans-serif;
   --headings__font-weight: 700;
+  --headings__color:       currentColor;
 
   --paragraph__link-color:							var(--color-links);
   --code__color:            						var(--color-highlight);
@@ -115,6 +116,7 @@ html {
 #{headings()} { // [1]
   font-weight: var(--headings__font-weight);
   font-family: var(--headings__font-family);
+  color: var(--headings__color);
 }
 
 // H1 — h6: Generate Element Styles from config
