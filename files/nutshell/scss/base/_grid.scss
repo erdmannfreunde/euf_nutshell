@@ -87,11 +87,11 @@ $grid__columns:         12 !default;
   			grid-column: span $i / span $i;
   			
   			@supports not (display: grid) {
-          width: percentage($i/12);
+          width: percentage($i/$grid__columns);
         }
         
         .ie & {
-          width: percentage($i/12);
+          width: percentage($i/$grid__columns);
         }
   		}
   	}
