@@ -11,7 +11,7 @@
 // --------------------------------------------------
 
 // VARIABLES
-:root {
+html {
   --gallery__gutter: var(--grid__gutter);
   --gallery__gutter--half: calc(var(--gallery__gutter) / 2);
 }
