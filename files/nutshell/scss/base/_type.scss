@@ -87,7 +87,7 @@ $headlines: (
 ) !default;
 
 // CSS-VARIABLES
-html {
+:root {
   --headings__font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Helvetica Neue", Arial, sans-serif;
   --headings__font-weight: 700;
   --headings__color:       currentColor;

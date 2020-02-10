@@ -11,7 +11,7 @@
 // --------------------------------------------------
 
 // VARIABLES
-html {
+:root {
   --grid__columns:       12;
   --grid__gutter:        1.875rem; // 30px
   --grid__gutter--half:  calc(var(--grid__gutter) / 2);
