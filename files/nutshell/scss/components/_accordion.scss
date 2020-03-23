@@ -53,5 +53,6 @@ html {
   .accordion {
     padding: var(--accordion-padding);
     background: var(--accordion-background);
+    overflow: hidden;
   }
 }
