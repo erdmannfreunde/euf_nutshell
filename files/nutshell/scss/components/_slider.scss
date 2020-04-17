@@ -11,9 +11,14 @@
 // --------------------------------------------------
 
 // VARIABLES
+// [1] some fonts use different sizes for left and right arrow. 
+//     We take Arial to make sure it has the same size.
+
 html {
   --arrow-color:               inherit;
   --arrow-size:                2rem;
+  --arrow-font-family:         'Arial';
+  --menu-point-size:           2rem;
   --menu-point-color:          inherit;
   --menu-point-color--active:  var(--color-brand);
 }
@@ -28,15 +33,13 @@ html {
 
 // default slider
 // NOTES:
-// [1] overrides default contao slider styling
-// [2] some fonts use different sizes for left and right arrow. 
-//     We take Arial to make sure it has the same size.
+// [2] overrides default contao slider styling
 .slider {
   position: relative;
   
   .slider-control {
-  	position: static; // [1]
-  	height: 0; // [1]
+  	position: static; // [2]
+  	height: 0; // [2]
   }
   
   .slider-control a {
@@ -49,7 +52,7 @@ html {
     position: absolute;
     display: block;
     color: var(--arrow-color);
-    font-family: Arial; // [2]
+    font-family: var(--arrow-font-family);
     
     &:before {
       padding: var(--base-spacing-unit--sm);
@@ -70,18 +73,18 @@ html {
   }
   
   .slider-menu {
-    font-size: 3rem;
+    font-size: var(--menu-point-size);
     line-height: 1;
     
-    top: auto; // [1]
-    bottom: 0; // [1]
+    top: auto; // [2]
+    bottom: 0; // [2]
     
     b {
-      color: var(--menu-point-color); // [1]
+      color: var(--menu-point-color); // [2]
     }
     
     b.active {
-      color: var(--menu-point-color--active); // [1]
+      color: var(--menu-point-color--active); // [2]
     }
     
     b:hover {
