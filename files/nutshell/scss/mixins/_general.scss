@@ -35,9 +35,9 @@
 }
 
 // make-row
-@mixin make-row() {
+@mixin make-row($grid__columns) {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat($grid__columns, 1fr);
   grid-column-gap: var(--grid__gutter);
   grid-auto-columns: 1fr;
   
@@ -78,11 +78,11 @@
   grid-column: span $columns / span $columns;
   
   @supports not (display: grid) {
-    width: percentage($columns/12);
+    width: percentage($columns/$grid__columns);
   }
   
   .ie & {
-    width: percentage($columns/12);
+    width: percentage($columns/$grid__columns);
   }
 }
 
