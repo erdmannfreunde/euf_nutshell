@@ -161,7 +161,7 @@ $grid__columns:         12 !default;
   @include media-query(screen-#{$current}) { // [2]
 
     .justify-#{$current}-start { // [2][3]
-      justify-self: flex-start;
+      justify-self: start;
       text-align: left;
     }
 
@@ -171,7 +171,7 @@ $grid__columns:         12 !default;
     }
 
     .justify-#{$current}-end { // [2][3]
-      justify-self: flex-end;
+      justify-self: end;
       text-align: right;
     }
   }
@@ -197,18 +197,15 @@ $grid__columns:         12 !default;
   @include media-query(screen-#{$current}) { // [2]
 
     .align-#{$current}-start { // [2][3]
-      justify-self: flex-start;
-      text-align: left;
+      align-self: start;
     }
 
     .align-#{$current}-center { // [2][3]
-      justify-self: center;
-      text-align: center;
+      align-self: center;
     }
 
     .align-#{$current}-end { // [2][3]
-      justify-self: flex-end;
-      text-align: right;
+      align-self: end;
     }
   }
 }
