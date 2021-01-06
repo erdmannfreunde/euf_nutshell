@@ -136,6 +136,7 @@ html {
     $line-height: map-get($options, line-height);
     $margin-top: map-get($options, margin-top);
     $margin-bottom: map-get($options, margin-bottom);
+    $color: map-get($options, color);	  
     
     
     font-size: map-get($sizes, xs); // [5]
@@ -143,6 +144,10 @@ html {
     font-weight: var(--headings__font-weight);
     line-height: $line-height;
     margin-bottom: $margin-bottom;
+	  
+    @if $color {
+      color: $color;
+    }	  
     
     // [6]
     @for $i from 2 through length($sizes) {
