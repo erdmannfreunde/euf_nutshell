@@ -136,14 +136,27 @@ html {
     $line-height: map-get($options, line-height);
     $margin-top: map-get($options, margin-top);
     $margin-bottom: map-get($options, margin-bottom);
+    $font-weight: map-get($options, font-weight);
+    $font-family: map-get($options, font-family);
     
     
     font-size: map-get($sizes, xs); // [5]
-    font-family: var(--headings__font-family);
-    font-weight: var(--headings__font-weight);
     line-height: $line-height;
     margin-bottom: $margin-bottom;
-    
+	  
+    	  
+    @if $font-weight {
+      font-weight: $font-weight;
+    } @else {
+      font-weight: var(--headings__font-weight);
+    }	  
+	  
+    @if $font-family {
+      font-family: $font-family;
+    } @else {
+      font-family: var(--headings__font-family);
+    }	
+	  
     // [6]
     @for $i from 2 through length($sizes) {
 	    $current: nth($sizes, $i); // $i = 2 = sm, $i = 5 = xl
