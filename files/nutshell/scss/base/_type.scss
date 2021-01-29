@@ -3,9 +3,9 @@
 // * BASE Contao Framework
 // * erdmann-freunde.de/nutshell/
 // *
-// * Lizenziert unter MIT OPEN SOURCE 
+// * Lizenziert unter MIT OPEN SOURCE
 // *
-  
+
 //
 // BASE/TYPE
 // --------------------------------------------------
@@ -97,9 +97,9 @@ html {
   --selection-background:								var(--color-brand);
   --pre__color-background:  						var(--color-gray);
   --pre__color:             						var(--color-text--inverted);
-  
+
   --selection-color: 										var(--color-text--inverted);
-  
+
   --hr-border: 													var(--base-border);
   --paragraph__link-decoration:         underline;
   --paragraph__link-decoration--hover:  none;
@@ -128,60 +128,59 @@ html {
 // [6] loop through all viewports and add font-size for every viewport
 
 @each $element,$options in $headlines {
-  $count: index(map-keys($headlines), $element);  
-  
+  $count: index(map-keys($headlines), $element);
+
   %#{$element},
   %_#{$element} {
     $sizes: map-get($options, sizes);
     $line-height: map-get($options, line-height);
     $margin-top: map-get($options, margin-top);
     $margin-bottom: map-get($options, margin-bottom);
-    $color: map-get($options, color);	  
-    
-    
+    $color: map-get($options, color);
+
     font-size: map-get($sizes, xs); // [5]
     font-family: var(--headings__font-family);
     font-weight: var(--headings__font-weight);
     line-height: $line-height;
     margin-bottom: $margin-bottom;
-	  
+
     @if $color {
       color: $color;
-    }	  
-    
+    }
+
     // [6]
     @for $i from 2 through length($sizes) {
 	    $current: nth($sizes, $i); // $i = 2 = sm, $i = 5 = xl
 	    $viewport: nth($current, 1);
-	    $font-size: nth($current, 2);	    
-	    
+	    $font-size: nth($current, 2);
+
 	    @include media-query(screen-#{$viewport}) {
 	      font-size: $font-size;
 	    }
     }
   }
-  
+
   #{$element} {
     @extend %_#{$element};
-    
+
     $sizes: map-get($options, sizes);
     $line-height: map-get($options, line-height);
     $margin-top: map-get($options, margin-top);
     $margin-bottom: map-get($options, margin-bottom);
-    
+
     p + &,  // [1]
     ul + &,
     ol + & {
       margin-top: $margin-top;
     }
-    
+
 
     .ce_text + .ce_text & {
       &:first-child {
         margin-top: $margin-top;
       }
     }
-    
+
     @if $count < 6 {
       & + h#{$count + 1} { // [4]
         margin-top: -1 * $margin-bottom;
@@ -195,15 +194,15 @@ p,
 ul,
 ol {
   margin-top: 0;
-  
+
   a {
     text-decoration: var(--paragraph__link-decoration);
-    
+
     &:hover {
       --paragraph__link-decoration: var(--paragraph__link-decoration--hover);
     }
   }
-  
+
   &:last-child {
     margin-bottom: 0;
   }
