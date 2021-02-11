@@ -37,7 +37,8 @@ html {
   
   a,
   strong.active,
-  strong.trail {
+  strong.trail,
+  strong.forward  {
     display: block;
     padding: calc(var(--nav--main__item-padding) / 2) var(--nav--main__item-padding);
   }
@@ -46,7 +47,8 @@ html {
 .nav--vertical {
   a,
   strong.active,
-  strong.trail {
+  strong.trail,
+  strong.forward  {
     display: block;
     padding: calc(var(--nav--main__item-padding) / 2) var(--nav--main__item-padding);
   }
@@ -57,7 +59,8 @@ html {
   
   a,
   strong.active,
-  strong.trail {
+  strong.trail,
+  strong.forward {
     padding: var(--nav--main__item-padding) var(--nav--main__item-padding);
     border-bottom: 1px solid var(--base-border-color);
   
