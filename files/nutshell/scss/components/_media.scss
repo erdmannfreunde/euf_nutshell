@@ -105,67 +105,25 @@ html {
 
 .ce_player,
 .ce_youtube {
-  
-  .inside,
-  .mejs-video,
-  .mejs__video {
-    margin-left: auto;
-    margin-right: auto;
+  .video_container {
+    position: relative;
+    padding-bottom: 56.25%;
+    width: 100%;
+    height: auto;
   }
-    
-  .mejs-video,
-  .mejs__video {
-		width: 100% !important;
-		height: auto !important;
-		padding-top: 56.25%;
-	}
-	
-	.mejs-audio,
-	.mejs__audio {
-  	margin-top: 30px;
-  	
-    audio {
-    	height: auto;
-  	}
-  }
-	
-	.mejs-overlay, 
-	.mejs-poster,
-	.mejs__overlay,
-	.mejs__poster {
-		width: 100% !important;
-		height: 100% !important;
-	}
-	
-	.mejs-video {
-  	.mejs-mediaelement video,
-  	.mejs-mediaelement .me-plugin,
-  	.mejs-mediaelement embed {
-  		position: absolute;
-  		top: 0; left: 0; right: 0; bottom: 0;
-  		width: 100% !important;
-  		height: 100% !important;
-  	}
-  }
-  
-  .mejs__video {
-  	.mejs__mediaelement video,
-  	.mejs__mediaelement .me__plugin,
-  	.mejs__mediaelement embed {
-  		position: absolute;
-  		top: 0; left: 0; right: 0; bottom: 0;
-  		width: 100% !important;
-  		height: 100% !important;
-  	}
+}
+
+.ce_player {
+  video {
+    border: 0;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100% !important;
+    height: 100% !important;
   }
 }
 
 .ce_youtube {
-  position: relative;
-  padding-bottom: 56.25%;
-  width: 100%;
-  height: auto;
-  
   iframe {
     border: 0;
     position: absolute;
