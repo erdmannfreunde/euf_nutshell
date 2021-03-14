@@ -90,21 +90,20 @@ $headlines: (
 html {
   --headings__font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Helvetica Neue", Arial, sans-serif;
   --headings__font-weight: 700;
-  --headings__color:       'currentColor';
+  --headings__color: 'currentColor';
 
-  --paragraph__link-color:							var(--color-links);
-  --code__color:            						var(--color-highlight);
-  --selection-background:								var(--color-brand);
-  --pre__color-background:  						var(--color-gray);
-  --pre__color:             						var(--color-text--inverted);
+  --paragraph__link-color: var(--color-links);
+  --code__color: var(--color-highlight);
+  --selection-background: var(--color-brand);
+  --pre__color-background: var(--color-gray);
+  --pre__color: var(--color-text--inverted);
 
-  --selection-color: 										var(--color-text--inverted);
+  --selection-color: var(--color-text--inverted);
 
-  --hr-border: 													var(--base-border);
-  --paragraph__link-decoration:         underline;
-  --paragraph__link-decoration--hover:  none;
+  --hr-border: var(--base-border);
+  --paragraph__link-decoration: underline;
+  --paragraph__link-decoration--hover: none;
 }
-
 
 
 // USED FROM _variables.scss
@@ -142,32 +141,32 @@ html {
     font-size: map-get($sizes, xs); // [5]
     line-height: $line-height;
     margin-bottom: $margin-bottom;
-    
+
     @if $color {
       color: $color;
     }
-    	  
+
     @if $font-weight {
       font-weight: $font-weight;
     } @else {
       font-weight: var(--headings__font-weight);
-    }	  
-	  
+    }
+
     @if $font-family {
       font-family: $font-family;
     } @else {
       font-family: var(--headings__font-family);
-    }  
-    
+    }
+
     // [6]
     @for $i from 2 through length($sizes) {
-	    $current: nth($sizes, $i); // $i = 2 = sm, $i = 5 = xl
-	    $viewport: nth($current, 1);
-	    $font-size: nth($current, 2);
+      $current: nth($sizes, $i); // $i = 2 = sm, $i = 5 = xl
+      $viewport: nth($current, 1);
+      $font-size: nth($current, 2);
 
-	    @include media-query(screen-#{$viewport}) {
-	      font-size: $font-size;
-	    }
+      @include media-query(screen-#{$viewport}) {
+        font-size: $font-size;
+      }
     }
   }
 
@@ -184,7 +183,6 @@ html {
     ol + & {
       margin-top: $margin-top;
     }
-
 
     .ce_text + .ce_text & {
       &:first-child {
@@ -248,7 +246,7 @@ hr {
 }
 
 ::selection {
-	background: var(--selection-background);
+  background: var(--selection-background);
   color: var(--selection-color);
   opacity: 1;
 }
