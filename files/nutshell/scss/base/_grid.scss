@@ -3,7 +3,7 @@
 // * BASE Contao Framework
 // * erdmann-freunde.de/nutshell/
 // *
-// * Lizenziert unter MIT OPEN SOURCE 
+// * Lizenziert unter MIT OPEN SOURCE
 // *
 
 //
@@ -30,14 +30,14 @@ $grid__columns:         12 !default;
   grid-template-columns: repeat(var(--grid__columns), 1fr);
   grid-column-gap: var(--grid__gutter);
   grid-auto-columns: 1fr;
-  
+
   @supports not (display: grid) {
     display: flex;
     flex-wrap: wrap;
     margin-left: calc(-1 * var(--grid__gutter) / 2);
     margin-right: calc(-1 * var(--grid__gutter) / 2);
   }
-  
+
   .ie & {
     display: flex;
     flex-wrap: wrap;
@@ -49,15 +49,29 @@ $grid__columns:         12 !default;
 // column default floating
 %column-floating {
   grid-column: 1 / -1;
-  
+
   @supports not(display: grid) {
     padding-left: var(--grid__gutter--half);
     padding-right: var(--grid__gutter--half);
   }
-  
+
   .ie & {
     padding-left: var(--grid__gutter--half);
     padding-right: var(--grid__gutter--half);
+  }
+}
+
+@for $i from 1 through $grid__columns { // [3][4]
+  .col-#{$i} { // [2][3]
+    grid-column: span $i / span $i;
+
+    @supports not (display: grid) {
+      width: percentage($i/$grid__columns);
+    }
+
+    .ie & {
+      width: percentage($i/$grid__columns);
+    }
   }
 }
 
@@ -67,65 +81,65 @@ $grid__columns:         12 !default;
 // [4] var(--grid__columns) - go through available columns (e.g. 1 --> 12)
 
 // [5] override clear- class for the next viewport by default
-// this means, you can add a clear-xs class to an element, but the clear will only affect the current viewport.  
+// this means, you can add a clear-xs class to an element, but the clear will only affect the current viewport.
 @for $size from 1 through length($breakpoints) { // [1]
   $x:   nth($breakpoints, $size); // [2]
   $current:   nth($x, 1); // [2]
-  
+
   // column creation
   @for $i from 1 through $grid__columns { // [3][4]
     .col-#{$current}-#{$i} { // [2][3]
       @extend %column-floating;
     }
   }
-  
+
   // width creation for every col- class
   @include media-query(screen-#{$current}) { // [2]
 
-  	@for $i from 1 through $grid__columns { // [3][4]
-  		.col-#{$current}-#{$i} { // [2][3]
-  			grid-column: span $i / span $i;
-  			
-  			@supports not (display: grid) {
+    @for $i from 1 through $grid__columns { // [3][4]
+      .col-#{$current}-#{$i} { // [2][3]
+        grid-column: span $i / span $i;
+
+        @supports not (display: grid) {
           width: percentage($i/$grid__columns);
         }
-        
+
         .ie & {
           width: percentage($i/$grid__columns);
         }
-  		}
-  	}
+      }
+    }
   }
-  
+
   // height creation for every row-span- class
   @include media-query(screen-#{$current}) { // [2]
 
-  	@for $i from 1 through $grid__columns { // [3][4]
-  		.row-span-#{$current}-#{$i} { // [2][3]
-  			grid-row: span $i / span $i;
-  		}
-  	}
+    @for $i from 1 through $grid__columns { // [3][4]
+      .row-span-#{$current}-#{$i} { // [2][3]
+        grid-row: span $i / span $i;
+      }
+    }
   }
-  
+
   // .col-start and .row-start creation
   @include media-query(screen-#{$current}) { // [2]
-  
-  	@for $i from 1 through $grid__columns { // [3]
-  		.col-start-#{$current}-#{$i} { // [2][3]
-  			grid-column-start: $i;
-  		}
-  		.row-start-#{$current}-#{$i} { // [2][3]
-  			grid-row-start: $i;
-  		}
-  	}
+
+    @for $i from 1 through $grid__columns { // [3]
+      .col-start-#{$current}-#{$i} { // [2][3]
+        grid-column-start: $i;
+      }
+      .row-start-#{$current}-#{$i} { // [2][3]
+        grid-row-start: $i;
+      }
+    }
   }
-  
+
   //pull-left & -right creation
   @include media-query(screen-#{$current}) { // [2]
     .pull-right-#{$current} { // [2]
       grid-column-end: -1;
     }
-    
+
     .pull-left-#{$current} { // [2]
       grid-row-start: 1;
       grid-column-end: inherit;
@@ -214,10 +228,10 @@ $grid__columns:         12 !default;
 // row-span-1-12
 @for $i from 1 through $grid__columns { // [1]
   .row-start-#{$i} { // [2][3]
-			grid-row-start: $i;
+      grid-row-start: $i;
   }
-  
+
   .row-span-#{$i} { // [2][3]
-			grid-row: span $i / span $i;
+      grid-row: span $i / span $i;
   }
 }
