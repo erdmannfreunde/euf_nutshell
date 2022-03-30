@@ -11,6 +11,7 @@
 // --------------------------------------------------
 
 // VARIABLES
+@use "sass:math";
 html {
   --grid__columns:       12;
   --grid__gutter:        1.875rem; // 30px
@@ -66,11 +67,11 @@ $grid__columns:         12 !default;
     grid-column: span $i / span $i;
 
     @supports not (display: grid) {
-      width: percentage($i/$grid__columns);
+      width: percentage(math.div($i, $grid__columns));
     }
 
     .ie & {
-      width: percentage($i/$grid__columns);
+      width: percentage(math.div($i, $grid__columns));
     }
   }
 }
@@ -101,11 +102,11 @@ $grid__columns:         12 !default;
         grid-column: span $i / span $i;
 
         @supports not (display: grid) {
-          width: percentage($i/$grid__columns);
+          width: percentage(math.div($i, $grid__columns));
         }
 
         .ie & {
-          width: percentage($i/$grid__columns);
+          width: percentage(math.div($i, $grid__columns));
         }
       }
     }

@@ -11,6 +11,7 @@
 // --------------------------------------------------
 
 // VARIABLES
+@use "sass:math";
 html {
   --news-border: var(--base-border);
 }
@@ -97,15 +98,15 @@ $news-grid-columns--lg: 3 !default;
     @include column-floating;
     
     @include media-query(screen-sm) {
-      @include make-col((12 / $news-grid-columns--sm));
+      @include make-col(math.div(12, $news-grid-columns--sm));
     }
     
     @include media-query(screen-md) {
-      @include make-col((12 / $news-grid-columns--md));
+      @include make-col(math.div(12, $news-grid-columns--md));
     }
     
     @include media-query(screen-lg) {
-      @include make-col((12 / $news-grid-columns--lg));
+      @include make-col(math.div(12, $news-grid-columns--lg));
     }
   }
   

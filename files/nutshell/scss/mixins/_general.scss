@@ -11,6 +11,7 @@
 // --------------------------------------------------
 
 // VARIABLES
+@use "sass:math";
 $grid__columns: 12 !default;
 
 // USED FROM _variables.scss
@@ -79,18 +80,18 @@ $grid__columns: 12 !default;
   grid-column: span $columns / span $columns;
   
   @supports not (display: grid) {
-    width: percentage($columns/$grid__columns);
+    width: percentage(math.div($columns, $grid__columns));
   }
   
   .ie & {
-    width: percentage($columns/$grid__columns);
+    width: percentage(math.div($columns, $grid__columns));
   }
 }
 
 // make-width mixin
 // [1] fallback for browser that can't calculate
 @mixin make-width($width, $align: auto) {
-  $width-percentage: $width / $grid__columns * $wrapper-max;
+  $width-percentage: math.div($width, $grid__columns) * $wrapper-max;
   
   max-width: $width-percentage; //[1]
   max-width: calc(#{$width-percentage} - var(--grid__gutter));
