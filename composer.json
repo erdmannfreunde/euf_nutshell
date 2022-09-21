@@ -18,9 +18,8 @@
 		"source":"https://github.com/ErdmannFreunde/euf_nutshell"
 	},
 	"require": {
-    "php": ">=5.3",
-    "contao/core-bundle": "^3.5 || ^4.3",
-    "contao-community-alliance/composer-plugin":"^2.3.0 || 3.*"
+    "php": ">=7.4",
+    "contao/core-bundle": "^4.9 || ^5.0"
   },
   "replace": {
     "contao-legacy/euf_nutshell": "self.version"
