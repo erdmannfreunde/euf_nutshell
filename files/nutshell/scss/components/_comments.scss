@@ -3,7 +3,7 @@
 // * BASE Contao Framework
 // * erdmann-freunde.de/nutshell/
 // *
-// * Lizenziert unter MIT OPEN SOURCE 
+// * Lizenziert unter MIT OPEN SOURCE
 // *
 
 //
@@ -25,24 +25,24 @@ html {
 // default comments, used for news and as content element
 .ce_comments {
   overflow: visible;
-  
+
   .widget {
     margin-bottom: var(--base-spacing-unit);
   }
-  
+
   p.error {
     margin-bottom: 0;
-    
+
     color: var(--color-error);
   }
-  
+
   .error {
     border-color: var(--color-error-light);
   }
-  
+
   .submit {
     @extend %button;
-    @extend button.btn--primary;
+    @extend %btn--primary;
   }
 }
 
@@ -50,12 +50,12 @@ html {
   padding: var(--base-spacing-unit);
   margin-bottom: var(--base-spacing-unit);
   border: var(--base-border);
-  
+
   .info {
     padding-bottom: var(--base-spacing-unit);
     border-bottom: var(--base-border);
   }
-  
+
   &.last {
     margin-bottom: var(--base-spacing-unit--lg);
   }

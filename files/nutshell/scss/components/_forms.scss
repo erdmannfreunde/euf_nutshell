@@ -3,7 +3,7 @@
 // * BASE Contao Framework
 // * erdmann-freunde.de/nutshell/
 // *
-// * Lizenziert unter MIT OPEN SOURCE 
+// * Lizenziert unter MIT OPEN SOURCE
 // *
 
 //
@@ -25,7 +25,7 @@ html {
 // [1] focus-highlighting on inputs was cut off by overflow: hidden
 // [2] reset for FF and Chrome, coming with a min-width
 // [3] force IE8 to wrap long content
-// [4] create half-transparent borders (otherwise you have a half-transparent border using the input background color) 
+// [4] create half-transparent borders (otherwise you have a half-transparent border using the input background color)
 // [5] reset height
 // [6] disable mobile safari make it a search field with different border-radius and size
 // [7] reset unusual Firefox-on-Android default style
@@ -75,7 +75,7 @@ textarea.textarea {
 input.submit,
 button.submit {
   @extend %button;
-  @extend button.btn--primary;
+  @extend %btn--primary;
 }
 
 input[type="search"] {
@@ -95,7 +95,7 @@ input.checkbox {
   margin-right: var(--base-spacing-unit--xs);
   line-height: var(--base-line-height);
   vertical-align: middle;
-  
+
   + label {
     margin-right: var(--base-spacing-unit--xs); // [11]
     margin-bottom: 0;
@@ -112,7 +112,7 @@ select.select {
 .widget-select,
 .widget-upload {
   margin-bottom: var(--base-spacing-unit);
-  
+
   legend {
     font-weight: 700;
   }

@@ -3,7 +3,7 @@
 // * BASE Contao Framework
 // * erdmann-freunde.de/nutshell/
 // *
-// * Lizenziert unter MIT OPEN SOURCE 
+// * Lizenziert unter MIT OPEN SOURCE
 // *
 
 //
@@ -42,34 +42,39 @@ html {
   text-decoration: none;
 }
 
+%button--primary {
+  background: var(--button-bg);
+  color: var(--color-btn-text);
+
+  &:hover {
+    background: var(--button-bg-hover);
+  }
+}
+
 a.btn,
 span.btn,
 button.btn {
   @extend %button;
+
   margin-bottom: var(--base-spacing-unit);
 }
 
 a.btn--primary,
 span.btn--primary,
 button.btn--primary {
-  background: var(--button-bg);
-  color: var(--color-btn-text);
-  
-  &:hover {
-    background: var(--button-bg-hover);
-  }
+  @extend %button--primary;
 }
 
 // [1] add margin, when there is another element following
 div.btn,
 .ce_toplink,
 .toplink {
-  
+
   > a,
   > button {
     @extend %button;
   }
-  
+
   // [1]
   &:not(:last-child) {
     margin-bottom: var(--base-spacing-unit);
@@ -81,13 +86,8 @@ div.btn--primary,
 .toplink {
 
   > a,
-  > button {    
-    background: var(--button-bg);
-    color: var(--color-btn-text);
-    
-    &:hover {
-      background: var(--button-bg-hover);
-    }
+  > button {
+    @extend %button--primary;
   }
 }
 
@@ -114,7 +114,7 @@ div.btn--right {
 }
 
 
-// used for 
+// used for
 // * news-reader
 // * events-reader
 // * faq-reader
@@ -124,7 +124,7 @@ div.btn--right {
   border-top: var(--base-border);
   margin-top: var(--base-spacing-unit);
   padding-top: var(--base-spacing-unit--sm);
-  
+
   a {
     text-decoration: none;
   }
