@@ -75,7 +75,7 @@ textarea.textarea {
 input.submit,
 button.submit {
   @extend %button;
-  @extend %btn--primary;
+  @extend %button--primary;
 }
 
 input[type="search"] {
