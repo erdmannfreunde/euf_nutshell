@@ -42,7 +42,7 @@ html {
 
   .submit {
     @extend %button;
-    @extend %btn--primary;
+    @extend %button--primary;
   }
 }
 
