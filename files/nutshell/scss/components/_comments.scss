@@ -56,7 +56,7 @@ html {
     border-bottom: var(--base-border);
   }
 
-  &.last {
+  &:last-child {
     margin-bottom: var(--base-spacing-unit--lg);
   }
 }

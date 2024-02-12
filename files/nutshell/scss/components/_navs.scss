@@ -65,7 +65,7 @@ html {
     border-bottom: 1px solid var(--base-border-color);
   
   
-    &.last {
+    &:last-child {
       border-bottom: 0;
     }
   }
