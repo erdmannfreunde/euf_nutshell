@@ -20,6 +20,8 @@ html {
 
 // --------------------------------------------------
 
+// [1] li.active needed for breadcrumb navigation since there is no wrapping element for text
+
 // general nav class, navigation-mixin resets margin, padding and list-stype-type
 .nav {
   @include navigation;
@@ -38,7 +40,8 @@ html {
   a,
   strong.active,
   strong.trail,
-  strong.forward  {
+  strong.forward,
+  li.active  { //[1]
     display: block;
     padding: calc(var(--nav--main__item-padding) / 2) var(--nav--main__item-padding);
   }
@@ -48,7 +51,8 @@ html {
   a,
   strong.active,
   strong.trail,
-  strong.forward  {
+  strong.forward,
+  li.active { //[1]
     display: block;
     padding: calc(var(--nav--main__item-padding) / 2) var(--nav--main__item-padding);
   }

@@ -35,7 +35,7 @@ html {
   margin-right: auto;
 }
 
-.ce_gallery {
+.content-gallery {
   margin-bottom: var(--base-spacing-unit);
   
   > ul {  
@@ -51,14 +51,41 @@ html {
       @extend %column-floating;
     }
   }
+
+  nav[data-pagination]{
+    @include navigation;
+
+    display: grid;
+    grid-column: 1 / -1;
+    margin-top: var(--base-spacing-unit);
+	  text-align: center;
+    line-height: 1;
+    
+    @supports not (display: grid) {
+      display: flex;
+      flex: 1 1 auto;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    li {
+      display: inline;
+    }
+    
+    a,
+    strong {
+      display: inline-block;
+      padding: var(--base-spacing-unit--xs);
+      margin: var(--base-spacing-unit--xs);
+    }
+  }
   
-  .cols_2 {
+  .cols_2,&.content-gallery--cols-2 {
     li {
       @include make-col(6);
     }
   }
   
-  .cols_3 {
+  .cols_3, &.content-gallery--cols-3 {
     li {
       @include make-col(6);
       
@@ -68,7 +95,7 @@ html {
     }
   }
   
-  .cols_4 {
+  .cols_4, &.content-gallery--cols-4 {
     li {
       @include make-col(6);
       
@@ -78,7 +105,7 @@ html {
     }
   }
   
-  .cols_5 {
+  .cols_5, &.content-gallery--cols-5 {
     li {
       @include make-col(6);
       
@@ -88,12 +115,72 @@ html {
     }
   }
   
-  .cols_6 {
+  .cols_6, &.content-gallery--cols-6 {
     li {
       @include make-col(6);
       
       @include media-query(screen-md) {
         @include make-col(2);
+      }
+    }
+  }
+
+  .cols_7, &.content-gallery--cols-7 {
+    li {
+      @include make-col(7);
+      
+      @include media-query(screen-md) {
+        @include make-col(7);
+      }
+    }
+  }
+
+  .cols_8, &.content-gallery--cols-8 {
+    li {
+      @include make-col(8);
+      
+      @include media-query(screen-md) {
+        @include make-col(8);
+      }
+    }
+  }
+
+  .cols_9, &.content-gallery--cols-9 {
+    li {
+      @include make-col(9);
+      
+      @include media-query(screen-md) {
+        @include make-col(9);
+      }
+    }
+  }
+
+  .cols_10, &.content-gallery--cols-10 {
+    li {
+      @include make-col(10);
+      
+      @include media-query(screen-md) {
+        @include make-col(10);
+      }
+    }
+  }
+
+  .cols_11, &.content-gallery--cols-11 {
+    li {
+      @include make-col(11);
+      
+      @include media-query(screen-md) {
+        @include make-col(11);
+      }
+    }
+  }
+
+  .cols_12, &.content-gallery--cols-12 {
+    li {
+      @include make-col(12);
+      
+      @include media-query(screen-md) {
+        @include make-col(1);
       }
     }
   }
@@ -102,6 +189,8 @@ html {
     display: block;
   }
 }
+
+
 
 .ce_player,
 .ce_youtube {
