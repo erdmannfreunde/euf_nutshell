@@ -61,7 +61,7 @@ html {
   }
 }
 
-.faq-page{
+.faq-page {
   > { 
     #{headings()} { // [1]
       margin-bottom: 0;
