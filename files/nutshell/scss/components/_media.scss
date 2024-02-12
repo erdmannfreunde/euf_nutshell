@@ -124,73 +124,11 @@ html {
       }
     }
   }
-
-  .cols_7, &.content-gallery--cols-7 {
-    li {
-      @include make-col(7);
-      
-      @include media-query(screen-md) {
-        @include make-col(7);
-      }
-    }
-  }
-
-  .cols_8, &.content-gallery--cols-8 {
-    li {
-      @include make-col(8);
-      
-      @include media-query(screen-md) {
-        @include make-col(8);
-      }
-    }
-  }
-
-  .cols_9, &.content-gallery--cols-9 {
-    li {
-      @include make-col(9);
-      
-      @include media-query(screen-md) {
-        @include make-col(9);
-      }
-    }
-  }
-
-  .cols_10, &.content-gallery--cols-10 {
-    li {
-      @include make-col(10);
-      
-      @include media-query(screen-md) {
-        @include make-col(10);
-      }
-    }
-  }
-
-  .cols_11, &.content-gallery--cols-11 {
-    li {
-      @include make-col(11);
-      
-      @include media-query(screen-md) {
-        @include make-col(11);
-      }
-    }
-  }
-
-  .cols_12, &.content-gallery--cols-12 {
-    li {
-      @include make-col(12);
-      
-      @include media-query(screen-md) {
-        @include make-col(1);
-      }
-    }
-  }
   
   img {
     display: block;
   }
 }
-
-
 
 .ce_player,
 .ce_youtube {
