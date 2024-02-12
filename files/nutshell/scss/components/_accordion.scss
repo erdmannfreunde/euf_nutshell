@@ -29,10 +29,10 @@ html {
 // --------------------------------------------------
 
 // default accordion
-.ce_accordion {
+.ce_accordion, .content-accordion {
   margin-bottom: var(--toggler-spacing);
 
-  .toggler {
+  .toggler, .handorgel__header__button {
     font-size: var(--toggler-font-size);    
     cursor: pointer;
     background: var(--toggler-background);
@@ -50,7 +50,7 @@ html {
     }
   }
   
-  .accordion {
+  .accordion, .handorgel__content {
     padding: var(--accordion-padding);
     background: var(--accordion-background);
     overflow: hidden;

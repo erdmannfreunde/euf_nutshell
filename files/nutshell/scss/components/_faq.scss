@@ -96,7 +96,7 @@ html {
     padding: var(--base-spacing-unit) 0;
     border-bottom: var(--faq-border);
     
-    &.last {
+    &:last-child {
       margin-bottom: var(--base-spacing-unit);
     }
   }

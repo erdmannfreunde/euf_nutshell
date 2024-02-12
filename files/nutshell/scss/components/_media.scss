@@ -35,7 +35,8 @@ html {
   margin-right: auto;
 }
 
-.ce_gallery {
+.ce_gallery, 
+.content-gallery {
   margin-bottom: var(--base-spacing-unit);
   
   > ul {  
@@ -51,14 +52,43 @@ html {
       @extend %column-floating;
     }
   }
+
+  nav[data-pagination]{
+    @include navigation;
+
+    display: grid;
+    grid-column: 1 / -1;
+    margin-top: var(--base-spacing-unit);
+	  text-align: center;
+    line-height: 1;
+    
+    @supports not (display: grid) {
+      display: flex;
+      flex: 1 1 auto;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    li {
+      display: inline;
+    }
+    
+    a,
+    strong {
+      display: inline-block;
+      padding: var(--base-spacing-unit--xs);
+      margin: var(--base-spacing-unit--xs);
+    }
+  }
   
-  .cols_2 {
+  .cols_2,
+  &.content-gallery--cols-2 {
     li {
       @include make-col(6);
     }
   }
   
-  .cols_3 {
+  .cols_3, 
+  &.content-gallery--cols-3 {
     li {
       @include make-col(6);
       
@@ -68,7 +98,8 @@ html {
     }
   }
   
-  .cols_4 {
+  .cols_4, 
+  &.content-gallery--cols-4 {
     li {
       @include make-col(6);
       
@@ -78,7 +109,8 @@ html {
     }
   }
   
-  .cols_5 {
+  .cols_5, 
+  &.content-gallery--cols-5 {
     li {
       @include make-col(6);
       
@@ -88,7 +120,8 @@ html {
     }
   }
   
-  .cols_6 {
+  .cols_6, 
+  &.content-gallery--cols-6 {
     li {
       @include make-col(6);
       
@@ -97,7 +130,7 @@ html {
       }
     }
   }
-  
+
   img {
     display: block;
   }

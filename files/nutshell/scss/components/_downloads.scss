@@ -21,7 +21,9 @@ html {
 // --------------------------------------------------
 
 .ce_download,
-.ce_downloads {
+.ce_downloads,
+.content-download,
+.content-downloads {
   margin-bottom: 1rem;
   
   .mime_icon {
@@ -37,6 +39,7 @@ html {
   }
 }
 
-.ce_downloads {
+.ce_downloads,
+.content-downloads {
   @include navigation;
 }
